@@ -639,7 +639,7 @@ transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background
 position: relative;
 top: -53px;
 right: 3px;
-animation: mod2m 5s infinite;
+animation: mod2m 15s infinite;
 pointer-events: all;
 
 
@@ -661,7 +661,7 @@ pointer-events: all;
     background-position: top 0% left 0%;
     background-size: 220%;
 
-    width: 1000px;
+    width: 900px;
     animation: mod2m 15s infinite;
 
     transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
@@ -687,7 +687,7 @@ background-image: url(owbtn.png);
 background-size: contain;
 background-position: center;
 padding: 0px;
-box-shadow: 0px 0px 30px 15px #ff00ff44, 0px 0px 1px 1px #ff22ed5e;
+box-shadow: 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 background-size: 101%;
 background-color: rgba(255, 0, 0, 0);
 border: none;
@@ -756,7 +756,7 @@ transition: opacity 0.7s 0.5s;
     margin:auto;
     width: 100%;
     height: 40%;
-    background-color: rgb(255, 213, 0);
+    background-color: rgb(255, 115, 0);
     bottom: 8%;
     opacity: 0%;
  
@@ -769,17 +769,73 @@ transition: opacity 0.7s 0.5s;
 .mod1img:hover > #btnmod1 {
         position: relative;
         height: 135px;
-        width: 135px;
+        width: 230px;
         border-radius: 25px;
-
+left: 50px;
           }
 
 #btnmod1 {
 
   border-radius: 25px;
   top: 58.5%; 
-  background-color: rgb(80, 39, 104);
+  background-color: rgb(255, 187, 0);
+  background-image: url(download_btn.png);
+  box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
+border: #9c0000 7px solid;
+border-left-color: #5f0000;
+border-bottom-color: #5f0000;
+z-index: 15;
+
+}
+
+#btnmod1a {
+
+  border-radius: 25px;
+  top: 62.5%; 
+  background-color: rgb(208, 255, 0);
   background-image: url(main_page_button.png);
+  box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
+border: #9c0000 7px solid;
+border-left-color: #5f0000;
+border-bottom-color: #5f0000;
+position: absolute;
+right: 395px;
+width: 150px;
+background-size: 60%;
+background-repeat: no-repeat;
+background-position: left;
+}
+
+.mod1img:hover > #btnmod1a {
+
+transition: height 0.5s, width 0.5s, rotate 1s 0.3s, opacity 4s 0.5s;
+
+}
+
+#btnmod2 {
+
+  border-radius: 25px;
+  top: 58.5%; 
+  background-color: rgb(255, 187, 0);
+  background-image: url(main_page_button.png);
+  box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
+border: #9c0000 7px solid;
+border-left-color: #5f0000;
+border-bottom-color: #5f0000;
+
+}
+
+#btnmod3 {
+
+  border-radius: 25px;
+  top: 58.5%; 
+  background-color: rgb(255, 187, 0);
+  background-image: url(main_page_button.png);
+  box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
+border: #9c0000 7px solid;
+border-left-color: #5f0000;
+border-bottom-color: #5f0000;
+
 }
           
 
