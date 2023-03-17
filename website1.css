@@ -391,6 +391,24 @@ text-shadow: rgba(0, 0, 0, 0.692) 0px 0px 15px;
 
   }
 
+  .featuredmod2 {
+    top: -190px;
+    position: relative;
+    pointer-events: none;
+    transition-duration: 0.7s;
+    text-shadow: #000000 -3px 5px;
+  
+    }
+
+    .featuredmod3 {
+      top: -190px;
+      position: relative;
+      pointer-events: none;
+      transition-duration: 0.7s;
+      text-shadow: #000000 -3px 5px;
+    
+      }
+
 .typinganim {
 
     width: 22ch;
@@ -443,17 +461,13 @@ padding-right: 90px;
 }
 
 
-
-
-
-
 .mod1:hover {
 
 height: 500px;
 transition: opacity 1s, height 0.7s ease-out, width 1s ease-in-out;
 background-position: top 0% left 0%;
 background-size: 20px 20px;
-background-image: url(mod1img.jpg);
+background-image: none;
 background-size: 2000%;
 background-position: top 0% left 0%;
 width: 900px;
@@ -468,17 +482,35 @@ transition-delay: 0.2s;
 }
 
 @keyframes mod1m {
-  0% {background-position: 40% 32.4%;
+  0% {background-position: 32.5% 18.7%;
     animation-timing-function: linear;} 
-  40% {background-position: 85% 32.4%;
+  40% {background-position: 90% 18.7%;
     animation-timing-function: steps(1, end);} 
-  40% {background-position: 60% 45%;
+  40% {background-position: 50% 33.7%;
     animation-timing-function: linear;}
-  65% {background-position: 85% 45%;
+  65% {background-position: 90% 33.7%;
   animation-timing-function: steps(1, end);}
-  65% {background-position: 5% 50%;
+  65% {background-position: 0% 50%;
     animation-timing-function: ease-out;}
-  100% {background-position: 95% 95%; 
+  100% {background-position: 100% 97%; 
+    animation-timing-function: steps(1, end);}
+
+
+  
+}
+
+@keyframes mod2m {
+  0% {background-position: 32.5% 9%;
+    animation-timing-function: linear;} 
+  40% {background-position: 90% 9%;
+    animation-timing-function: steps(1, end);} 
+  40% {background-position: 50% 33.7%;
+    animation-timing-function: linear;}
+  65% {background-position: 90% 33.7%;
+  animation-timing-function: steps(1, end);}
+  65% {background-position: 0% 50%;
+    animation-timing-function: ease-out;}
+  100% {background-position: 100% 97%; 
     animation-timing-function: steps(1, end);}
 
 
@@ -504,6 +536,21 @@ top: -135%;
 position: relative;
 transition-delay: 0.2s;
 }
+
+#mod2img:hover + .featuredmod2 {
+
+  top: -135%;
+  position: relative;
+  transition-delay: 0.2s;
+
+  }
+
+  #mod3img:hover + .featuredmod3 {
+
+    top: -135%;
+    position: relative;
+    transition-delay: 0.2s;
+    }
 
 
 .block {
@@ -552,7 +599,7 @@ background-color: red;
   height: 500px;
   background-position: top 0% left 0%;
   background-image: url(mod1img.jpg);
-  background-size: 500%;
+  background-size: 350%;
   background-position: top 0% left 0%;
   width: 900px;
   animation: mod1m 30s infinite;
@@ -562,10 +609,12 @@ background-color: red;
 
 }
 
+
+
 .mod1img{
 
   background-image: url(mod1img.jpg);
-  background-size: 2000%;
+  background-size: 1350%;
   background-position: top 0% left 0%;
   width: 300px;
   height: 200px;
@@ -582,9 +631,16 @@ background-color: red;
 
 #mod2img {
 
-background-image: url(scroll_transparent.png);
-background-size: cover;
-
+background-image: url(mod2img.jpg);
+background-size: 500%;
+background-position: top 0% left 0%;
+border: 6px solid black;
+transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 0.7s;
+position: relative;
+top: -53px;
+right: 3px;
+animation: mod2m 5s infinite;
+pointer-events: all;
 
 
 }
@@ -597,6 +653,21 @@ background-size: cover;
   
   
   }
+
+#mod2img:hover {
+
+ 
+    height: 500px;
+    background-position: top 0% left 0%;
+    background-size: 220%;
+
+    width: 1000px;
+    animation: mod2m 15s infinite;
+
+    transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
+    transition-delay: 0.2s;
+
+  }  
 
 
 
@@ -635,6 +706,27 @@ border: none;
   
 }
 
+#mod2:hover {
+  transition-delay: 0.2s;
+}
+
+#mod2 {
+  transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 2.5s;
+  outline: 3px solid rgb(0, 0, 0);
+  pointer-events: none;
+}
+
+#mod3:hover {
+  transition-delay: 0.2s;
+}
+
+#mod3 {
+  transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 2.5s;
+  outline: 3px solid rgb(0, 0, 0);
+  pointer-events: none;
+  
+}
+
 
 .mod1img:hover > .btn  { 
   opacity: 100%;
@@ -655,7 +747,7 @@ border: none;
 
   .mod1img:hover > .btnbg {
 
-opacity: 10%;
+opacity: 15%;
 transition: opacity 0.7s 0.5s;
 }
   .btnbg {
@@ -664,7 +756,7 @@ transition: opacity 0.7s 0.5s;
     margin:auto;
     width: 100%;
     height: 40%;
-    background-color: rgb(187, 190, 0);
+    background-color: rgb(255, 213, 0);
     bottom: 8%;
     opacity: 0%;
  
@@ -983,7 +1075,7 @@ height: 120px;
               }
               
     
-              .btninside {
+.btninside {
     opacity: 0%;
     width: 80%;
        height: 0%;
@@ -994,16 +1086,9 @@ height: 120px;
     border-radius: 3px;
     transition: all 1s ease-in-out, opacity 0.5s 0s;
     
-              }
-    #btnmodh:hover {
-               
-                width: 80%;
-    transition-timing-function: ease-out;
-    transition-duration: 0.5s;
-    animation: whitetonormal 1s forwards;
-    background-image: none;
-                
-                          }
+}
+
+
     
     @keyframes whitetonormal {
     
@@ -1052,7 +1137,7 @@ height: 120px;
       border-radius: 5px;
     background-color: rgb(52, 157, 255);
     margin: 50px;
-    outline: 5px solid rgb(255, 207, 48);
+    outline: 5px solid rgb(48, 255, 79);
     height: 90px;
     width: 200px;
     transition-duration: 1s;
@@ -1571,7 +1656,7 @@ box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.39) inset;
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
 
   .ingridlevels {
     width: 200px;
@@ -1643,13 +1728,3 @@ font-family: 'Fjalla One', sans-serif;
 100% {opacity: 0%}
 
 }
-
-.mod2 {
-
-background-image: url(scroll_transparent.png);
-
-
-
-
-}
-
