@@ -370,8 +370,8 @@ transition-duration: 2s;
 
 
 .featured {
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   -webkit-text-stroke: 55px;
   -webkit-text-stroke-color: rgba(255, 0, 0, 0.452);
 -webkit-text-stroke-width: 2px;
@@ -380,6 +380,12 @@ font-size: 35px;
 text-align: center;
 font-family: 'Anton', sans-serif;
 text-shadow: rgba(0, 0, 0, 0.692) 0px 0px 15px;
+}
+
+#top_f {
+
+font-size: 50px;
+
 }
 
 .featuredmod1 {
@@ -500,17 +506,17 @@ transition-delay: 0.2s;
 }
 
 @keyframes mod2m {
-  0% {background-position: 32.5% 9%;
-    animation-timing-function: linear;} 
-  40% {background-position: 90% 9%;
+  0% {background-position: 125% 23%;
+    animation-timing-function: ease-out;} 
+  40% {background-position: 26.5% 23%;
     animation-timing-function: steps(1, end);} 
-  40% {background-position: 50% 33.7%;
-    animation-timing-function: linear;}
-  65% {background-position: 90% 33.7%;
+  40% {background-position: 26.5% 23%;
+    animation-timing-function: ease-in-out;}
+  65% {background-position: 26.5% 115%;
   animation-timing-function: steps(1, end);}
-  65% {background-position: 0% 50%;
+  65% {background-position: -3% 79.5%;
     animation-timing-function: ease-out;}
-  100% {background-position: 100% 97%; 
+  100% {background-position: 100% 79.5%; 
     animation-timing-function: steps(1, end);}
 
 
@@ -618,7 +624,7 @@ background-color: red;
   background-position: top 0% left 0%;
   width: 300px;
   height: 200px;
-  border: 6px solid black;
+  border: 3px solid black;
   transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 0.7s;
   position: relative;
   top: -53px;
@@ -634,12 +640,12 @@ background-color: red;
 background-image: url(mod2img.jpg);
 background-size: 500%;
 background-position: top 0% left 0%;
-border: 6px solid black;
+border: 3px solid black;
 transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 0.7s;
 position: relative;
 top: -53px;
 right: 3px;
-animation: mod2m 15s infinite;
+animation: mod2m 20s infinite;
 pointer-events: all;
 
 
@@ -662,7 +668,7 @@ pointer-events: all;
     background-size: 220%;
 
     width: 900px;
-    animation: mod2m 15s infinite;
+    animation: mod2m 20s infinite;
 
     transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
     transition-delay: 0.2s;
@@ -673,11 +679,11 @@ pointer-events: all;
 
 .btn {
   position: relative;
-  top: 59%;
+  top: 56.5%;
   z-index: 1;
   border-radius: 100px;
-  height: 10px;
-  width: 10px;
+  height: 0px;
+  width: 0px;
   margin-right: 0%;
   margin-left: 0%;
   display: inline-block;
@@ -691,7 +697,10 @@ box-shadow: 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 background-size: 101%;
 background-color: rgba(255, 0, 0, 0);
 border: none;
-  }
+pointer-events: all;
+scale: 100%;
+
+}
 
 
   
@@ -701,9 +710,9 @@ border: none;
 
 #mod1 {
   transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 2.5s;
-  outline: 3px solid rgb(0, 0, 0);
+  outline: 3px solid rgb(110, 101, 101);
   pointer-events: none;
-  
+  margin-top: 100px;
 }
 
 #mod2:hover {
@@ -731,8 +740,8 @@ border: none;
 .mod1img:hover > .btn  { 
   opacity: 100%;
   transition: top 0.5s ease-in; 
-  margin-left: 7%; 
-  margin-right: 7%;
+  margin-left: 10%; 
+  margin-right: 10%;
   height: 100px;
   width: 100px;
   transition-delay: 0.2s;
@@ -740,7 +749,7 @@ border: none;
   }
 
   .mod1img:hover > .btn {
-    transition: rotate 0.8s cubic-bezier(0,1.95,.11,1) 0.3s, opacity 1s ease-in 0.4s, margin-left 0.5s 0.5s, margin-right 0.5s 0.5s;
+    transition: rotate 0.8s cubic-bezier(0,1.95,.11,1) 0.3s, opacity 1s ease-in 0.7s, margin-left 0.5s 0.7s, margin-right 0.5s 0.7s;
     rotate: 360deg;
     
   }
@@ -767,12 +776,14 @@ transition: opacity 0.7s 0.5s;
   
 
 .mod1img:hover > #btnmod1 {
-        position: relative;
-        height: 135px;
-        width: 230px;
-        border-radius: 25px;
-left: 50px;
-          }
+ 
+position: relative;
+height: 135px;
+width: 230px;
+border-radius: 25px;
+transition-duration: 1s;
+transition-delay: 0.3s;
+}
 
 #btnmod1 {
 
@@ -785,6 +796,13 @@ border: #9c0000 7px solid;
 border-left-color: #5f0000;
 border-bottom-color: #5f0000;
 z-index: 15;
+margin: 0px;
+left: 50px;
+
+transition: scale 0.3s ease-out, height 0.5s, width 0.5s, opacity 0.3s ease-out, rotate 1s;
+
+width: 0px;
+height: 0px;
 
 }
 
@@ -799,15 +817,16 @@ border: #9c0000 7px solid;
 border-left-color: #5f0000;
 border-bottom-color: #5f0000;
 position: absolute;
-right: 395px;
-width: 150px;
+right: 365px;
 background-size: 60%;
 background-repeat: no-repeat;
 background-position: left;
+
 }
 
 .mod1img:hover > #btnmod1a {
 
+width: 150px;
 transition: height 0.5s, width 0.5s, rotate 1s 0.3s, opacity 4s 0.5s;
 
 }
@@ -1784,3 +1803,11 @@ font-family: 'Fjalla One', sans-serif;
 100% {opacity: 0%}
 
 }
+
+#btnmod1:hover {
+
+scale: 90%;
+
+
+}
+
