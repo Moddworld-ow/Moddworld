@@ -523,6 +523,24 @@ transition-delay: 0.2s;
   
 }
 
+@keyframes mod3m {
+  0% {background-position: 100% -7%;
+    animation-timing-function: ease-out;} 
+  40% {background-position: -15% 35%;
+    animation-timing-function: steps(1, end);} 
+  40% {background-position: 87% 50%;
+    animation-timing-function: ease-in-out;}
+  65% {background-position: -5% 50%;
+  animation-timing-function: steps(1, end);}
+  65% {background-position: -15% 85%;
+    animation-timing-function: ease-out;}
+  100% {background-position: 95% 85%; 
+    animation-timing-function: steps(1, end);}
+
+
+  
+}
+
 .idk {
 
 background-color: yellow;
@@ -652,10 +670,17 @@ pointer-events: all;
 }
 
 #mod3img {
-
-  background-image: url(scroll_transparent.png);
-  background-size: cover;
-  
+ 
+background-image: url(mod3img.jpg);
+background-size: 700%;
+background-position: top 0% left 0%;
+border: 3px solid black;
+transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 0.7s;
+position: relative;
+top: -53px;
+right: 3px;
+animation: mod3m 30s infinite;
+pointer-events: all;
   
   
   }
@@ -675,11 +700,26 @@ pointer-events: all;
 
   }  
 
+  #mod3img:hover {
+
+ 
+    height: 500px;
+    background-position: top 0% left 0%;
+    background-size: 300%;
+
+    width: 900px;
+    animation: mod3m 30s infinite;
+
+    transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
+    transition-delay: 0.2s;
+
+  }  
+
 
 
 .btn {
   position: relative;
-  top: 56.5%;
+  top: 52%;
   z-index: 1;
   border-radius: 100px;
   height: 0px;
@@ -788,7 +828,7 @@ transition-delay: 0.3s;
 #btnmod1 {
 
   border-radius: 25px;
-  top: 58.5%; 
+  top: 57%; 
   background-color: rgb(255, 187, 0);
   background-image: url(download_btn.png);
   box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
@@ -809,7 +849,7 @@ height: 0px;
 #btnmod1a {
 
   border-radius: 25px;
-  top: 62.5%; 
+  top: 60.5%; 
   background-color: rgb(208, 255, 0);
   background-image: url(main_page_button.png);
   box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
@@ -827,7 +867,7 @@ background-position: left;
 .mod1img:hover > #btnmod1a {
 
 width: 150px;
-transition: height 0.5s, width 0.5s, rotate 1s 0.3s, opacity 4s 0.5s;
+transition: height 0.5s, width 0.5s, rotate 0.7s 0.3s, opacity 2.5s 0.5s;
 
 }
 
@@ -1371,7 +1411,7 @@ height: 120px;
     margin: 55px;
     min-width: 100px;
     transition-duration: 1s;
-   
+    text-align: center;
 
     }
     
@@ -1807,7 +1847,21 @@ font-family: 'Fjalla One', sans-serif;
 #btnmod1:hover {
 
 scale: 90%;
+transition-delay: 0s !important;
+transition-duration: 0.15s !important;
+transition-timing-function: ease-out !important;
 
+border: 7px #ce6e00 dashed;
+border-left-color: #8b490b;
+border-bottom-color: #8b490b;
+
+box-shadow: inset 0px 0px 15px 5px rgba(194, 9, 9, 0.63),0px 0px 15px 1px #ff7a22b0;
+background-color: #ffae00;
 
 }
 
+#btnmod1:active {
+
+opacity: 80%;
+transition-duration: 0s !important;
+}
