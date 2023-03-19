@@ -176,6 +176,7 @@ width: 400px;
   z-index: -5;
 transition-duration: 1s;
 transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)(0.075, 0.82, 0.165, 1);
+background-repeat: repeat;
 
 }
 
