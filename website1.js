@@ -60,16 +60,3 @@ function show(param_div_id) {
 
 
 
-
-  $(function(){
-    $('.btn_move_target').on('click', function(){
-    $('.btn_move_start').toggleClass('btn_move_behind');
-
-    });
-});
-
-
-
-
-
-
