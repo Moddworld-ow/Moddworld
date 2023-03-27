@@ -855,7 +855,7 @@ height: 0px;
 
 border-radius: 25px;
 top: 60.25%; 
-background-color: rgb(208, 255, 0);
+background-color: rgb(187, 69, 0);
 background-image: none;
 box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 border: #9c0000 7px solid;
@@ -868,14 +868,15 @@ background-repeat: no-repeat;
 background-position: left;
 width: 0px;
 height: 0px;
+pointer-events: none;
 }
 
 .mod1img:hover > #btnmod1a {
 
 width: 450px;
 height: 115px;
-transition: height 0s 0s, width 0s 0s, rotate 0.7s 0.3s, opacity 2.5s 0.5s, top 1s;
-
+transition: height 0s 0s, width 0s 0s, rotate 0.7s 0.3s, opacity 2.5s 0.5s, top 1s, background-color 0s;
+pointer-events: all;
 }
 
 #btnmod2 {
@@ -1932,9 +1933,14 @@ transition-duration: 0s !important;
 transition-delay: 0s !important;
 }
 
+#btnmod1a:hover {
+  background-color: rgb(97, 0, 0);
+  transition: height 1s 0.2s, width 1s 0.2s ease-in-out, top 0.5s ease-out, opacity 1s 0s, background-color 0.15s, rotate 0.7s 0.3s !important;
+   }
+
 #btnmod1a:focus {
 
-transition: height 1s 0.2s, width 1s 0.2s ease-in-out, top 0.5s ease-out, opacity 1s 0s !important;
+transition: height 1s 0.2s, width 1s 0.2s ease-in-out, top 0.5s ease-out, opacity 1s 0s, background-color 0s !important;
 height: 300px !important; 
 
 top: 27%; 
@@ -1964,6 +1970,8 @@ box-shadow: none;
     top: 25%;
     scale: 85%;
     }
+
+  
 
   
 
