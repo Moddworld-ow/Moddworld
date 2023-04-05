@@ -1460,8 +1460,71 @@ height: 120px;
     min-width: 100px;
     transition-duration: 1s;
     text-align: center;
+    background-image: url(scoooroll_transparent.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% -30%;
 
     }
+
+.info_icon1 {
+
+width: 50px;
+height: 50px;
+z-index: 1000;
+
+position: relative;
+display: inline-block;
+right: 0px; 
+left: -20%; 
+margin-left: auto; 
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+top: 50%;
+
+shape-outside: url(best_rating.png);
+filter: drop-shadow(0px 0px 5px rgb(255, 98, 98));
+
+}
+
+.info_icon2 {
+
+  width: 35px;
+  height: 50px;
+  z-index: 1000;
+  
+  position: relative;
+  display: inline-block;
+  right: 0px; 
+  left: 0px; 
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 50%;
+  
+  
+}
+
+.info_icon3 {
+
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  
+  position: relative;
+  display: inline-block;  
+  right: 27%; 
+  left: 20%; 
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 50%;
+  
+  
+}
     
 .whitebox {
 

@@ -26,16 +26,6 @@ $(function(){
     });
 });
 
-$(document).scroll(function() {
-    var scroll = $(window).scrollTop();
-    $(".coolfollow").css("top", "0" + (scroll / 1.5) + "px");
-  });
-
-  $(window).on('load', function() {
-	$(".loader").delay(7000).hide();
-	$(".container").delay(2000).fadeIn(1);
-});
-
 
 var parallax = document.querySelectorAll(".parallax");
 var	speed = -0.25;
@@ -57,6 +47,4 @@ function show(param_div_id) {
     document.getElementById('main_place').innerHTML = document.getElementById(param_div_id).innerHTML;
   }
 
-
-
-
+  
