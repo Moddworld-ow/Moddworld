@@ -16,16 +16,6 @@
 
 }
 
- 
-a {
-
-text-decoration: none;
-text-align: unset;
-padding-left: 5px;
-color: black;
-
-  }
-
 .odd {
   color: #ff480056;
   margin: 40px;
@@ -1388,19 +1378,7 @@ height: 120px;
     
     
       }
-    
-        a:hover {
-    
-          color: yellow;
-    
-        }
-    
-        
-        a:active {
-    
-          color: rgb(255, 0, 179);
-    
-        }
+
     
         .textbox {
     
@@ -1480,14 +1458,32 @@ height: 120px;
     background-color: rgba(0, 0, 0, 0.445);
     outline: rgb(255, 157, 0) 4px outset;
     border: #000000 2px solid;
-    margin: 55px;
+    margin: 80px;
     min-width: 100px;
-    transition-duration: 1s;
+    transition-duration: 0.25s;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.378) inset, 0px 0px 25px 10px rgba(216, 158, 22, 0.219);
-  
+    z-index: 25;
+    transition-timing-function: ease-in;
+
     }
+
+    .inflex:hover {
+    
+      outline: rgb(158, 0, 0) 4px outset;
+      transition-duration: 0s;
+      transition-timing-function: ease-out;
+      scale: 115%;
+
+      }
+
+.inflex:hover .mod_info_inside {
+    
+  color: rgb(255, 255, 255);
+  transition-duration: 1s;
+}
+  
 
 .inflex_grid {
 
@@ -1541,8 +1537,9 @@ filter: drop-shadow(0px 0px 7px rgb(104, 0, 0));
 
 .mod_info {
 
+width: 300px;
 position: absolute;
-left: 0;
+left: -13%;
 right: 0;
 top: -130%;
 
@@ -2084,16 +2081,26 @@ box-shadow: none;
 }
 
 .mod_info_inside {
+  
+  padding-bottom: 12px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 5px;
+  pointer-events: none;
 
   position: absolute;
   left: 0;
   right: 0;
   color: rgb(204, 88, 0);
-  font-size: 18px;
+  font-size: 13px;
+  border-bottom: #ffa60039 3px solid;
 
-  bottom: -180px;
+  bottom: -220px;
   text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black; 
   filter: drop-shadow(0px 0px 3px rgba(255, 0, 0, 0.301));
+  text-align: center;
+  line-height: 17px;
+  transition-duration: 0.5s;
 }
 
 
