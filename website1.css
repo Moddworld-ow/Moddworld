@@ -1421,7 +1421,7 @@ height: 120px;
     
     }
     
-    .flextest {
+  .flextest {
     
       display: flex;
       background-color: rgba(0, 0, 0, 0.767);
@@ -1438,8 +1438,9 @@ height: 120px;
       margin-top: 50px;
 
       animation: sort_appear 1s forwards;
-    
-    }
+      height: 100%;
+      
+    }   
 
 @keyframes sort_appear {
 
