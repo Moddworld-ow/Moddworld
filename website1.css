@@ -390,9 +390,8 @@ transition-duration: 2s;
 .featured {
   margin-top: 20px;
   margin-bottom: 20px;
-  -webkit-text-stroke: 55px;
   -webkit-text-stroke-color: rgba(255, 0, 0, 0.452);
--webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
 color:#f6d43c;
 font-size: 35px;
 text-align: center;
@@ -958,7 +957,7 @@ left: 0;
 opacity: 0;
 shape-outside: url(scroll_more_info.png);
 filter: drop-shadow(5px 5px 0px rgb(0, 0, 0));
-;
+background-image: url(scroll_transparent.png);
 
 }
 
@@ -1805,7 +1804,8 @@ margin: auto;
 padding-top : 20px;
 border-radius: 15px;
 box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75) inset;
-
+-webkit-text-stroke-color: rgba(0, 0, 0, 0.36);
+-webkit-text-stroke-width: 1px;
 }
 
 .moddworld_logo {
