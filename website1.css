@@ -980,8 +980,7 @@ display: block;
   z-index: 30;
   position: absolute;
   opacity: 0;
-  background-color: rgb(179, 101, 0);
-  outline: rgb(0, 0, 0) 5px solid;
+
   border-radius: 5px;
   top: 50%;
   margin: auto;
@@ -991,8 +990,11 @@ display: block;
   display: block;
   height: 100%;
   width: 100%;
-  box-shadow: inset rgba(0, 0, 0, 0.404) 0px 0px 5px 5px;
 
+background-image: url(mod_info_bg.png);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 
@@ -1997,7 +1999,7 @@ box-shadow: none;
 
  #btnmod1a:focus:hover > .info_over_scroll {
   
-  transition: opacity 1s 0.25s;
+  transition: opacity 1.5s 0.15s;
   opacity: 100%; 
   height: 70%;
   width: 100%;
@@ -2011,8 +2013,8 @@ box-shadow: none;
   transition: opacity 1s 0.5s;
   opacity: 100%;
   width: 100%;
-  height: auto;
-  top: 5%;
+  height: 45%;
+  top: -30%;
 
   left: 0;
   right: 0;
