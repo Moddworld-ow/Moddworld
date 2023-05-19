@@ -26,6 +26,42 @@ $(function(){
     });
 });
 
+$(function(){
+    $('.btnbg').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
+
+$(function(){
+    $('.btn_target').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
+
+$(function(){
+    $('.btn_right').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
+
+$(function(){
+    $('.btnmod1_target').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
+
+$(function(){
+    $('.btn_left').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
+
+
 
 var parallax = document.querySelectorAll(".parallax");
 var	speed = -0.25;
