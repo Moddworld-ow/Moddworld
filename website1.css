@@ -249,11 +249,13 @@ margin-bottom: 20px;
 
 background-size: 100%;
 background-image: none;
-background-color: rgba(150, 59, 101, 0.781);
+background-color: rgba(0, 44, 67, 0.781);
 shape-outside: ellipse(130px 140px at 20% 20%);
 box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.377) inset;
 border-radius: 25px;
-outline: 10px outset rgba(255, 251, 0, 0.377); height: auto;
+outline: 7px outset rgba(255, 191, 0, 0.834);
+border: 5px rgba(255, 170, 0, 0.652) outset;
+height: auto;
 transition-duration: 1s;
 
 }
@@ -1460,16 +1462,16 @@ height: 120px;
   .flextest {
     
       display: flex;
-      background-color: rgba(0, 0, 0, 0.767);
-      border: 10px #5f0000 solid;
-      border-top: 10px #910000 solid;
-      border-bottom: 10px #350000 solid;
+      background-color: rgba(54, 0, 32, 0.742);
+      border: 10px #4e0026 solid;
+      border-top: 10px #91003f solid;
+      border-bottom: 10px #350020 solid;
       flex-wrap: wrap;
       margin: auto;
       justify-content: center;
       flex-shrink: 0;
       border-radius: 10px;
-      box-shadow: inset #00000036 0px 0px 35px 0px;
+      box-shadow: inset #00000036 0px 0px 35px 0px, 0px 0px 50px 10px rgba(0, 0, 0, 0.321);
       max-width: 80%;
       margin-top: 50px;
 
