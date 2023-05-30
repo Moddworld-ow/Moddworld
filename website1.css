@@ -247,6 +247,7 @@ margin-bottom: 20px;
 
 .midsection1{
 
+display: flexbox;
 background-size: 100%;
 background-image: none;
 background-color: rgba(0, 44, 67, 0.781);
@@ -1471,10 +1472,9 @@ height: 120px;
       justify-content: center;
       flex-shrink: 0;
       border-radius: 10px;
-      box-shadow: inset #00000036 0px 0px 35px 0px, 0px 0px 50px 10px rgba(0, 0, 0, 0.321);
+      box-shadow: inset #00000036 0px 0px 35px 0px, 0px 0px 50px 10px rgba(185, 0, 65, 0.368);
       max-width: 80%;
       margin-top: 50px;
-
       animation: sort_appear 1s forwards;
       height: 100%;
       padding-bottom: 5.5%;
@@ -1895,7 +1895,7 @@ background-size: cover;
 }
 
 .choose1 {
-display: inline-flex;
+display: inline;
 height: 90px;
 width: 180px;
 text-align: center;
@@ -1906,34 +1906,53 @@ margin-top: 0px;
 margin-bottom: 0px;
 margin-right: 5%;
 margin-left: 5%;
+background-color: rgba(255, 157, 0, 0.642);
+box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.353) inset;
+border: 3px rgba(255, 183, 0, 0.681) ridge;
+border-radius: 10px;
+color: rgb(255, 205, 78);
+text-shadow: 2px 2px 2px black;
 }
 
 .choose2 {
-display: inline-flex;
-height: 90px;
-width: 180px;
-text-align: center;
-margin-top: 0px;
-margin-bottom: 0px;
-z-index: 16;
-font-size: 35px;
-font-family: 'Fjalla One', sans-serif;
-margin-right: 5%;
-margin-left: 5%;
+  display: inline;
+  height: 90px;
+  width: 180px;
+  text-align: center;
+  z-index: 16;
+  font-size: 35px;
+  font-family: 'Fjalla One', sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-color: rgba(255, 157, 0, 0.642);
+  box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.353) inset;
+  border: 3px rgba(255, 183, 0, 0.681) ridge;
+  border-radius: 10px;
+  color: rgb(255, 205, 78);
+  max-width: 100px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .choose3 {
-display: inline-flex;
-height: 90px;
-width: 180px;
-text-align: center;
-margin-top: 0px;
-margin-bottom: 0px;
-margin-right: 5%;
-margin-left: 5%;
-z-index: 16;
-font-size: 35px;
-font-family: 'Fjalla One', sans-serif;
+  display: inline;
+  height: 90px;
+  width: 180px;
+  text-align: center;
+  z-index: 16;
+  font-size: 35px;
+  font-family: 'Fjalla One', sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-color: rgba(255, 157, 0, 0.642);
+  box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.353) inset;
+  border: 3px rgba(255, 183, 0, 0.681) ridge;
+  border-radius: 10px;
+  color: rgb(255, 205, 78);
+  text-shadow: 2px 2px 2px black;
 }
 
 @keyframes fade_choose {
