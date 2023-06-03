@@ -1501,11 +1501,13 @@ height: 120px;
     margin: 80px;
     min-width: 100px;
     transition-duration: 0.25s;
+    transition-delay: 0;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.378) inset, 0px 0px 25px 10px rgba(216, 158, 22, 0.219);
     z-index: 17;
     transition-timing-function: ease-in;
+    margin-top: 70px;
 
     }
 
@@ -1515,6 +1517,7 @@ height: 120px;
       transition-duration: 0s;
       transition-timing-function: ease-out;
       scale: 115%;
+      transition-delay: 0;
 
       }
 
@@ -1592,7 +1595,7 @@ bottom: 0px;
 position: absolute;
 height: 100%;
 width: 100%;
-background-color: rgb(102, 0, 0);
+background-color: rgb(102, 0, 26);
 border-radius: 0px;
 z-index: 16;
 
@@ -2095,6 +2098,43 @@ box-shadow: none;
   text-align: center;
   line-height: 17px;
   transition-duration: 0.5s;
+}
+
+.bg_2 {
+  height: 450%;
+  width: 150%;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: rgb(107, 0, 0);
+  color:#000000;
+  background-image:  url(bg_map_paramonia.png);
+  background-size: 150%;
+  animation: bgmovement 800s infinite;
+  position: fixed;
+  margin: 0px;
+  top: 0px;
+  background-attachment: fixed;
+  z-index: -5;
+transition-duration: 1s;
+transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)(0.075, 0.82, 0.165, 1);
+background-repeat: repeat;
+
+}
+
+.bg_sprite_box {
+
+height: 100%;
+width: 100%;
+
+}
+
+.bg_sprite {
+
+width: 160px;
+height: 140px;
+z-index: -4;
+display: inline;
+position: fixed;
+
 }
 
 
