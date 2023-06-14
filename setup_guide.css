@@ -1,0 +1,55 @@
+.bg_2 {
+    height: 4000px;
+    width: 8000px;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: rgb(107, 0, 0);
+    color:#000000;
+    background-image:  url(bg_map_paramonia.png);
+    background-size: 150%;
+    position: fixed;
+    margin: 0px;
+    top: 0px;
+    z-index: -5;
+    background-repeat: repeat;
+    animation: bg2_move 60s infinite ease-in-out;
+    background-repeat: repeat;
+    background-size: 50%;
+  }
+  
+  .bg_sprite_box {
+  
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  
+  }
+  
+  .bg_sprite {
+  
+  width: 160px;
+  height: 140px;
+  z-index: -4;
+  display: inline;
+  position: absolute;
+  
+  }
+
+@keyframes bg2_move {
+
+0% {
+left: 0;
+}
+
+50% {
+left: -5500px;
+
+}
+
+100% {
+left: 0;
+
+}
+
+
+
+}
