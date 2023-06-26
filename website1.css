@@ -561,11 +561,19 @@ transition-delay: 0.2s;
   
 }
 
-.idk {
+@keyframes mod4m {
+  0% {background-position: 100% 10%;
+    animation-timing-function: ease-out;} 
+  20% {background-position: 0% 35%;} 
+  30% {background-position: 87% 50%;
+    animation-timing-function: ease-in-out;}
+  65% {background-position: 0% 30%;}
+  75% {background-position: 15% 85%;
+    animation-timing-function: ease-out;}
+  100% {background-position: 85% 100%;}
 
-background-color: yellow;
 
-
+  
 }
 
 
@@ -705,6 +713,21 @@ pointer-events: all;
   
   }
 
+  #mod4img {
+
+    background-image: url(mod4img.jpg);
+    background-size: 250%;
+    background-position: top 0% left 0%;
+    border: 3px solid black;
+    position: relative;
+    top: -53px;
+    right: 3px;
+    animation: mod4m 40s infinite backwards;
+    pointer-events: all;
+    
+    
+    }
+
 #mod2img:hover {
 
  
@@ -729,6 +752,21 @@ pointer-events: all;
 
     width: 900px;
     animation: mod3m 30s infinite;
+
+    transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
+    transition-delay: 0.2s;
+
+  }
+
+  #mod4img:hover {
+
+ 
+    height: 500px;
+    background-position: top 0% left 0%;
+    background-size: 140%;
+
+    width: 900px;
+    animation: mod4m 40s infinite backwards;
 
     transition: opacity 1s, height 0.5s ease-out, width 0.7s ease-in-out, background-size 1s ease-in-out;
     transition-delay: 0.2s;
