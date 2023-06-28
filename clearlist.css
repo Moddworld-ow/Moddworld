@@ -1,0 +1,401 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Catamaran', sans-serif;
+    overflow-x: hidden;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.364) !important;
+  }
+  
+label {
+
+left: 12px;
+display: inline-block;
+position: relative;
+}
+
+.main_bg {
+
+  background-image: url(bg.png);
+  z-index: 0;
+  width: 100%;
+  height: 111%;
+  background-size: 80%;
+  position: absolute;
+  opacity: 3%;
+  animation: diag_move 360s linear infinite;
+  background-repeat: repeat;
+
+}
+
+@keyframes diag_move {
+
+0% {background-position-x: 0;
+  background-position-y: 0; }
+
+50% {background-position-x: 10000px;
+  background-position-y: -2000px; }
+
+100% {background-position-x: 0;
+  background-position-y: 0; }
+
+
+}
+
+  /* Basic layout */
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    overflow-y: hidden;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 1000px;
+  }
+
+  .navbar_bg {
+
+    height: 200px;
+    width: 110px;
+    background-color: #354585;
+    position: absolute;
+    z-index: 1;
+    rotate: -10deg;
+    transform: translateY(-110.4px);
+    left: 50.7px;
+    box-shadow: -3px 2px 0px 0px rgb(38, 119, 225);
+
+
+  }
+
+  .navbar_bg_filler {
+
+    height: 20px;
+    width: 110px;
+    background-color: rgb(38, 119, 225);
+    position: absolute;
+    z-index: 0;
+    transform: translateY(82px);
+    left: 47px;
+  
+  }
+  
+  /* The blue bar at the top */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #354585;
+    color: #fff;
+    padding: 10px;
+    z-index: 3;
+    position: relative;
+    min-width: 200px;
+    box-shadow: 0px 3px 0px 0px rgb(38, 119, 225);
+  }
+
+  
+  
+  .navbar h1 {
+    font-size: 34px;
+    margin: 11.8px;
+    margin-left: 0px;
+
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin-left: 20px;
+    margin-right: 15px;
+  }
+  
+ 
+  .dashboard {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .dashboard .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard .card h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    
+  }
+  
+  
+  .expenses-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .expenses-table th,
+  .expenses-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 3px solid #cccccc2c;
+  }
+  
+  .expenses-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .expenses-table td {
+    font-weight: normal;
+  }
+
+  
+  
+  /* Summary section */
+  .summary {
+    margin-top: -15px;
+    padding-left: 10px;
+  }
+  
+  .summary h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .summary ul {
+    list-style-type: none;
+    margin-left: 20px;
+  }
+  
+  .summary li {
+    margin-bottom: 5px;
+  }
+  
+  /* Additional styling for specific elements */
+  .period-select,
+  .category-select,
+  .name-input,
+  .amount-input {
+    display: block;
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Catamaran', sans-serif;
+    margin: auto;
+  }
+
+  .category-select {
+
+    width: 90%;
+
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  div .card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .expenses-table th {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .expenses-table td {
+    color: #765f5f;
+  }
+  
+  .button {
+    background-color: #4285f4;
+    color: #fff;
+  }
+  
+  .button:hover {
+    background-color: #3367d6;
+  }
+  
+  .summary h3 {
+    color: #333;
+  }
+  
+  .summary ul li {
+    color: #666;
+  }
+  
+
+  .swiping_back {
+
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.147) inset;
+    font-size: 33px; 
+    height: 50px;
+    background-color: rgb(0, 206, 138);
+    border-top: 8px rgba(0, 0, 0, 0.13) solid;
+    border-bottom: 16px rgba(0, 0, 0, 0.14) solid;
+    width: 140%;
+    animation: swipe 3s ease-in-out forwards;
+    position: absolute;
+    z-index: 4;
+    top: -200px;
+ 
+    
+  }
+
+/* The long, green box appearing from the right side*/
+
+  @keyframes swipe {
+
+    0%{
+      right: -150%;
+      top: 152px;
+      z-index: 1;
+    }
+    70%{
+      right: -35%;
+      top: 152px;
+    }
+
+    85% {
+      top: 50px;
+      z-index: 4;
+    }
+
+    100% {
+      top: 152px;
+      z-index: 20;
+      right: 0%;
+      animation-timing-function: ease-in;
+    }
+
+/* Text that appears after delay*/
+
+  }
+    @keyframes delayed_text {
+
+      0% {
+        opacity: 0;
+      }
+  
+      75% {
+        opacity: 0;
+        transform: translateX(20%);
+      }
+  
+      100% {
+       opacity: 100%;
+       transform: translateX(0%);
+      }
+
+}
+
+
+.card_on_top {
+  z-index: 5;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.147) inset;
+  padding-top: 100px;
+  animation: cards_move_up 2s forwards;
+  padding-bottom: 100px;
+  }
+
+  .text_on_top {
+    top: 148px;
+    z-index: 25;
+    background-color: #3367d600;
+    position: absolute;
+    animation: delayed_text 3.9s forwards;
+    display: inline;
+
+  }
+
+@keyframes cards_move_up {
+
+  0% {
+   transform: translateY(1000%)
+  }
+
+  60% {
+    transform: translateY(-7%);
+  }
+
+  100% {
+   transform: translateY(0%);
+  }
+
+}
+
+  #top_card {
+  animation-delay: 0s;
+  }
+  
+  #middle_card {
+  
+    animation-delay: 0.025s;
+  
+  }
+  
+  #bottom_card {
+    animation-delay: 0.05s;
+  
+  
+  }
+
+
+
+
+
+
+
+
+ /* Responsive styles */
+ @media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .period-select,
+  .category-select,
+  .name-input,
+  .amount-input {
+    width: 80%;
+  }
+
+  .card_on_top {
+
+    padding-top: 20px;
+  }
+
+  #top_card {
+
+    margin-top: 140px;
+
+
+  }
+
+}
