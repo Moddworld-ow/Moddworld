@@ -50,7 +50,7 @@ position: relative;
     overflow-y: hidden;
     padding-left: 50px;
     padding-right: 50px;
-    height: 1000px;
+    height: auto;
   }
 
   .navbar_bg {
@@ -144,8 +144,11 @@ position: relative;
   .expenses-table th,
   .expenses-table td {
     padding: 10px;
+    padding: 0 ;
     text-align: left;
     border-bottom: 3px solid #cccccc2c;
+    text-align: center;
+    font-size: 15px;
   }
   
   .expenses-table th {
