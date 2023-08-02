@@ -246,8 +246,9 @@ margin-bottom: 20px;
 }
 
 .midsection1{
-
-display: flexbox;
+  
+display: block !important;
+margin: auto;
 background-size: 100%;
 background-image: none;
 background-color: rgba(0, 44, 67, 0.781);
@@ -872,6 +873,7 @@ scale: 100%;
     opacity: 15%;
     transition: opacity 0.7s 0.5s;
 }
+
 
 .btn_p {
 
@@ -1878,39 +1880,6 @@ background-size: cover;
 }
 
 
-@media screen and (max-width: 400px) {
-
-  .ingridlevels {
-    width: 200px;
-    }
-  .divupper {
-  display: block;
-  margin: auto;
-
-  }
-
-  .mod1:hover {
-    width: 400px;
-    height: 650px;
-    }
-    .mod1img:hover {
-      width: 400px;
-      height: 650px;
-    }
-
-    .mod1img:hover + .featuredmod1  {
-      top: -200px;
-    }
-
-    .btn  {
-      display: block;
-    }
-    #btnmod1  {
-      display: block;
-    }
-
-}
-
 .choose1 {
 display: inline;
 height: 90px;
@@ -2112,4 +2081,188 @@ box-shadow: none;
   text-align: center;
   line-height: 17px;
   transition-duration: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+  .ingridlevels {
+    width: 250px;
+    }
+
+    .mod1img {
+
+      width: 250px;
+    }
+
+    .altfeatured {
+      font-size: 70px !important;
+      margin: auto;
+
+    }
+
+    #top_f {
+      margin: auto;
+      margin-top: 70px;
+
+    }
+
+  .divupper {
+  display: block;
+  margin: auto;
+
+  }
+
+  .mod1:hover {
+    width: 400px;
+    height: 650px;
+    }
+
+      .mod1img:hover {
+      width: 400px;
+      height: 650px;
+      }
+
+      #mod2img:hover {
+        width: 400px;
+        height: 650px;
+      }
+
+      #mod3img:hover {
+        width: 400px;
+        height: 650px;
+      }
+
+      #mod4img:hover {
+        width: 400px;
+        height: 650px;
+      }
+
+
+    .mod1img:hover + .featuredmod1  {
+      top: -200px;
+    }
+
+    #mod2img:hover + .featuredmod2  {
+      top: -200px;
+    }
+
+    #mod3img:hover + .featuredmod3  {
+      top: -200px;
+    }
+
+    #mod4img:hover + .featuredmod4  {
+      top: -200px;
+    }
+
+    .btnbg {
+
+      top: -50%;
+      height: 150px;
+      pointer-events: none;
+    }
+
+    #btnmod1a {
+      scale: 70%;
+      position: absolute !important;
+
+      right: -7%;
+      margin: auto;
+    }
+
+    #btnmod1 {
+      scale: 70%;
+      position: absolute !important;
+
+      right: 0%;
+      left: 0%;
+      margin: auto;
+      bottom: 18%
+    }
+
+    .featured {
+
+      font-size: 30px;
+
+    }
+
+    .featuredmod1 {
+top: -210px;
+
+    }
+
+    #btnmod1a:focus > .more_info_bg {
+
+    top: 0px;
+    }
+
+    #btnmod1a:focus:hover > .info_over_scroll {
+
+      top: 0;
+      }
+
+      #btnmod1a:focus > .over_scroll_text {
+
+        top: -182px !important;
+        }
+
+        #btnmod1a:focus{
+          top: -15px;
+
+        }
+
+        .btn_left {
+          scale: 65%;
+          top: 64px;
+
+          left: -35px;
+        }
+
+        .btn_right {
+          scale: 80%;
+          top: 64px;
+          right: -20px;
+          z-index: 50;
+
+        }
+
+        #btnmod1:hover {
+          scale: 65%;
+
+        }
+
+        .moddworld_logo {
+          width: 600px;
+          height: 300px;
+        }
+
+.midsection1 {
+
+width: 70% !important;
+display: block;
+}
 }

@@ -31,3 +31,8 @@ return number * 7 + 2 + number*0.3 - 4;
 let newnumber = [weird(852)];
 
 console.log(newnumber)
+
+let var1 = 5;
+
+console.log(var1);
+alert(var1);
