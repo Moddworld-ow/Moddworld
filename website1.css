@@ -1,3 +1,12 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 .button {
   border: none;
       display: inline-flex;
@@ -2211,8 +2220,37 @@ box-shadow: none;
     }
 
     .featuredmod1 {
-top: -210px;
+      top: -210px;
 
+    }
+
+    .CUSTOMLEVELSTEXT {
+      height: 100px;
+      width: 300px;
+
+    }
+
+    .toggle_font_size {
+      font-size: 17px !important;
+      top: 73px !important;
+      position: absolute;
+    }
+
+    .select_toggle_size {
+      font-size: 50px !important;
+
+    }
+
+    .choose1 {
+      font-size: 20px;
+    }
+
+    .choose2 {
+      font-size: 20px;
+    }
+
+    .choose3 {
+      font-size: 20px;
     }
 
     #btnmod1a:focus > .more_info_bg {
@@ -2260,9 +2298,12 @@ top: -210px;
           height: 300px;
         }
 
-.midsection1 {
 
-width: 70% !important;
-display: block;
+.inflex {
+  min-width: 240px !important;
+  display: block;
+
+
 }
+
 }
