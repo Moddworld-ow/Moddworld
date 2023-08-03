@@ -61,6 +61,12 @@ $(function(){
     });
 });
 
+$(function(){
+    $('.btn_left').hover(function(){
+    $('.btn_right').toggleClass('btn_p');
+
+    });
+});
 
 
 var parallax = document.querySelectorAll(".parallax");
