@@ -372,8 +372,7 @@ position: relative;
 top: 4px;
 border-radius: 1px;
 outline-style: ridge;
-margin-left: 300px;
-transition-duration: 1s;
+transition-duration: 2s;
 overflow: hidden;
 
 }
@@ -1761,11 +1760,18 @@ scale: 50% !important;
 
 z-index: 5;
 position: fixed;
-height: 180px;
-width: 50%;
-top: 10px;
-margin-left: 15%;
+height: 350px;
+width: 500px;
+top: 0;
+margin-left: 45%;
 display: grid;
+background-image: url(scroll_transparent.png);
+background-repeat: no-repeat;
+background-size: 100%;
+background-position: 0% -270px;
+padding-top: 17px;
+grid-template-rows: 60px 60px 60px;
+
 
 }
 
