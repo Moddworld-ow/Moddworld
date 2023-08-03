@@ -611,7 +611,15 @@ transition-delay: 0.2s;
     transition-delay: 0.2s;
     }
 
+    #mod4img:hover + .featuredmod2 {
 
+      top: -135%;
+      position: relative;
+      transition-delay: 0.2s;
+    
+      }
+
+      
 .block {
 
 background-color: red;
@@ -2160,7 +2168,7 @@ box-shadow: none;
       top: -200px;
     }
 
-    #mod4img:hover + .featuredmod4  {
+    #mod4img:hover + .featuredmod2  {
       top: -200px;
     }
 
@@ -2312,8 +2320,5 @@ position: absolute;
 font-size: 15px;
 
 }
-
-
-
 
 }
