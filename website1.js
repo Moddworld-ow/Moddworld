@@ -21,6 +21,14 @@ $(function(){
 
 $(function(){
     $('.divtop').on('click', function(){
+    $('.divtop').toggleClass('divtopalt');
+
+    });
+});
+
+
+$(function(){
+    $('.divtop').on('click', function(){
     $('.presser1').toggleClass('p1alt');
 
     });
