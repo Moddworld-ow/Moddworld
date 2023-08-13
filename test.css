@@ -1,0 +1,196 @@
+html {
+    overflow: hidden;
+}
+
+
+button {
+    margin: 10px;
+
+
+}
+
+.btns_container {
+    margin: auto;
+    width: 50%;
+
+    border: 2px rgba(0, 0, 0, 0.192) solid;
+    display: block;
+    position: relative;
+    margin-top: 1%;
+    padding: 5% 10% 5% 10%;
+
+}
+
+
+.btn_1 {
+    width: 15%;
+    height: 30%;
+    border-radius: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    background-color: rgba(255, 210, 62, 0.658);
+    border: 8px rgba(255, 0, 0, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 12px inset;
+    animation: btn1loop infinite 5s;
+    position: absolute;
+}
+
+.btn_2 {
+    width: 12.5%;
+    height: 25%;
+
+    border-radius: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    background-color: rgba(124, 22, 22, 0.658);
+    border: 6px rgba(255, 50, 50, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 9px inset;
+    animation: btn2loop infinite 5s;
+    position: absolute;
+    pointer-events: all;
+}
+
+.btn_3 {
+    width: 10%;
+    height: 20%;
+
+    border-radius: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    background-color: rgba(7, 124, 23, 0.781);
+    border: 4px rgba(255, 234, 114, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 6px inset;
+    animation: btn3loop infinite 5s;
+    position: absolute;
+    left: 30%;
+
+}
+
+.btn_4 {
+    width: 7.5%;
+    height: 15%;
+
+    border-radius: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    background-color: rgba(62, 162, 255, 0.658);
+    border: 2px rgba(159, 85, 255, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 3px inset;
+    animation: btn4loop infinite 5s;
+    position: absolute;
+    left: 60%;
+
+}
+
+@keyframes btn1loop {
+    0% {left: 5%; top: 65%;}
+    10% {left: 72%; top: 65%;}
+    20% {left: 72%; top: 10%;}
+    30% {left: 10%; top: 10%;}
+    40% {left: 10%; top: 55%;}
+    50% {left: 62%; top: 55%;}
+    60% {left: 62%; top: 15%;}
+    70% {left: 15%; top: 15%;}
+    80% {left: 15%; top: 45%;}
+    90% {left: 52%; top: 45%; animation-timing-function: cubic-bezier(.63,.07,.94,.26)}
+    100% {left: 52%; top: -100%;}
+}
+
+
+
+
+
+/*
+
+
+
+.one_state_a {
+animation-duration: 10s;
+
+
+}
+
+.one_state_b {
+
+animation-duration: 2s;
+
+}
+
+.two_state_a {
+
+
+
+}
+
+.two_state_b {
+
+
+
+}
+
+.three_state_a {
+
+
+
+}
+
+.three_state_b {
+
+
+
+}
+
+.four_state_a {
+
+
+
+}
+
+.four_state_b {
+
+
+
+}
+
+*/
+
+.score_container {
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.score_display {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: all 0.3s 0s;
+    width: 100px;
+    height: 100px;
+    outline: 3px red solid;
+    margin: auto;
+    opacity: 60%;
+    margin-top: 1%;
+}
+
+.combo_display {
+    display: flex;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1%;
+}
+
+.animate_score {
+    opacity: 100%;
+    font-size: 2.5em; /* Set the desired font size when the score increments */
+    transition: all 0.05s 0s;
+    outline: 20px red solid;
+}
+
+
+.quick_animation {
+    font-size: 1.5em; /* Set desired font size for quick animation */
+    opacity: 0.8; /* Set desired opacity for quick animation */
+    transition-delay: 0s;
+}
