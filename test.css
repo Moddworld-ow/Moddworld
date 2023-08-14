@@ -93,8 +93,11 @@ button {
 
     border: 3px rgb(122, 0, 0) solid;
     display: block;
-    position: relative;
-    margin-top: 3%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     padding: 5% 10% 5% 10%;
     animation: combo_effect 1s 0.05s infinite;
     overflow: hidden;
@@ -148,12 +151,12 @@ button {
     align-items: center;
     justify-content: center;
 
-    font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
+    font-family: 'Roboto Condensed', sans-serif;    background-color: rgb(255, 210, 62);
     font-size: 35px;
     border-radius: 100%;
     border: 2px rgba(255, 0, 0, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn1loop infinite 30s;
+    animation: btn1loop infinite 15s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
 }
@@ -215,7 +218,7 @@ button {
     background-color: rgba(62, 162, 255, 0.658);
     border: 2px rgba(159, 85, 255, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn4loop infinite 15s;
+    animation: btn4loop infinite 20s;
     position: absolute;
     left: 60%;
 
@@ -232,10 +235,10 @@ button {
     background-color: rgba(0, 0, 0, 0.372);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 30s 0.05s;
+    animation: btn1loop infinite 15s 0.15s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
-    transform: translate(20%, 20%);
+    transform: translate(10%, 10%);
     z-index: -1;
     scale: 80%;
     opacity: 50% !important;
@@ -253,10 +256,10 @@ button {
     background-color: rgba(0, 0, 0, 0.372);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 30s 0.1s;
+    animation: btn1loop infinite 15s 0.3s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
-    transform: translate(20%, 20%);
+    transform: translate(10%, 10%);
     z-index: -1;
     scale: 65%;
     opacity: 35% !important;
@@ -274,10 +277,10 @@ button {
     background-color: rgba(0, 0, 0, 0.372);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 30s 0.15s;
+    animation: btn1loop infinite 15s 0.45s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
-    transform: translate(20%, 20%);
+    transform: translate(10%, 10%);
     z-index: -1;
     scale: 50%;
     opacity: 20% !important;
@@ -410,7 +413,11 @@ animation-duration: 2s;
 .score_container {
     text-align: center;
     display: block;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    top: 6%;
 }
 
 .score_display {
@@ -437,7 +444,7 @@ animation-duration: 2s;
     text-align: center;
     justify-content: center;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 1.5%;
     border: rgb(0, 0, 0) 3px solid;
     background-color: white;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;

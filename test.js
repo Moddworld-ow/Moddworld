@@ -228,13 +228,13 @@ function startNestedTimeouts() {
 
                     // Chain another inner timeout for innerTimeout3 if needed
                     setTimeout(innerTimeout3, 5000); // Call innerTimeout3 again after 5 seconds
-                }, 30000); // Wait 5 seconds before calling innerTimeout3
-            }, 30000); // Wait 5 seconds before calling innerTimeout2
-        }, 30000); // Wait 5 seconds before calling innerTimeout1
+                }, 15000); // Wait 5 seconds before calling innerTimeout3
+            }, 15000); // Wait 5 seconds before calling innerTimeout2
+        }, 15000); // Wait 5 seconds before calling innerTimeout1
 
         // Chain the outer timeout
         setTimeout(outerTimeout, 5000); // Call outerTimeout again after 5 seconds
-    }, 30000); // Wait 5 seconds before calling outerTimeout
+    }, 15000); // Wait 5 seconds before calling outerTimeout
 }
 
 // Call the function to start the nested timeouts
