@@ -9,15 +9,134 @@ button {
 
 }
 
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.85)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0%;
+    margin: auto;
+    z-index: -1;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: 0%;
+    background-image: linear-gradient(to top, #ff9e27 25%, #b90000);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 25%;
+}
+.waveAnimation .waveTop {
+    animation: move_wave 15s linear infinite;
+}
+.waveMiddle {
+    background-size: 50% 40%;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+    animation-direction: reverse;
+}
+.waveBottom {
+    background-size: 50% 55%;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 5s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
 .btns_container {
     margin: auto;
     width: 50%;
 
-    border: 2px rgba(0, 0, 0, 0.192) solid;
+    border: 3px rgb(122, 0, 0) solid;
     display: block;
     position: relative;
-    margin-top: 1%;
+    margin-top: 3%;
     padding: 5% 10% 5% 10%;
+    animation: combo_effect 1s 0.05s infinite;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+}
+
+@keyframes combo_effect {
+    0% {outline: red 3px solid;}
+    5% {outline: red 9px solid; transition-timing-function: ease-in;}
+    80% {outline: red 3px solid;}
+    100% {outline: red 3px solid;}
+
+
+
+
+}
+
+
+:root {
+    --left_mod1: 0px;
+    --top_mod1: 0px;
+    --rotate_mod1: 0deg;
+    --rotate_fix1: 0deg;
+    --scale_mod1: 100%;
+
+}
+
+.btn1txt {
+    rotate: var(--rotate_fix1);
+
+    }
+    
+
+.rotating_btn_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: var(--left_mod1);
+    top: var(--top_mod1);
+    rotate: var(--rotate_mod1);
+    scale: var(--scale_mod1);
 
 }
 
@@ -25,39 +144,58 @@ button {
 .btn_1 {
     width: 15%;
     height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
+    font-size: 35px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
-    background-color: rgba(255, 210, 62, 0.658);
-    border: 8px rgba(255, 0, 0, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 12px inset;
-    animation: btn1loop infinite 5s;
+    border: 2px rgba(255, 0, 0, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    animation: btn1loop infinite 30s;
     position: absolute;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
 }
+
 
 .btn_2 {
     width: 12.5%;
     height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
+    font-size: 25px;
     border-radius: 100%;
     box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
     background-color: rgba(124, 22, 22, 0.658);
-    border: 6px rgba(255, 50, 50, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 9px inset;
-    animation: btn2loop infinite 5s;
+    border: 2px rgba(255, 50, 50, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    animation: btn2loop infinite 30s 1s;
     position: absolute;
     pointer-events: all;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+
+
 }
 
 .btn_3 {
     width: 10%;
     height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
+    font-size: 15px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     background-color: rgba(7, 124, 23, 0.781);
-    border: 4px rgba(255, 234, 114, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 6px inset;
-    animation: btn3loop infinite 5s;
+    border: 2px rgba(255, 234, 114, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    animation: btn3loop infinite 50s;
     position: absolute;
     left: 30%;
 
@@ -66,34 +204,153 @@ button {
 .btn_4 {
     width: 7.5%;
     height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
+    font-size: 10px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     background-color: rgba(62, 162, 255, 0.658);
     border: 2px rgba(159, 85, 255, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 3px inset;
-    animation: btn4loop infinite 5s;
+    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    animation: btn4loop infinite 15s;
     position: absolute;
     left: 60%;
 
 }
 
+.btn1shadow {
+    width: 15%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgba(0, 0, 0, 0.372);
+    font-size: 35px;
+    border-radius: 100%;
+    animation: btn1loop infinite 30s 0.05s;
+    position: absolute;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    transform: translate(20%, 20%);
+    z-index: -1;
+    scale: 80%;
+    opacity: 50% !important;
+    
+}
+
+.btn1shadow2 {
+    width: 15%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgba(0, 0, 0, 0.372);
+    font-size: 35px;
+    border-radius: 100%;
+    animation: btn1loop infinite 30s 0.1s;
+    position: absolute;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    transform: translate(20%, 20%);
+    z-index: -1;
+    scale: 65%;
+    opacity: 35% !important;
+    
+}
+
+.btn1shadow3 {
+    width: 15%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgba(0, 0, 0, 0.372);
+    font-size: 35px;
+    border-radius: 100%;
+    animation: btn1loop infinite 30s 0.15s;
+    position: absolute;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    transform: translate(20%, 20%);
+    z-index: -1;
+    scale: 50%;
+    opacity: 20% !important;
+    
+}
+
 @keyframes btn1loop {
-    0% {left: 5%; top: 65%;}
-    10% {left: 72%; top: 65%;}
-    20% {left: 72%; top: 10%;}
+    0% {left: 5%; top: 52%; opacity: 0%;}
+    10% {left: 72%; top: 52%; opacity: 100%;}
+    20% {left: 72%; top: 10%;} 
+    30% {left: 10%; top: 10%;}
+    40% {left: 10%; top: 45%;}
+    50% {left: 62%; top: 45%;}
+    60% {left: 62%; top: 15%;}
+    70% {left: 15%; top: 15%;}
+    80% {left: 15%; top: 35%;}
+    90% {left: 40%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
+    97% {opacity: 0%}
+    100% {left: 40%; top: -300%; opacity: 0;}
+}
+
+@keyframes btn2loop {
+    0% {
+    transform: translate(-150%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+
+    0% {opacity: 0%;}
+
+    5% {opacity: 100%;}
+    
+    20% {transform: translate(0%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+
+    40% {transform: translate(150%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+
+    60% {transform: translate(300%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+
+    80% {transform: translate(450%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+
+    95% {opacity: 100%;}
+
+    100% {opacity: 0%;}
+
+    100% {transform: translate(600%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+}
+
+@keyframes btn3loop {
+    0% {left: 5%; top: 52%; opacity: 0%;}
+    10% {left: 72%; top: 52%; opacity: 100%;}
+    20% {left: 72%; top: 10%;} 
     30% {left: 10%; top: 10%;}
     40% {left: 10%; top: 55%;}
     50% {left: 62%; top: 55%;}
     60% {left: 62%; top: 15%;}
     70% {left: 15%; top: 15%;}
     80% {left: 15%; top: 45%;}
-    90% {left: 52%; top: 45%; animation-timing-function: cubic-bezier(.63,.07,.94,.26)}
-    100% {left: 52%; top: -100%;}
+    90% {left: 52%; top: 45%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
+    97% {opacity: 0%}
+    100% {left: 52%; top: -300%; opacity: 0;}
 }
 
-
-
+@keyframes btn4loop {
+    0% {left: 5%; top: 52%; opacity: 0%;}
+    10% {left: 72%; top: 52%; opacity: 100%;}
+    20% {left: 72%; top: 10%;} 
+    30% {left: 10%; top: 10%;}
+    40% {left: 10%; top: 55%;}
+    50% {left: 62%; top: 55%;}
+    60% {left: 62%; top: 15%;}
+    70% {left: 15%; top: 15%;}
+    80% {left: 15%; top: 45%;}
+    90% {left: 52%; top: 45%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
+    97% {opacity: 0%}
+    100% {left: 52%; top: -300%; opacity: 0;}
+}
 
 
 /*
@@ -165,8 +422,10 @@ animation-duration: 2s;
     height: 100px;
     outline: 3px red solid;
     margin: auto;
-    opacity: 60%;
     margin-top: 1%;
+    background-color: white;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+
 }
 
 .combo_display {
@@ -178,14 +437,18 @@ animation-duration: 2s;
     text-align: center;
     justify-content: center;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 3%;
+    border: rgb(0, 0, 0) 3px solid;
+    background-color: white;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+
 }
 
 .animate_score {
     opacity: 100%;
     font-size: 2.5em; /* Set the desired font size when the score increments */
     transition: all 0.05s 0s;
-    outline: 20px red solid;
+    outline: 15px red solid;
 }
 
 

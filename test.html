@@ -9,26 +9,56 @@
     <title>Document</title>
 
 </head>
-<body>
 
     <link rel="stylesheet" href="test.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Fredoka+One&display=swap" rel="stylesheet">
+
     <title>Document</title>
+    
 </head>
 <body>
+
     <div class="score_container">
         <div class="score_display"><span id="scoreValue">0</span></div>
         <div class="combo_display"><span id="comboValue">0</span></div>
     </div>
 
     <div class="btns_container">
-        <button class="btn_1">+1</button>
-        <button class="btn_2">+3</button>
-        <button class="btn_3">+5</button>
-        <button class="btn_4">+15</button>
+        <div class="rotating_btn_container"><button class="btn_1"><p class="btn1txt">+1</p></button><div class="btn1shadow"></div><div class="btn1shadow2"></div><div class="btn1shadow3"></div></div>
+        <button class="btn_2"><p class="btn2txt">+3</p></button>
+        <button class="btn_3"><p class="btn3txt">+5</p></button>
+        <button class="btn_4"><p class="btn4txt">+15</p></button>
+
+
+
+
+
+        <div class="waveWrapper waveAnimation">
+          <div class="waveWrapperInner bgTop">
+            <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+          </div>
+          <div class="waveWrapperInner bgMiddle">
+            <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+          </div>
+          <div class="waveWrapperInner bgBottom">
+            <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+          </div>
+        </div>
+        
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="test.js"></script>
 
@@ -36,5 +66,22 @@
         
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 </body>
 </html>
