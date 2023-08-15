@@ -217,8 +217,8 @@ function randomizemod1() {
 
 function randomizemodvalues() {
 
-offset_rotate = Math.floor((Math.random() * 1000) + 1) + "deg";
-offset_scale = Math.floor((Math.random() * 300) + 1) + "%";
+offset_rotate = Math.floor((Math.random() * 500) + 1) + "deg";
+offset_scale = Math.max(Math.min(Math.floor((Math.random() * 500) + 1), 150), 25) + "%";
 offset_left = Math.floor((Math.random() * 10) + 1) + "%";
 offset_top = Math.floor((Math.random() * 10) + 1) + "%";
 
@@ -226,4 +226,4 @@ offset_top = Math.floor((Math.random() * 10) + 1) + "%";
 
 setInterval(randomizemodvalues, 500);
 
-setInterval(randomizemod1, 15000);
+setInterval(randomizemod1, 20000);

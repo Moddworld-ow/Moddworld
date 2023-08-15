@@ -179,7 +179,7 @@ button {
     border-radius: 100%;
     border: 2px rgba(255, 0, 0, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn1loop infinite 15s;
+    animation: btn1loop infinite 20s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     
@@ -200,7 +200,7 @@ button {
     background-color: rgba(124, 22, 22, 0.658);
     border: 2px rgba(255, 50, 50, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn2loop infinite 10s;
+    animation: btn2loop infinite 25s;
     position: absolute;
     pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
@@ -270,16 +270,15 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: rgba(0, 0, 0, 0.372);
+    background-color: rgba(0, 0, 0, 0.2);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 15s 0.15s;
+    animation: btn1loop infinite 20s 0.15s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.035) 7px 7px, rgba(0, 0, 0, 0.325) 0 0 50px 0, rgba(0, 0, 0, 0.175) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 80%;
-    opacity: 50% !important;
     
 }
 
@@ -291,16 +290,15 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: rgba(0, 0, 0, 0.372);
+    background-color: rgba(0, 0, 0, 0.15);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 15s 0.3s;
+    animation: btn1loop infinite 20s 0.3s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.025) 7px 7px, rgba(0, 0, 0, 0.25) 0 0 50px 0, rgba(0, 0, 0, 0.125) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 65%;
-    opacity: 35% !important;
     
 }
 
@@ -312,32 +310,31 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: rgba(0, 0, 0, 0.372);
+    background-color: rgba(0, 0, 0, 0.1);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 15s 0.45s;
+    animation: btn1loop infinite 20s 0.45s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.02) 7px 7px, rgba(0, 0, 0, 0.2) 0 0 50px 0, rgba(0, 0, 0, 0.1) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 50%;
-    opacity: 20% !important;
     
 }
 
 @keyframes btn1loop {
     0% {left: 5%; top: 52%; opacity: 0%;}
-    10% {left: 72%; top: 52%; opacity: 100%;}
-    20% {left: 72%; top: 10%;} 
-    30% {left: 10%; top: 10%;}
-    40% {left: 10%; top: 45%;}
-    50% {left: 62%; top: 45%;}
-    60% {left: 62%; top: 15%;}
-    70% {left: 15%; top: 15%;}
-    80% {left: 15%; top: 35%;}
-    90% {left: 40%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
-    97% {opacity: 0%}
-    100% {left: 40%; top: -300%; opacity: 0;}
+    5% {left: 72%; top: 52%; opacity: 100%;}
+    10% {left: 72%; top: 10%;} 
+    15% {left: 10%; top: 10%;}
+    20% {left: 10%; top: 45%;}
+    25% {left: 62%; top: 45%;}
+    30% {left: 62%; top: 15%;}
+    35% {left: 15%; top: 15%;}
+    40% {left: 15%; top: 35%;}
+    45% {left: 40%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
+    50% {top: -300%; opacity: 0%}
+    100% {opacity: 0%}
 }
 
 @keyframes btn2loop {
