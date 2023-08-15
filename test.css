@@ -1,5 +1,7 @@
 html {
     overflow: hidden;
+    user-select: none;
+
 }
 
 
@@ -103,6 +105,7 @@ button {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    user-select: none;
 }
 
 @keyframes combo_effect {
@@ -118,16 +121,36 @@ button {
 
 
 :root {
-    --left_mod1: 0px;
-    --top_mod1: 0px;
-    --rotate_mod1: 0deg;
-    --rotate_fix1: 0deg;
-    --scale_mod1: 100%;
+    --left_mod: 0px;
+    --top_mod: 0px;
+    --rotate_mod: 0deg;
+    --rotate_fix: 0deg;
+    --scale_mod: 100%;
+
+    /*
+    --left_mod2: 0px;
+    --top_mod2: 0px;
+    --rotate_mod2: 0deg;
+    --rotate_fix2: 0deg;
+    --scale_mod2: 100%;
+
+    --left_mod2: 0px;
+    --top_mod2: 0px;
+    --rotate_mod2: 0deg;
+    --rotate_fix2: 0deg;
+    --scale_mod2: 100%;
+
+    --left_mod2: 0px;
+    --top_mod2: 0px;
+    --rotate_mod2: 0deg;
+    --rotate_fix2: 0deg;
+    --scale_mod2: 100%;
+    */
 
 }
 
 .btn1txt {
-    rotate: var(--rotate_fix1);
+    rotate: var(--rotate_fix);
 
     }
     
@@ -136,10 +159,10 @@ button {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: var(--left_mod1);
-    top: var(--top_mod1);
-    rotate: var(--rotate_mod1);
-    scale: var(--scale_mod1);
+    left: var(--left_mod);
+    top: var(--top_mod);
+    rotate: var(--rotate_mod);
+    scale: var(--scale_mod);
 
 }
 
@@ -159,6 +182,7 @@ button {
     animation: btn1loop infinite 15s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    
 }
 
 
@@ -176,11 +200,15 @@ button {
     background-color: rgba(124, 22, 22, 0.658);
     border: 2px rgba(255, 50, 50, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn2loop infinite 30s 1s;
+    animation: btn2loop infinite 10s;
     position: absolute;
     pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
 
+    left: var(--left_mod2);
+    top: var(--top_mod2);
+    rotate: var(--rotate_mod2);
+    scale: var(--scale_mod2);
 
 }
 
@@ -202,6 +230,11 @@ button {
     position: absolute;
     left: 30%;
 
+    left: var(--left_mod3);
+    top: var(--top_mod3);
+    rotate: var(--rotate_mod3);
+    scale: var(--scale_mod3);
+
 }
 
 .btn_4 {
@@ -221,6 +254,11 @@ button {
     animation: btn4loop infinite 20s;
     position: absolute;
     left: 60%;
+
+    left: var(--left_mod4);
+    top: var(--top_mod4);
+    rotate: var(--rotate_mod4);
+    scale: var(--scale_mod4);
 
 }
 
@@ -304,25 +342,25 @@ button {
 
 @keyframes btn2loop {
     0% {
-    transform: translate(-150%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    transform: translate(-150%, 0%); animation-timing-function: ease-in}
 
     0% {opacity: 0%;}
 
-    5% {opacity: 100%;}
+    10% {opacity: 100%;}
     
-    20% {transform: translate(0%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    10% {transform: translate(0%, 200%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
 
-    40% {transform: translate(150%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    40% {transform: translate(200%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
 
-    60% {transform: translate(300%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    60% {transform: translate(400%, 200%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
 
-    80% {transform: translate(450%, 0%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    90% {transform: translate(600%, 0%); animation-timing-function: ease-out;}
 
-    95% {opacity: 100%;}
+    90% {opacity: 100%;}
 
     100% {opacity: 0%;}
 
-    100% {transform: translate(600%, 150%); animation-timing-function: cubic-bezier(.41,2.6,.37,-1.81);}
+    100% {transform: translate(800%, 200%);}
 }
 
 @keyframes btn3loop {
@@ -418,6 +456,8 @@ animation-duration: 2s;
     right: 0;
     z-index: 5;
     top: 6%;
+    pointer-events: none;
+
 }
 
 .score_display {

@@ -81,7 +81,6 @@ $(function() {
         comboValue = comboValue + 5;
     });
     
-    // Click events for buttons 1, 3, and 4
     $(".btn_3").click(function() {
         resetInactivity()
         current_amount += parseInt($(this).text().replace("+", "") * comboValue);
@@ -178,64 +177,53 @@ function get_var() {
 var rs = getComputedStyle(r);
 }
 
-function change_btn1_offset_left() {
-r.style.setProperty('--left_mod1', offset_left);
+function change_btn_offset_left() {
+r.style.setProperty('--left_mod', offset_left);
 }
 
-function change_btn1_offset_top() {
-r.style.setProperty('--top_mod1', offset_top);
-
-}
-
-function change_btn1_offset_rotate() {
-r.style.setProperty('--rotate_mod1', offset_rotate);
+function change_btn_offset_top() {
+r.style.setProperty('--top_mod', offset_top);
 
 }
 
-function fix_btn1_offset_rotate() {
-r.style.setProperty('--rotate_fix1', "-" + offset_rotate);
+function change_btn_offset_rotate() {
+r.style.setProperty('--rotate_mod', offset_rotate);
+
+}
+
+function fix_btn_offset_rotate() {
+r.style.setProperty('--rotate_fix', "-" + offset_rotate);
     
     }
 
-function change_btn1_offset_scale() {
-r.style.setProperty('--scale_mod1', offset_scale);
+function change_btn_offset_scale() {
+r.style.setProperty('--scale_mod', offset_scale);
 
 }
 
-function startNestedTimeouts() {
-    setTimeout(function outerTimeout() {
-        change_btn1_offset_left();
+function randomizemod1() {
+    
+    fix_btn_offset_rotate();
+    change_btn_offset_rotate();
 
-        setTimeout(function innerTimeout1() {
-           
-            fix_btn1_offset_rotate();
-            change_btn1_offset_rotate();
+    change_btn_offset_left();
 
-            offset_left = "100px";
-            offset_top = "120px";
+    change_btn_offset_top();
 
+    change_btn_offset_scale();
 
-            change_btn1_offset_left();
-            change_btn1_offset_top();
-
-
-            setTimeout(function innerTimeout2() {
-                change_btn1_offset_top();
-
-                setTimeout(function innerTimeout3() {
-
-                    change_btn1_offset_scale();
-
-                    // Chain another inner timeout for innerTimeout3 if needed
-                    setTimeout(innerTimeout3, 5000); // Call innerTimeout3 again after 5 seconds
-                }, 15000); // Wait 5 seconds before calling innerTimeout3
-            }, 15000); // Wait 5 seconds before calling innerTimeout2
-        }, 15000); // Wait 5 seconds before calling innerTimeout1
-
-        // Chain the outer timeout
-        setTimeout(outerTimeout, 5000); // Call outerTimeout again after 5 seconds
-    }, 15000); // Wait 5 seconds before calling outerTimeout
 }
 
-// Call the function to start the nested timeouts
-startNestedTimeouts();
+
+function randomizemodvalues() {
+
+offset_rotate = Math.floor((Math.random() * 1000) + 1) + "deg";
+offset_scale = Math.floor((Math.random() * 300) + 1) + "%";
+offset_left = Math.floor((Math.random() * 10) + 1) + "%";
+offset_top = Math.floor((Math.random() * 10) + 1) + "%";
+
+}
+
+setInterval(randomizemodvalues, 500);
+
+setInterval(randomizemod1, 15000);
