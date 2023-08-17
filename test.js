@@ -222,7 +222,7 @@ function randomizemod2() {
 
 
 
-        r.style.setProperty('--rotate_fix2', "-" + offset_rotate3);
+        r.style.setProperty('--rotate_fix2', "-" + offset_rotate2);
         
         
         
@@ -304,7 +304,7 @@ function randomizemodvaluesmod2() {
     function randomizemodvaluesmod3() {
 
         offset_rotate3 = Math.floor((Math.random() * 200) + 1) + "deg";
-        offset_scale3 = Math.max(Math.min(Math.floor((Math.random() * 180) + 1 - 90), 180), 40) + "%";
+        offset_scale3 = Math.max(Math.min(Math.floor((Math.random() * 300) + 1 - 50), 150), 40) + "%";
         offset_left3 = Math.floor((Math.random() * 101) - 50) + "%";
         offset_top3 = Math.floor((Math.random() * 101) - 50) + "%";
         
@@ -327,7 +327,7 @@ function reroll_mod2() {
     }
             
             
-    setInterval(reroll_mod2, 25000);
+    setInterval(reroll_mod2, 20000);
 
 
     
@@ -336,11 +336,11 @@ function reroll_mod3() {
    
         randomizemodvaluesmod3();
         randomizemod3();
-                
+                console.log(offset_scale3);
         }
 
-        setInterval(reroll_mod3, 20000);
-
+        setInterval(reroll_mod3, 30000);
+        reroll_mod4();
 
     
 function reroll_mod4() {
@@ -351,8 +351,8 @@ function reroll_mod4() {
     }
         
         
-    setInterval(reroll_mod4, 30000);
-        
+    setInterval(reroll_mod4, 25000);
+    reroll_mod4();
 
 
 
