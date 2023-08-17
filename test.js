@@ -207,6 +207,81 @@ function randomizemod1() {
 
 }
 
+function randomizemod2() {
+
+
+        r.style.setProperty('--left_mod2', offset_left2);
+        
+        
+
+        r.style.setProperty('--top_mod2', offset_top2);
+        
+        
+        
+        r.style.setProperty('--rotate_mod2', offset_rotate2);
+
+
+
+        r.style.setProperty('--rotate_fix2', "-" + offset_rotate3);
+        
+        
+        
+        r.style.setProperty('--scale_mod2', offset_scale2);
+
+
+    
+}
+
+function randomizemod3() {
+
+    r.style.setProperty('--left_mod3', offset_left3);
+    
+    
+
+    r.style.setProperty('--top_mod3', offset_top3);
+    
+    
+    
+    r.style.setProperty('--rotate_mod3', offset_rotate3);
+    
+    
+    
+    r.style.setProperty('--rotate_fix3', "-" + offset_rotate3);
+        
+    
+    
+    r.style.setProperty('--scale_mod3', offset_scale3);
+
+
+
+}
+
+
+function randomizemod4() {
+
+    r.style.setProperty('--left_mod4', offset_left4);
+    
+    
+
+    r.style.setProperty('--top_mod4', offset_top4);
+    
+    
+    
+    r.style.setProperty('--rotate_mod4', offset_rotate4);
+    
+    
+    
+    r.style.setProperty('--rotate_fix4', "-" + offset_rotate4);
+        
+    
+    
+    r.style.setProperty('--scale_mod4', offset_scale4);
+
+
+
+}
+
+let offset_rotate2 = 0;
 
 function randomizemodvalues() {
 
@@ -217,7 +292,74 @@ offset_top = Math.floor((Math.random() * 10) + 1) + "%";
 
 }
 
-setInterval(randomizemodvalues, 5000);
+function randomizemodvaluesmod2() {
+
+    offset_rotate2 = Math.floor((Math.random() * 200) + 1) + "deg";
+    offset_scale2 = Math.max(Math.min(Math.floor((Math.random() * 180) + 1 - 90), 180), 60) + "%";
+    offset_left2 = Math.floor((Math.random() * 101) - 50) + "%";
+    offset_top2 = Math.floor((Math.random() * 151) - 50) + "%";
+    
+    }
+
+    function randomizemodvaluesmod3() {
+
+        offset_rotate3 = Math.floor((Math.random() * 200) + 1) + "deg";
+        offset_scale3 = Math.max(Math.min(Math.floor((Math.random() * 180) + 1 - 90), 180), 40) + "%";
+        offset_left3 = Math.floor((Math.random() * 101) - 50) + "%";
+        offset_top3 = Math.floor((Math.random() * 101) - 50) + "%";
+        
+        }
+
+        function randomizemodvaluesmod4() {
+
+            offset_rotate4 = Math.floor((Math.random() * 500) + 1) + "deg";
+            offset_scale4 = Math.max(Math.min(Math.floor((Math.random() * 300) + 1 - 100), 150), 60) + "%";
+            offset_left4 = Math.floor((Math.random() * 101) -50) + "%";
+            offset_top4 = Math.floor((Math.random() * 101) -50) + "%";
+            
+            }
+
+function reroll_mod2() {
+
+    randomizemodvaluesmod2();
+    randomizemod2();
+            
+    }
+            
+            
+    setInterval(reroll_mod2, 25000);
+
+
+    
+function reroll_mod3() {
+
+   
+        randomizemodvaluesmod3();
+        randomizemod3();
+                
+        }
+
+        setInterval(reroll_mod3, 20000);
+
+
+    
+function reroll_mod4() {
+
+    randomizemodvaluesmod4();
+    randomizemod4();
+
+    }
+        
+        
+    setInterval(reroll_mod4, 30000);
+        
+
+
+
+
+
+
+
 
 let animdelay_mod = "0s";
 let animdelay_mod_pure = 0;
@@ -232,6 +374,25 @@ let animdelay_mod_pure = 0;
     
     }
 
+    let iteration = 0;
+    let offset_rotate3pure = 0
+
+    function rotate_smooth(iteration = 0) {
+
+    
+        if (iteration < 500) {
+            offset_rotate3pure += 1; // Increase the rotation value by 1 degree
+            offset_rotate3 = offset_rotate3pure + "deg";
+            r.style.setProperty('--rotate_mod3', offset_rotate3);
+            console.log(offset_rotate3);
+    
+            setTimeout(() => {
+                rotate_smooth(iteration + 1);
+            }, 50); // Adjust the delay time in milliseconds
+        }
+
+   
+    }
 
 let running;
 
@@ -285,6 +446,8 @@ function reroll_anim_speed_mod() {
 }
 
 function updateAnimation() {
+
+    randomizemodvalues();
     randomizemod1();
     reroll_anim_speed_mod();
   
