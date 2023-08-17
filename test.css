@@ -121,6 +121,10 @@ button {
 
 
 :root {
+    
+    --feedback: none;
+
+
     --left_mod: 0px;
     --top_mod: 0px;
     --rotate_mod: 0deg;
@@ -239,6 +243,9 @@ button {
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     animation-play-state: running;
+    pointer-events: all;
+
+    scale: var(--feedback);
 
 
 }
@@ -292,6 +299,7 @@ button {
     animation: btn3loop infinite 30s;
     position: absolute;
     left: 30%;
+    pointer-events: all;
 
 
 
@@ -313,6 +321,7 @@ button {
     outline: rgba(0, 0, 0, 0.315) 4px inset;
     animation: btn4loop infinite 25s;
     position: absolute;
+    pointer-events: all;
 
     scale: var(--scale_mod4);
 

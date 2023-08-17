@@ -2,7 +2,7 @@ $(function() {
     let current_amount = 0;
     let intervalId;
     let isHovering = false;
-    let debounceInterval = 100; // Debounce interval time in milliseconds
+    let debounceInterval = 50; // Debounce interval time in milliseconds
 
     var div = $('.btns_container');
     var width = div.width() * (100 / 100);
@@ -16,6 +16,7 @@ $(function() {
         div.css('height', width);
     }
 
+
     // Track mouse movement over btn_2 to reset inactivityTime and trigger hover behavior
     $(".btn_2").mousemove(function() {
         if (!isHovering) {
@@ -26,6 +27,7 @@ $(function() {
                 if (hoverTime < 5) {
                     hoverTime++;
                     handleHover(true);
+                    
                 }
             }, debounceInterval); // Debounce the interval start
         }
@@ -39,7 +41,7 @@ $(function() {
             intervalId = null;
         }
         isHovering = false;
-        hoverTime = 0;
+        setTimeout(function(){hoverTime = 0;}, 50);
         handleHover(false);
         update_combo();
 
@@ -51,7 +53,7 @@ $(function() {
             intervalId = null;
         }
         isHovering = false;
-        hoverTime = 0; // Reset hoverTime when hover ends
+        setTimeout(function(){hoverTime = 0;}, 50);
         resetInactivity();
     
     });
@@ -63,18 +65,17 @@ $(function() {
         if (isHoverStart) {
             hoverTime = Math.min(5, hoverTime + 1); // Increase hover time, max value is 5
         } else {
-            hoverTime = 0; // Reset hover time
+            setTimeout(function(){hoverTime = 0;}, 50);
         }
         resetInactivity(); // Reset inactivity when hovering changes
     }
-
     
     $(".btn_4").click(function() {
         resetInactivity()
         setInterval(current_amount += parseInt($(this).text().replace("+", "") * comboValue), 50);
         update_score();
         update_combo();
-        comboValue = comboValue + 5;
+        comboValue = comboValue + 1;
     });
     
     $(".btn_3").click(function() {
@@ -126,7 +127,7 @@ $(function() {
         if (hoverTime >= 5) {
             comboValue++;
             console.log("Combo increased! New comboValue:", comboValue);
-            hoverTime = 0; // Reset hoverTime after increasing combo
+            setTimeout(function(){hoverTime = 0;}, 50);
         }
     
         if (inactivityTime >= 1 && comboValue > 1) {
@@ -326,7 +327,6 @@ function reroll_mod2() {
             
     }
             
-            
     setInterval(reroll_mod2, 20000);
 
 
@@ -340,19 +340,18 @@ function reroll_mod3() {
         }
 
         setInterval(reroll_mod3, 30000);
-        reroll_mod4();
+        reroll_mod3();
 
     
 function reroll_mod4() {
 
-    randomizemodvaluesmod4();
-    randomizemod4();
+        randomizemodvaluesmod4();
+        randomizemod4();
 
-    }
+        }
         
-        
-    setInterval(reroll_mod4, 25000);
-    reroll_mod4();
+        setInterval(reroll_mod4, 25000);
+        reroll_mod4();
 
 
 
