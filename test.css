@@ -127,6 +127,8 @@ button {
     --rotate_fix: 0deg;
     --scale_mod: 100%;
 
+    --anim_time: 15s;
+
     /*
     --left_mod2: 0px;
     --top_mod2: 0px;
@@ -179,12 +181,22 @@ button {
     border-radius: 100%;
     border: 2px rgba(255, 0, 0, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn1loop infinite 20s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
-    
+    animation-play-state: running;
+
+
 }
 
+
+
+.btn1anim {
+
+    animation: btn1loop infinite 15s;
+
+
+    
+}
 
 .btn_2 {
     width: 12.5%;
@@ -251,7 +263,7 @@ button {
     background-color: rgba(62, 162, 255, 0.658);
     border: 2px rgba(159, 85, 255, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 4px inset;
-    animation: btn4loop infinite 20s;
+    animation: btn4loop infinite 10s;
     position: absolute;
     left: 60%;
 
@@ -273,12 +285,14 @@ button {
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 20s 0.15s;
+    animation: btn1loop infinite 15s 0.1s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.035) 7px 7px, rgba(0, 0, 0, 0.325) 0 0 50px 0, rgba(0, 0, 0, 0.175) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 80%;
+    animation-play-state: running;
+
     
 }
 
@@ -293,13 +307,14 @@ button {
     background-color: rgba(0, 0, 0, 0.15);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 20s 0.3s;
+    animation: btn1loop infinite 15s 0.2s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.025) 7px 7px, rgba(0, 0, 0, 0.25) 0 0 50px 0, rgba(0, 0, 0, 0.125) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 65%;
-    
+    animation-play-state: running;
+
 }
 
 .btn1shadow3 {
@@ -313,28 +328,32 @@ button {
     background-color: rgba(0, 0, 0, 0.1);
     font-size: 35px;
     border-radius: 100%;
-    animation: btn1loop infinite 20s 0.45s;
+    animation: btn1loop infinite 15s 0.3s;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.02) 7px 7px, rgba(0, 0, 0, 0.2) 0 0 50px 0, rgba(0, 0, 0, 0.1) 0 0 10px 10px;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 50%;
+    animation-play-state: running;
+
     
 }
 
 @keyframes btn1loop {
-    0% {left: 5%; top: 52%; opacity: 0%;}
-    5% {left: 72%; top: 52%; opacity: 100%;}
-    10% {left: 72%; top: 10%;} 
-    15% {left: 10%; top: 10%;}
-    20% {left: 10%; top: 45%;}
-    25% {left: 62%; top: 45%;}
-    30% {left: 62%; top: 15%;}
-    35% {left: 15%; top: 15%;}
-    40% {left: 15%; top: 35%;}
-    45% {left: 42%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%;}
-    50% {top: -300%; opacity: 0%}
-    100% {opacity: 0%}
+    0% {left: 5%; top: 52%; opacity: 0%; pointer-events: none;}
+    2% {opacity: 0%; pointer-events: none;}
+    6.6% {left: 72%; top: 52%; opacity: 100%; pointer-events: all;}
+    13.2% {left: 72%; top: 10%;} 
+    19.8% {left: 10%; top: 10%;}
+    26.4% {left: 10%; top: 45%;}
+    33% {left: 62%; top: 45%;}
+    39.6% {left: 62%; top: 15%;}
+    46.2% {left: 15%; top: 15%;}
+    52.8% {left: 15%; top: 35%;}
+    59.4% {left: 42%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%; pointer-events: all;}
+    62.7% {opacity: 100%;}
+    66%, 100% {left: 42%; top: -300%; opacity: 0%; pointer-events: none;}
+
 }
 
 @keyframes btn2loop {
@@ -501,3 +520,5 @@ animation-duration: 2s;
     opacity: 0.8; /* Set desired opacity for quick animation */
     transition-delay: 0s;
 }
+
+

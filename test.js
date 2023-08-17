@@ -25,7 +25,6 @@ $(function() {
                 update_score();
                 if (hoverTime < 5) {
                     hoverTime++;
-                    console.log("Hover time increased:", hoverTime);
                     handleHover(true);
                 }
             }, debounceInterval); // Debounce the interval start
@@ -34,7 +33,7 @@ $(function() {
     });
 
     $(".btn_2").mouseout(function() {
-        console.log("Mouse left btn_2");
+        
         if (intervalId) {
             clearInterval(intervalId);
             intervalId = null;
@@ -46,7 +45,7 @@ $(function() {
 
     },
     function() {
-        console.log("Hover ended");
+
         if (intervalId) {
             clearInterval(intervalId);
             intervalId = null;
@@ -62,12 +61,9 @@ $(function() {
    // Function to handle button hover
    function handleHover(isHoverStart) {
         if (isHoverStart) {
-            console.log("handleHover() called!");
             hoverTime = Math.min(5, hoverTime + 1); // Increase hover time, max value is 5
-            console.log("Hover time increased:", hoverTime);
         } else {
             hoverTime = 0; // Reset hover time
-            console.log("Hover time reset");
         }
         resetInactivity(); // Reset inactivity when hovering changes
     }
@@ -118,9 +114,6 @@ $(function() {
 
     // Interval to check and update the combo
     setInterval(() => {
-        console.log("hoverTime:", hoverTime);
-        console.log("clickCount:", clickCount);
-        console.log("inactivityTime:", inactivityTime);
     
         if (clickCount >= 5) {
             comboValue++;
@@ -150,7 +143,7 @@ $(function() {
 
     // Function to handle button click
     function handleClick() {
-        console.log("handleClick() called!");
+        
         clickCount++;
         inactivityTime = 0; // Reset inactivityTime when interaction occurs
     }
@@ -218,12 +211,95 @@ function randomizemod1() {
 function randomizemodvalues() {
 
 offset_rotate = Math.floor((Math.random() * 500) + 1) + "deg";
-offset_scale = Math.max(Math.min(Math.floor((Math.random() * 500) + 1), 150), 25) + "%";
+offset_scale = Math.max(Math.min(Math.floor((Math.random() * 200) + 1), 180), 40) + "%";
 offset_left = Math.floor((Math.random() * 10) + 1) + "%";
 offset_top = Math.floor((Math.random() * 10) + 1) + "%";
 
 }
 
-setInterval(randomizemodvalues, 500);
+setInterval(randomizemodvalues, 5000);
 
-setInterval(randomizemod1, 20000);
+let animdelay_mod = "0s";
+let animdelay_mod_pure = 0;
+
+    function reroll_delay() {
+    animdelay_mod_pure = Math.floor(Math.random() * 10000) + 1, 700;
+    
+    }
+    
+    function convert_delay() {
+    animdelay_mod = animdelay_mod_pure + "s";
+    
+    }
+
+
+let running;
+
+function check_anim_state() {
+running = document.querySelector(".btn_1").style.animationPlayState === 'running';
+
+}
+
+function change_state_yes() {
+
+document.querySelector(".btn_1").style.animationPlayState = 'running';
+
+}
+
+function change_state_no() {
+
+document.querySelector(".btn_1").style.animationPlayState = 'paused';
+    
+}
+
+    
+function update_anim_time() {
+    
+    r.style.setProperty('--anim_time', anim_time_converted + "s");
+}
+
+
+function reroll_anim_time() {
+    anim_time = Math.floor(Math.random() * 20000) + 1;
+    
+}
+
+function convert_anim_time() {
+    anim_time_converted = anim_time * 1/1000;
+
+}
+
+let anim_time = 15000;
+let anim_time_converted = anim_time * 1/1000 + "s";
+
+
+
+
+
+let anim_speed_mod = 1; // Initial speed modifier
+let baseAnimationDuration = 15000; // Base animation duration in milliseconds
+
+function reroll_anim_speed_mod() {
+    anim_speed_mod = Math.floor(Math.random() * 2) + 1;
+    console.log("Current anim speed mod:", anim_speed_mod);
+}
+
+function updateAnimation() {
+    randomizemod1();
+    reroll_anim_speed_mod();
+  
+    const elements = document.querySelectorAll(".btn_1, .btn1shadow, .btn1shadow2, .btn1shadow3");
+  
+    // Calculate the new animation duration by dividing the base duration by the animation speed modifier
+    const newAnimationDuration = baseAnimationDuration / anim_speed_mod;
+  
+    // Loop through each selected element and update its animation duration using the style property
+    elements.forEach(element => {
+      element.style.animationDuration = `${newAnimationDuration}ms`;
+    });
+  
+    console.log(newAnimationDuration);
+  }
+  
+  // Initial call to start the animation loop
+  setInterval(updateAnimation, baseAnimationDuration / anim_speed_mod);
