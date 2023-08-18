@@ -108,6 +108,7 @@ button {
     user-select: none;
 }
 
+
 @keyframes combo_effect {
     0% {outline: red 3px solid;}
     5% {outline: red 9px solid; transition-timing-function: ease-in;}
@@ -255,10 +256,11 @@ button {
     margin: 0;
 
     color: rgb(255, 255, 255);
-    font-size: 35px;
+    text-align: center;
+    font-size: 45px;
     font-family: 'Oswald';
     font-weight: bold;
-    text-shadow: rgb(0, 0, 0) -3px 3px 0;
+    text-shadow: rgb(0, 0, 0) 3px 3px 0, black 0 0 5px;
     letter-spacing: 3px;
 }
 
@@ -322,9 +324,89 @@ button {
 
 @keyframes start_game_btn {
     0% {transform: translate(0%, 0%); opacity: 100%;}
-    100% {transform: translate(0%, 50%); opacity: 0;}
+    90% {transform: translate(0%, 50%); opacity: 0; top: 0;}
+    100% {top: 250%; opacity: 0;}
+}
+
+.main_obstacle_container {
+    margin: auto;
+    width: 70%;
+    aspect-ratio: 2/1;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    user-select: none;
+    overflow: hidden;
+}
+
+.obstacle_container1 {
+    width: 100%;
+    height: 100%;
+    left: 80%;
+    top: 300%;
+    scale: 200%;
+    margin: 0;
+    position: absolute;
+    z-index: 25;
+    pointer-events: none;
+    opacity: 0;
+
+    animation: obstacle1move 30s infinite;
+    transform-origin: 80% 160%;
 
 }
+
+.obstacle_container2 {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 100%;
+    scale: 200%;
+    margin: 0;
+    position: absolute;
+    z-index: 25;
+    pointer-events: none;
+    opacity: 0;
+
+    animation: obstacle2move 40s 5s infinite;
+    transform-origin: 80% 160%;
+
+}
+
+.rectangle_shape {
+    width: 20%;
+    height: 40%;
+
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+
+
+}
+
+.circle_shape {
+    width: 40%;
+    height: 80%;
+    border-radius: 100%;
+
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+
+    }
+
+
+
+    @keyframes obstacle1move {
+        0% {opacity: 100%; transform: rotate(-30deg);}
+        100% {opacity: 100%; transform: rotate(180deg);}
+    }
+
+    @keyframes obstacle2move {
+        0% {opacity: 100%; transform: rotate(-60deg);}
+        100% {opacity: 100%; transform: rotate(180deg);}
+    }
 
 
 
