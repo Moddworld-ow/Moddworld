@@ -227,6 +227,106 @@ button {
 
 }
 
+.starter_btn {
+    width: 150px;
+    height: 75px;
+    background-color: rgb(99, 0, 0);
+    outline: #ab0000 2px solid;
+    border-radius: 10px;
+    display: block;
+
+    z-index: 11;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    animation: start_game_btn 0.5s ease-out forwards;
+    animation-play-state: paused;
+
+}
+
+.start_text {
+    text-align: center;
+    line-height: 75px;
+    margin: 0;
+
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-family: 'Oswald';
+    font-weight: bold;
+    text-shadow: rgb(0, 0, 0) -3px 3px 0;
+    letter-spacing: 3px;
+}
+
+.cover_screen1 {
+    content: "";
+    left: 0; /* Adjust as needed */
+    top: -50%; /* Adjust as needed */
+    position: fixed; /* Use fixed positioning for full-screen overlay */
+    width: 100vw;
+    height: 200vh;
+    background-color: black;
+    scale: 175%;
+    z-index: 10;
+    box-shadow: 0 0 50px 0 black;
+    
+    animation: start_game 2s cubic-bezier(.09,.5,.18,.75) forwards;
+    animation-play-state: paused;
+}
+
+.cover_screen2 {
+    content: "";
+    left: 0; /* Adjust as needed */
+    top: -50%; /* Adjust as needed */
+    position: fixed; /* Use fixed positioning for full-screen overlay */
+    width: 100vw;
+    height: 200vh;
+    background-color: rgb(64, 64, 64);
+    rotate: 0deg;
+    scale: 175%;
+    z-index: 9;
+    box-shadow: 0 0 50px 0 black;
+
+    animation: start_game 2s 0.1s cubic-bezier(.09,.5,.18,.75) forwards;
+    animation-play-state: paused;
+}
+
+.cover_screen3 {
+    content: "";
+    left: 0; /* Adjust as needed */
+    top: -50%; /* Adjust as needed */
+    position: fixed; /* Use fixed positioning for full-screen overlay */
+    width: 100vw;
+    height: 200vh;
+    background-color: rgb(127, 127, 127);
+    rotate: 0deg;
+    scale: 175%;
+    z-index: 8;
+    box-shadow: 0 0 50px 0 black;
+
+    animation: start_game 2s 0.2s cubic-bezier(.09,.5,.18,.75) forwards;
+    animation-play-state: paused;
+}
+
+
+
+@keyframes start_game {
+    0% {transform: translate(0%, 0%) rotate(0deg);}
+    100% {transform: translate(-60%, 75%) rotate(-90deg);}
+
+}
+
+@keyframes start_game_btn {
+    0% {transform: translate(0%, 0%); opacity: 100%;}
+    100% {transform: translate(0%, 50%); opacity: 0;}
+
+}
+
+
 
 .btn_1 {
     width: 15%;
@@ -242,7 +342,6 @@ button {
     outline: rgba(0, 0, 0, 0.315) 4px inset;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
-    animation-play-state: running;
     pointer-events: all;
 
     scale: var(--feedback);
@@ -255,6 +354,7 @@ button {
 .btn1anim {
 
     animation: btn1loop infinite 15s;
+    animation-play-state: paused;
 
 
     
@@ -279,6 +379,8 @@ button {
     pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
 
+    animation-play-state: paused;
+
 
 }
 
@@ -300,6 +402,9 @@ button {
     position: absolute;
     left: 30%;
     pointer-events: all;
+
+    animation-play-state: paused;
+
 
 
 
@@ -325,6 +430,9 @@ button {
 
     scale: var(--scale_mod4);
 
+    animation-play-state: paused;
+
+
 }
 
 .btn1shadow {
@@ -344,7 +452,9 @@ button {
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 80%;
-    animation-play-state: running;
+
+    opacity: 0;
+    animation-play-state: paused;
 
     
 }
@@ -366,7 +476,9 @@ button {
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 65%;
-    animation-play-state: running;
+
+    opacity: 0;
+    animation-play-state: paused;
 
 }
 
@@ -387,7 +499,9 @@ button {
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 50%;
-    animation-play-state: running;
+
+    opacity: 0;
+    animation-play-state: paused;
 
     
 }

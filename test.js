@@ -1,20 +1,10 @@
+function start_all() {
+
 $(function() {
     let current_amount = 0;
     let intervalId;
     let isHovering = false;
     let debounceInterval = 50; // Debounce interval time in milliseconds
-
-    var div = $('.btns_container');
-    var width = div.width() * (100 / 100);
-    div.css('height', width);
-
-    setInterval(oneSecondFunction, 200);
-
-    function oneSecondFunction() {
-        var div = $('.btns_container');
-        var width = div.width() * (50 / 100);
-        div.css('height', width);
-    }
 
 
     // Track mouse movement over btn_2 to reset inactivityTime and trigger hover behavior
@@ -465,3 +455,68 @@ function updateAnimation() {
   
   // Initial call to start the animation loop
   setInterval(updateAnimation, baseAnimationDuration / anim_speed_mod);
+
+}
+
+
+var div = $('.btns_container');
+var width = div.width() * (100 / 100);
+div.css('height', width);
+
+setInterval(oneSecondFunction, 200);
+
+function oneSecondFunction() {
+    var div = $('.btns_container');
+    var width = div.width() * (50 / 100);
+    div.css('height', width);
+}
+
+let targetanim1 = document.querySelector(".btn1anim");
+let targetanim2 = document.querySelector(".btn_2");
+let targetanim3 = document.querySelector(".btn_3");
+let targetanim4 = document.querySelector(".btn_4");
+
+let targetanimshadow1 = document.querySelector(".btn1shadow");
+let targetanimshadow2 = document.querySelector(".btn1shadow2");
+let targetanimshadow3 = document.querySelector(".btn1shadow3");
+
+let black_cover1 = document.querySelector(".cover_screen1");
+let black_cover2 = document.querySelector(".cover_screen2");
+let black_cover3 = document.querySelector(".cover_screen3");
+
+let starter_btn = document.querySelector(".starter_btn");
+
+
+
+function runanims() {
+    targetanim1.style.animationPlayState = 'running';
+    targetanim2.style.animationPlayState = 'running';
+    targetanim3.style.animationPlayState = 'running';
+    targetanim4.style.animationPlayState = 'running';
+
+    targetanimshadow1.style.animationPlayState = 'running';
+    targetanimshadow2.style.animationPlayState = 'running';
+    targetanimshadow3.style.animationPlayState = 'running';
+
+    black_cover1.style.animationPlayState = 'running';
+    black_cover2.style.animationPlayState = 'running';
+    black_cover3.style.animationPlayState = 'running';
+
+    starter_btn.style.animationPlayState = 'running';
+
+}
+
+
+$(".starter_btn").click(function() {
+    start_all();
+    runanims();
+
+
+
+
+
+}
+
+
+
+)
