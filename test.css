@@ -123,6 +123,31 @@ button {
 
 :root {
     
+
+
+    --anim1type: obstacle1move 30s 8s infinite;
+    --anim2type: obstacle2move 40s 24s infinite;
+
+
+    --obstacle1top: 300%; /* 300 */
+    --obstacle1left: 80%; /* 80 */
+    --obstacle1scale: 200%; /* 200 */
+
+    --obstacle2top: 50%; /* 50 */
+    --obstacle2left: 0%; /* 100 */
+    --obstacle2scale: 150%; /* 200 */
+
+    --anim1wdur: 15s;
+    --anim2wdur: 10s;
+
+    --anim1wdel: 8s;
+    --anim2wdel: 24s;
+
+    --shadow1delay: 8.05s;
+    --shadow2delay: 24.1s;
+
+    --containerrotate: 90deg;
+
     --feedback: none;
 
 
@@ -141,17 +166,15 @@ button {
     --rotate_fix2: 0deg;
     --scale_mod2: 100%;
 
-    --left_mod2: 0px;
-    --top_mod2: 0px;
-    --rotate_mod2: 0deg;
-    --rotate_fix2: 0deg;
-    --scale_mod2: 100%;
+    --left_mod3: 0px;
+    --top_mod3: 0px;
+    --rotate_mod3: 0deg;
+    --rotate_fix3: 0deg;
+    --scale_mod3: 100%;
 
-    --left_mod2: 0px;
-    --top_mod2: 0px;
-    --rotate_mod2: 0deg;
-    --rotate_fix2: 0deg;
-    --scale_mod2: 100%;
+
+
+    --failstate_opacity: 0%;
     
 
 }
@@ -160,6 +183,16 @@ button {
     rotate: var(--rotate_fix);
 
     }
+
+    .btn2txt {
+        rotate: var(--rotate_fix2);
+    
+        }
+
+        .btn3txt {
+            rotate: var(--rotate_fix3);
+        
+            }
     
 
 .rotating_btn_container {
@@ -342,37 +375,154 @@ button {
     overflow: hidden;
 }
 
+@keyframes obstacle1movehard {
+    0% {left: 8.5%; transform: rotate(900deg); scale: 40%; transform-origin: 80% 120%;}
+    50% {left: 8.5%; transform-origin: 40% 80%;}
+    100% {left: 8.5%; transform: rotate(180deg); scale: 10%; transform-origin: 40% -80%;}
+}
+
+@keyframes obstacle1movehard2 {
+
+0% {transform: rotate(900deg); scale: 40%; transform-origin: 40% -40%;}
+50% {transform-origin: 40% 80%;}
+100% {transform: rotate(180deg); scale: 10%; transform-origin: 40% -80%;}
+
+}
+
+@keyframes obstacle2movehard {
+    0% {transform: rotate(90deg);}
+    100% {transform: rotate(360deg);}
+}
+
 .obstacle_container1 {
     width: 100%;
     height: 100%;
-    left: 80%;
-    top: 300%;
-    scale: 200%;
+    left: var(--obstacle1left);
+    top: var(--obstacle1top);
+    scale: var(--obstacle1scale);
+    margin: 0;
+    position: absolute;
+    z-index: 25;
+    pointer-events: all;
+
+
+
+    animation: var(--anim1type);
+    transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+
+
+
+}
+
+.obstacle_container1shadow {
+    width: 100%;
+    height: 100%;
+    left: var(--obstacle1left);
+    top: var(--obstacle1top);
+    scale: var(--obstacle1scale);
     margin: 0;
     position: absolute;
     z-index: 25;
     pointer-events: none;
-    opacity: 0;
+    opacity: 40%;
 
-    animation: obstacle1move 30s infinite;
+    animation: var(--anim1type);
     transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-delay: var(--shadow1delay);
+    animation-iteration-count: 1;
+
+
+}
+
+.obstacle_container1warning {
+    width: 100%;
+    height: 100%;
+    left: var(--obstacle1left);
+    top: var(--obstacle1top);
+    scale: var(--obstacle1scale);
+    margin: 0;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 50%;
+
+    animation: var(--anim1type), huechange 2s infinite;
+    transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-delay: var(--anim1wdel);
+    animation-duration: var(--anim1wdur);
+    animation-iteration-count: 1;
 
 }
 
 .obstacle_container2 {
     width: 100%;
     height: 100%;
-    left: 50%;
-    top: 100%;
-    scale: 200%;
+    left: var(--obstacle2left);
+    top: var(--obstacle2top);
+    scale: var(--obstacle2scale);
+    margin: 0;
+    position: absolute;
+    z-index: 25;
+    pointer-events: all;
+    rotate: var(--containerrotate);
+
+    animation: var(--anim2type);
+    transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+
+
+
+}
+
+.obstacle_container2shadow {
+    width: 100%;
+    height: 100%;
+    left: var(--obstacle2left);
+    top: var(--obstacle2top);
+    scale: var(--obstacle2scale);
     margin: 0;
     position: absolute;
     z-index: 25;
     pointer-events: none;
-    opacity: 0;
+    rotate: var(--containerrotate);
+    opacity: 40%;
 
-    animation: obstacle2move 40s 5s infinite;
+    animation: var(--anim2type);
     transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-delay: var(--shadow2delay);
+    animation-iteration-count: 1;
+
+
+
+}
+
+.obstacle_container2warning {
+    width: 100%;
+    height: 100%;
+    left: var(--obstacle2left);
+    top: var(--obstacle2top);
+    scale: var(--obstacle2scale);
+    margin: 0;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    rotate: var(--containerrotate);
+    opacity: 50%;
+
+    animation: var(--anim2type), huechange 2s infinite;
+    transform-origin: 80% 160%;
+    animation-play-state: paused;
+    animation-delay: var(--anim2wdel);
+    animation-duration: var(--anim2wdur);
+    animation-iteration-count: 1;
+ 
+
 
 }
 
@@ -382,7 +532,7 @@ button {
 
     background-color: rgb(0, 0, 0);
     position: absolute;
-
+    pointer-events: all;
 
 }
 
@@ -393,20 +543,40 @@ button {
 
     background-color: rgb(0, 0, 0);
     position: absolute;
+    pointer-events: all;
 
+    }
+
+    @keyframes huechange {
+
+        0% {filter: hue-rotate(0deg);}
+        100% {filter: hue-rotate(3600deg);}
     }
 
 
 
     @keyframes obstacle1move {
-        0% {opacity: 100%; transform: rotate(-30deg);}
-        100% {opacity: 100%; transform: rotate(180deg);}
+        0% {transform: rotate(-30deg);}
+        100% {transform: rotate(180deg);}
     }
 
     @keyframes obstacle2move {
-        0% {opacity: 100%; transform: rotate(-60deg);}
-        100% {opacity: 100%; transform: rotate(180deg);}
+        0% {transform: rotate(-135deg);}
+        100% {transform: rotate(180deg);}
     }
+
+    @keyframes obstacle1shadowmove {
+        0% {transform: rotate(-30deg);}
+        100% {transform: rotate(180deg);}
+    }
+
+    @keyframes obstacle2shadowmove {
+        0% {transform: rotate(-60deg);}
+        100% {transform: rotate(180deg);}
+    }
+
+
+
 
 
 
@@ -427,6 +597,7 @@ button {
     pointer-events: all;
 
     scale: var(--feedback);
+    z-index: 5;
 
 
 }
@@ -463,6 +634,8 @@ button {
 
     animation-play-state: paused;
 
+    z-index: 5;
+
 
 }
 
@@ -486,6 +659,8 @@ button {
     pointer-events: all;
 
     animation-play-state: paused;
+
+    z-index: 5;
 
 
 
@@ -513,6 +688,8 @@ button {
     scale: var(--scale_mod4);
 
     animation-play-state: paused;
+
+    z-index: 5;
 
 
 }
@@ -800,4 +977,20 @@ animation-duration: 2s;
     transition-delay: 0s;
 }
 
+
+
+
+
+.failstate {
+    opacity: var(--failstate_opacity);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: red;
+    position: absolute;
+    background-image: url(failstate.jpg);
+    pointer-events: none;
+    background-size: contain;
+
+}
 

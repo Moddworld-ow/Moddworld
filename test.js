@@ -1,3 +1,94 @@
+let targetanim1 = document.querySelector(".btn1anim");
+let targetanim2 = document.querySelector(".btn_2");
+let targetanim3 = document.querySelector(".btn_3");
+let targetanim4 = document.querySelector(".btn_4");
+
+let targetanimshadow1 = document.querySelector(".btn1shadow");
+let targetanimshadow2 = document.querySelector(".btn1shadow2");
+let targetanimshadow3 = document.querySelector(".btn1shadow3");
+
+let black_cover1 = document.querySelector(".cover_screen1");
+let black_cover2 = document.querySelector(".cover_screen2");
+let black_cover3 = document.querySelector(".cover_screen3");
+
+let starter_btn = document.querySelector(".starter_btn");
+
+let targetcontainer1 = document.querySelector(".obstacle_container1");
+
+let targetcontainer2 = document.querySelector(".obstacle_container2");
+
+let targetcontainershadow1 = document.querySelector(".obstacle_container1shadow");
+
+let targetcontainershadow2 = document.querySelector(".obstacle_container2shadow");
+
+let targetcontainerwarning1 = document.querySelector(".obstacle_container1warning");
+
+let targetcontainerwarning2 = document.querySelector(".obstacle_container2warning");
+
+
+
+
+let anim1type;
+let anim2type;
+
+let anim1delay;
+let anim2delay;
+
+let obstacle1top;
+let obstacle1left;
+let obstacle1scale;
+
+let obstacle2top;
+let obstacle2left;
+let obstacle2scale;
+
+let anim1wdur;
+let anim2wdur;
+
+
+let obstacleanimduration = 40000;
+
+
+
+
+
+
+let comboValue = 1;
+let hoverTime = 0;
+let clickCount = 0;
+let inactivityTime = 0;
+
+
+
+
+
+
+
+let offset_left = "-20%";
+let offset_top = "-120%";
+let offset_rotate = "90deg";
+let offset_scale = "150%";
+
+
+
+
+let offset_rotate2 = 0;
+
+
+
+$(".starter_btn").click(function() {
+    start_all();
+
+
+}
+
+)
+
+var r = document.querySelector(':root');
+
+
+
+
 function start_all() {
 
 $(function() {
@@ -98,10 +189,7 @@ $(function() {
         }, 25); // Adjust the delay as needed (e.g., 1000ms = 1 second)
     }
 
-    let comboValue = 1;
-    let hoverTime = 0;
-    let clickCount = 0;
-    let inactivityTime = 0;
+
 
     // Interval to check and update the combo
     setInterval(() => {
@@ -150,12 +238,7 @@ function resetInactivity() {
 }
 });
 
-let offset_left = "-20%";
-let offset_top = "-120%";
-let offset_rotate = "90deg";
-let offset_scale = "150%";
 
-var r = document.querySelector(':root');
 
 function get_var() {
 var rs = getComputedStyle(r);
@@ -272,7 +355,7 @@ function randomizemod4() {
 
 }
 
-let offset_rotate2 = 0;
+
 
 function randomizemodvalues() {
 
@@ -456,7 +539,153 @@ function updateAnimation() {
   // Initial call to start the animation loop
   setInterval(updateAnimation, baseAnimationDuration / anim_speed_mod);
 
+
+
+
+
+
+
+
+function startall2() {}
+
+
+
+function runanims() {
+
+    starter_btn.style.animationPlayState = 'running';
+
+
+    targetanim1.style.animationPlayState = 'running';
+    targetanim2.style.animationPlayState = 'running';
+    targetanim3.style.animationPlayState = 'running';
+    targetanim4.style.animationPlayState = 'running';
+
+    targetanimshadow1.style.animationPlayState = 'running';
+    targetanimshadow2.style.animationPlayState = 'running';
+    targetanimshadow3.style.animationPlayState = 'running';
+
+
+    black_cover1.style.animationPlayState = 'running';
+    black_cover2.style.animationPlayState = 'running';
+    black_cover3.style.animationPlayState = 'running';
+
+
+    targetcontainer1.style.animationPlayState = 'running';
+    targetcontainer2.style.animationPlayState = 'running';
+    targetcontainershadow1.style.animationPlayState = 'running';
+    targetcontainershadow2.style.animationPlayState = 'running';
+    targetcontainerwarning1.style.animationPlayState = 'running';
+    targetcontainerwarning2.style.animationPlayState = 'running';
+
 }
+
+runanims();
+
+
+
+
+
+function starthardanims() {
+
+    r.style.setProperty('--anim1type', 'obstacle1movehard 7.5s 10s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2movehard 10s 20s infinite');
+
+    r.style.setProperty('--anim1wdel', '1s');
+
+    r.style.setProperty('--anim2wdel', '4s');
+
+    r.style.setProperty("--anim1wdur", "2s")
+
+    r.style.setProperty("--anim2wdur", "2s")
+
+    r.style.setProperty("--anim1wdel", "9s")
+
+    r.style.setProperty("--anim2wdel", "19s")
+
+
+    r.style.setProperty("--shadow1delay", "10.05s")
+
+    r.style.setProperty("--shadow2delay", "20.05s")
+
+
+    r.style.setProperty('--containerrotate', '0%');
+
+    r.style.setProperty('--obstacle1top', '-40%');
+    r.style.setProperty('--obstacle1left', '200%');
+    r.style.setProperty('--obstacle1scale', '80%');
+
+    r.style.setProperty('--obstacle2top', '-200%');
+    r.style.setProperty('--obstacle2left', '-30%');
+    r.style.setProperty('--obstacle2scale', '80%');
+
+    obstacleanimduration = 35000;
+
+
+}
+
+setTimeout(starthardanims, obstacleanimduration);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+function failstate(){
+
+r.style.setProperty("--failstate_opacity", "100%");
+}
+
+
+
+
+
+$(".rectangle_shape").mouseenter(function() {
+    failstate();
+});
+
+$(".circle").mouseenter(function() {
+    failstate();
+});
+
+$(".rectangle_shape").mouseleave(function() {
+    failstate();
+});
+
+$(".circle").mouseleave(function() {
+    failstate();
+});
+
+
+
 
 
 var div = $('.btns_container');
@@ -470,53 +699,3 @@ function oneSecondFunction() {
     var width = div.width() * (50 / 100);
     div.css('height', width);
 }
-
-let targetanim1 = document.querySelector(".btn1anim");
-let targetanim2 = document.querySelector(".btn_2");
-let targetanim3 = document.querySelector(".btn_3");
-let targetanim4 = document.querySelector(".btn_4");
-
-let targetanimshadow1 = document.querySelector(".btn1shadow");
-let targetanimshadow2 = document.querySelector(".btn1shadow2");
-let targetanimshadow3 = document.querySelector(".btn1shadow3");
-
-let black_cover1 = document.querySelector(".cover_screen1");
-let black_cover2 = document.querySelector(".cover_screen2");
-let black_cover3 = document.querySelector(".cover_screen3");
-
-let starter_btn = document.querySelector(".starter_btn");
-
-
-
-function runanims() {
-    targetanim1.style.animationPlayState = 'running';
-    targetanim2.style.animationPlayState = 'running';
-    targetanim3.style.animationPlayState = 'running';
-    targetanim4.style.animationPlayState = 'running';
-
-    targetanimshadow1.style.animationPlayState = 'running';
-    targetanimshadow2.style.animationPlayState = 'running';
-    targetanimshadow3.style.animationPlayState = 'running';
-
-    black_cover1.style.animationPlayState = 'running';
-    black_cover2.style.animationPlayState = 'running';
-    black_cover3.style.animationPlayState = 'running';
-
-    starter_btn.style.animationPlayState = 'running';
-
-}
-
-
-$(".starter_btn").click(function() {
-    start_all();
-    runanims();
-
-
-
-
-
-}
-
-
-
-)

@@ -16,10 +16,13 @@
 
 <body>
 
+  <div class="failstate"></div>
+
 
   <div class="cover_screen1"></div>
   <div class="cover_screen2"></div>
   <div class="cover_screen3"></div>
+
 
 
   <div class="starter_btn"><p class="start_text">START</p></div>
@@ -37,11 +40,42 @@
   
       </div>
       
+      <div class="obstacle_container1shadow" style="pointer-events: none;">
+        <div class="rectangle_shape" style="pointer-events: none;"></div>
+        <div class="circle_shape" style="pointer-events: none;"></div>
+  
+      </div>
+
+      <div class="obstacle_container1warning" style="pointer-events: none;">
+        <div class="rectangle_shape" style="pointer-events: none; background-color: red;"></div>
+        <div class="circle_shape" style="pointer-events: none; background-color: red;"></div>
+  
+      </div>
+      
+
       <div class="obstacle_container2">
         <div class="rectangle_shape"></div>
         <div class="circle_shape"></div>
         <div class="rectangle_shape" style="top: 7.5%; left: 15%; height: 80%; rotate: -45deg;"></div>
         <div class="rectangle_shape" style="top: 75%; left: 52.5%; height: 100%; rotate: -45deg;"></div>
+
+
+      </div>
+
+      <div class="obstacle_container2shadow" style="pointer-events: none;">
+        <div class="rectangle_shape" style="pointer-events: none;"></div>
+        <div class="circle_shape" style="pointer-events: none;"></div>
+        <div class="rectangle_shape" style="pointer-events: none; top: 7.5%; left: 15%; height: 80%; rotate: -45deg;"></div>
+        <div class="rectangle_shape" style="pointer-events: none; top: 75%; left: 52.5%; height: 100%; rotate: -45deg;"></div>
+
+
+      </div>
+
+      <div class="obstacle_container2warning" style="pointer-events: none;">
+        <div class="rectangle_shape" style="pointer-events: none; background-color: red;"></div>
+        <div class="circle_shape" style="pointer-events: none; background-color: red;"></div>
+        <div class="rectangle_shape" style="pointer-events: none; top: 7.5%; left: 15%; height: 80%; rotate: -45deg; background-color: red;"></div>
+        <div class="rectangle_shape" style="pointer-events: none; top: 75%; left: 52.5%; height: 100%; rotate: -45deg; background-color: red;"></div>
 
 
       </div>
@@ -54,7 +88,7 @@
         <div class="rotating_btn_container"><button class="btn_1 btn1anim"><p class="btn1txt">+15</p></button><div class="btn1shadow"></div><div class="btn1shadow2"></div><div class="btn1shadow3"></div></div>
         <div class="rotating_btn_container2"><button class="btn_2"><p class="btn2txt">+3</p></button></div>
         <div class="rotating_btn_container3"><button class="btn_3"><p class="btn3txt">+25</p></button></div>
-        <div class="rotating_btn_container4"><button class="btn_4"><p class="btn4txt">+1</p></button></div>
+        <div class="rotating_btn_container4"><button class="btn_4"></button></div>
 
         
         
