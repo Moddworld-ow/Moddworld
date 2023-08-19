@@ -662,9 +662,18 @@ setTimeout(starthardanims, obstacleanimduration);
 function failstate(){
 
 r.style.setProperty("--failstate_opacity", "100%");
+r.style.setProperty("--failstate_fontsize", "1000%");
+
 }
 
 
+$(".rectangle_shape").mouseenter(function() {
+    console.log("hello");
+});
+
+$(".circle").mouseenter(function() {
+    failstate();
+});
 
 
 
@@ -672,7 +681,7 @@ $(".rectangle_shape").mouseenter(function() {
     failstate();
 });
 
-$(".circle").mouseenter(function() {
+$(".circle_shape").mouseenter(function() {
     failstate();
 });
 
@@ -680,7 +689,7 @@ $(".rectangle_shape").mouseleave(function() {
     failstate();
 });
 
-$(".circle").mouseleave(function() {
+$(".circle_shape").mouseleave(function() {
     failstate();
 });
 
