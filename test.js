@@ -46,7 +46,7 @@ let anim1wdur;
 let anim2wdur;
 
 
-let obstacleanimduration = 40000;
+let obstacleanimduration = 30000;
 
 
 
@@ -579,6 +579,47 @@ function runanims() {
 
 }
 
+
+function startnormalanims() {
+
+    r.style.setProperty('--anim1type', 'obstacle1move 30s 8s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2move 40s 24s infinite');
+
+
+    r.style.setProperty("--anim1wdur", "15s")
+
+    r.style.setProperty("--anim2wdur", "10s")
+
+    r.style.setProperty("--anim1wdel", "8s")
+
+    r.style.setProperty("--anim2wdel", "24s")
+
+
+    r.style.setProperty("--shadow1delay", "8.05s")
+
+    r.style.setProperty("--shadow2delay", "24.1s")
+
+
+    r.style.setProperty('--containerrotate', '90deg');
+
+    r.style.setProperty('--obstacle1top', '300%');
+    r.style.setProperty('--obstacle1left', '80%');
+    r.style.setProperty('--obstacle1scale', '200%');
+
+    r.style.setProperty('--obstacle2top', '50%');
+    r.style.setProperty('--obstacle2left', '0%');
+    r.style.setProperty('--obstacle2scale', '150%');
+
+    obstacleanimduration = 30000;
+
+
+}
+
+
+
+
+
+
 runanims();
 
 
@@ -590,9 +631,7 @@ function starthardanims() {
     r.style.setProperty('--anim1type', 'obstacle1movehard 7.5s 10s infinite');
     r.style.setProperty('--anim2type', 'obstacle2movehard 10s 20s infinite');
 
-    r.style.setProperty('--anim1wdel', '1s');
 
-    r.style.setProperty('--anim2wdel', '4s');
 
     r.style.setProperty("--anim1wdur", "2s")
 
@@ -623,9 +662,95 @@ function starthardanims() {
 
 }
 
+
+
+function starthard2anims() {
+    starthardanims();
+
+    r.style.setProperty('--anim1type', 'obstacle1movehard2 15s 10s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2movehard2 25s 20s infinite');
+
+
+
+    r.style.setProperty("--anim1wdur", "2s")
+
+    r.style.setProperty("--anim2wdur", "4s")
+
+    r.style.setProperty("--anim1wdel", "9s")
+
+    r.style.setProperty("--anim2wdel", "19s")
+
+
+    r.style.setProperty("--shadow1delay", "10.05s")
+
+    r.style.setProperty("--shadow2delay", "20.05s")
+
+
+    r.style.setProperty('--containerrotate', '0%');
+
+    r.style.setProperty('--obstacle1top', '150%');
+    r.style.setProperty('--obstacle1left', '0%');
+    r.style.setProperty('--obstacle1scale', '80%');
+
+    r.style.setProperty('--obstacle2top', '-230%');
+    r.style.setProperty('--obstacle2left', '-30%');
+    r.style.setProperty('--obstacle2scale', '80%');
+
+
+    obstacleanimduration = 40000;
+
+}
+
 setTimeout(starthardanims, obstacleanimduration);
 
 
+function select_obstacleset(){
+    obstacle_setID = Math.floor(Math.random() * 3 + 1);
+
+}
+
+function runchoosenset() {
+
+
+        if (obstacle_setID == 1) {console.log("set1");
+
+        startnormalanims();
+
+
+        } else if (obstacle_setID  == 2) {console.log("set2");
+
+        starthardanims();
+
+
+        
+
+        } else if (obstacle_setID  == 3) {console.log("set3");
+
+        starthard2anims();    
+       
+               }
+        else {console.log("this cant happen");
+      }
+
+    }
+
+function deployobstacle() {
+    select_obstacleset();
+    runchoosenset();
+}
+
+
+
+function obstacle_loop (){
+
+    setTimeout(deployobstacle, obstacleanimduration)
+}
+
+
+
+
+
+setInterval(obstacle_loop, obstacleanimduration);
 
 
 
@@ -667,13 +792,6 @@ r.style.setProperty("--failstate_fontsize", "1000%");
 }
 
 
-$(".rectangle_shape").mouseenter(function() {
-    console.log("hello");
-});
-
-$(".circle").mouseenter(function() {
-    failstate();
-});
 
 
 
