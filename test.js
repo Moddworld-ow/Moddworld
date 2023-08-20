@@ -46,7 +46,7 @@ let anim1wdur;
 let anim2wdur;
 
 
-let obstacleanimduration = 30000;
+let obstacleanimduration = 35000;
 
 
 
@@ -610,7 +610,7 @@ function startnormalanims() {
     r.style.setProperty('--obstacle2left', '0%');
     r.style.setProperty('--obstacle2scale', '150%');
 
-    obstacleanimduration = 30000;
+    obstacleanimduration = 45000;
 
 
 }
