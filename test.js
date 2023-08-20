@@ -668,7 +668,7 @@ function starthard2anims() {
     starthardanims();
 
     r.style.setProperty('--anim1type', 'obstacle1movehard2 15s 10s infinite');
-    r.style.setProperty('--anim2type', 'obstacle2movehard2 25s 20s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2movehard2 25s 20s infinite ease-in');
 
 
 
@@ -743,14 +743,12 @@ function deployobstacle() {
 
 function obstacle_loop (){
 
-    setTimeout(deployobstacle, obstacleanimduration)
+    setInterval(deployobstacle, obstacleanimduration)
 }
 
 
 
-
-
-setInterval(obstacle_loop, obstacleanimduration);
+obstacle_loop();
 
 
 
@@ -787,7 +785,7 @@ setInterval(obstacle_loop, obstacleanimduration);
 function failstate(){
 
 r.style.setProperty("--failstate_opacity", "100%");
-r.style.setProperty("--failstate_fontsize", "1000%");
+r.style.setProperty("--failstate_fontsize", "75px");
 
 }
 

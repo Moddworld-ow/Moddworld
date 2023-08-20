@@ -175,7 +175,7 @@ button {
 
 
     --failstate_opacity: 0%;
-    --failstate_fontsize: 2000%;
+    --failstate_fontsize: 100px;
     
 
 }
