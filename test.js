@@ -25,6 +25,8 @@ let targetcontainerwarning1 = document.querySelector(".obstacle_container1warnin
 
 let targetcontainerwarning2 = document.querySelector(".obstacle_container2warning");
 
+let onetimebtn = document.querySelector(".onetimebtn");
+
 
 
 
@@ -153,10 +155,11 @@ $(function() {
     
     $(".btn_4").click(function() {
         resetInactivity()
-        setInterval(current_amount += parseInt($(this).text().replace("+", "") * comboValue), 50);
+        comboValue = comboValue + 1;
+        
         update_score();
         update_combo();
-        comboValue = comboValue + 1;
+
     });
     
     $(".btn_3").click(function() {
@@ -218,7 +221,7 @@ $(function() {
     
         update_combo(); // Update combo display value
     
-    }, 1000);
+    }, 2000);
 
     // Function to handle button click
     function handleClick() {
@@ -576,6 +579,9 @@ function runanims() {
     targetcontainershadow2.style.animationPlayState = 'running';
     targetcontainerwarning1.style.animationPlayState = 'running';
     targetcontainerwarning2.style.animationPlayState = 'running';
+
+
+    onetimebtn.style.animationPlayState = "running";
 
 }
 

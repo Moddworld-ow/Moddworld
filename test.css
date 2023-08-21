@@ -102,7 +102,7 @@ button {
     top: 0;
     padding: 5% 10% 5% 10%;
     animation: combo_effect 1s 0.05s infinite;
-    overflow: hidden;
+    overflow: visible;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
     user-select: none;
@@ -297,6 +297,8 @@ button {
     text-shadow: rgb(0, 0, 0) 3px 3px 0, black 0 0 5px;
     letter-spacing: 3px;
 }
+
+
 
 .cover_screen1 {
     content: "";
@@ -590,6 +592,10 @@ button {
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     pointer-events: all;
 
+    background-image: url(yellow_button_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
     scale: var(--feedback);
     z-index: 5;
 
@@ -625,10 +631,13 @@ button {
     position: absolute;
     pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    background-image: url(red_button_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 
     animation-play-state: paused;
 
-    z-index: 5;
+    z-index: 6;
 
 
 }
@@ -652,9 +661,13 @@ button {
     left: 30%;
     pointer-events: all;
 
+    background-image: url(green_button_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
     animation-play-state: paused;
 
-    z-index: 5;
+    z-index: 7;
 
 
 
@@ -679,14 +692,126 @@ button {
     position: absolute;
     pointer-events: all;
 
+    background-image: url(blue_button_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
     scale: var(--scale_mod4);
 
     animation-play-state: paused;
 
-    z-index: 5;
+    z-index: 8;
 
 
 }
+
+
+
+
+
+.onetimebtn {
+    width: 15%;
+    height: 30%;
+    background-image: url(onetime_button_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(192, 22, 144);
+    font-size: 35px;
+    border-radius: 100%;
+    border: 2px rgba(255, 0, 0, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    position: absolute;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    pointer-events: all;
+    left: -100%;
+
+    z-index: 9;
+
+}
+
+:root {
+    --onetime1anim: onetime1 5s ease-in;
+    --onetime2anim: onetime2 45s ease-in;
+    --onetime3anim: onetime3 45s ease-in;
+    --onetime4anim: onetime4 45s ease-in;
+    --onetime5anim: onetime5 45s ease-in;
+    --onetime6anim: onetime6 45s ease-in;
+    --onetime7anim: onetime7 45s ease-in;
+    --onetime8anim: onetime8 45s ease-in;
+
+}
+
+
+@keyframes onetime1 {
+    0% {transform: translate(0%, 0%);}
+    10% {transform: translate(1200%, 0%); filter: hue-rotate(0deg);}
+    90% {filter: hue-rotate(90deg);}
+    100%{transform: translate(1200%, 0%);}
+
+}
+
+
+
+#onetimebtn_1 {
+    animation: var(--onetime1anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_2 {
+    animation: var(--onetime2anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_3 {
+    animation: var(--onetime3anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_4 {
+    animation: var(--onetime4anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_5 {
+    animation: var(--onetime5anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_6 {
+    animation: var(--onetime6anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_7 {
+    animation: var(--onetime7anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+#onetimebtn_8 {
+    animation: var(--onetime7anim);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+
 
 .btn1shadow {
     width: 15%;
