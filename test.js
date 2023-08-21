@@ -74,6 +74,7 @@ let offset_scale = "150%";
 
 
 
+
 let offset_rotate2 = 0;
 
 
@@ -146,7 +147,7 @@ $(function() {
    // Function to handle button hover
    function handleHover(isHoverStart) {
         if (isHoverStart) {
-            hoverTime = Math.min(5, hoverTime + 1); // Increase hover time, max value is 5
+            hoverTime = Math.min(10, hoverTime + 1); // Increase hover time, max value is 5
         } else {
             setTimeout(function(){hoverTime = 0;}, 50);
         }
@@ -189,9 +190,8 @@ $(function() {
         // Remove animation class after a delay
         setTimeout(function() {
             scoreDisplay.classList.remove('animate_score');
-        }, 25); // Adjust the delay as needed (e.g., 1000ms = 1 second)
+        }, 25);
     }
-
 
 
     // Interval to check and update the combo
@@ -199,8 +199,17 @@ $(function() {
     
         if (clickCount >= 5) {
             comboValue++;
+
+
             console.log("Combo increased! New comboValue:", comboValue);
             clickCount = 0; // Reset clickCount after reaching 5
+            
+            r.style.setProperty('--combo_increased', "15px red solid");
+
+            setTimeout(function(){r.style.setProperty('--combo_increased', "0px black solid");}, 150);
+
+            r.style.setProperty('--combo_fontsize', "3vw");
+
         } else if (clickCount > 0) {
             clickCount = 0; // Reset clickCount if clicked once
         }
@@ -208,20 +217,44 @@ $(function() {
         if (hoverTime >= 5) {
             comboValue++;
             console.log("Combo increased! New comboValue:", comboValue);
+
             setTimeout(function(){hoverTime = 0;}, 50);
+
+            r.style.setProperty('--combo_increased', "15px red solid");
+            setTimeout(function(){r.style.setProperty('--combo_increased', "0px black solid");}, 150);
         }
     
-        if (inactivityTime >= 1 && comboValue > 1) {
+        if (inactivityTime >= 1 && comboValue > 0) {
             comboValue = 1; // Reset comboValue if no interaction for 1 second
             console.log("Combo reset!");
-            inactivityTime = 0; // Reset inactivityTime
+            inactivityTime = 1; // Reset inactivityTime
+
+            r.style.setProperty('--combo_fontsize', "2vw");
+
+            r.style.setProperty('--combo_fontcolor', "red");
+
+            setTimeout(function(){r.style.setProperty('--combo_fontcolor', "black")}, 200);
+
         } else if (hoverTime === 0 && clickCount === 0) {
             inactivityTime++;
         }
     
         update_combo(); // Update combo display value
+
+        var comboDisplay = document.getElementsByClassName('combo_display')[0];
+        comboDisplay.innerHTML = "x" + comboValue;
+
+
+        // Add animation class
+        comboDisplay.classList.add('animate_combo');
+
+        // Remove animation class after a delay
+        setTimeout(function() {
+            comboDisplay.classList.remove('animate_combo');
+
+        }, 250);
     
-    }, 2000);
+    }, 1000);
 
     // Function to handle button click
     function handleClick() {
@@ -791,7 +824,7 @@ obstacle_loop();
 function failstate(){
 
 r.style.setProperty("--failstate_opacity", "100%");
-r.style.setProperty("--failstate_fontsize", "75px");
+r.style.setProperty("--failstate_fontsize", "1em");
 
 }
 

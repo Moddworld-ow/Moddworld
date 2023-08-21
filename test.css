@@ -101,7 +101,7 @@ button {
     bottom: 0;
     top: 0;
     padding: 5% 10% 5% 10%;
-    animation: combo_effect 1s 0.05s infinite;
+    animation: combo_effect 1s infinite;
     overflow: visible;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
@@ -629,7 +629,7 @@ button {
     outline: rgba(0, 0, 0, 0.315) 4px inset;
     animation: btn2loop infinite 20s;
     position: absolute;
-    pointer-events: all;
+    pointer-events: all !important;
     box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
     background-image: url(red_button_bg.png);
     background-size: cover;
@@ -1039,54 +1039,87 @@ animation-duration: 2s;
 
 */
 
+:root {
+
+    --combo_increased: 0px rgb(0, 0, 0) solid;
+    --combo_fontsize: 3vw;
+    --combo_fontcolor: black;
+
+}
+
+
+
 .score_container {
     text-align: center;
     display: block;
     position: absolute;
+    height: 50%;
     left: 0;
     right: 0;
+    top: -20%;
+
     z-index: 5;
-    top: 6%;
     pointer-events: none;
+    font-size: 2vw;
+    margin-top: 1.5%;
 
 }
 
 .score_display {
-    display: flex;
+    display: inline-flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
     transition: all 0.3s 0s;
-    width: 100px;
-    height: 100px;
+    width: 12%;
+ 
     outline: 3px red solid;
     margin: auto;
-    margin-top: 1%;
+
     background-color: white;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    vertical-align: middle;
+    aspect-ratio: 2/1;
 
 }
 
 .combo_display {
-    display: flex;
+    display: inline-flex;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 6%;
+
     align-items: center;
     text-align: center;
     justify-content: center;
     margin: auto;
-    margin-top: 1.5%;
+    margin-left: 2%;
+
     border: rgb(0, 0, 0) 3px solid;
     background-color: white;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    outline: none;
+    vertical-align: middle;
+    aspect-ratio: 1/1;
 
 }
 
+
+
+
 .animate_score {
     opacity: 100%;
-    font-size: 2.5em; /* Set the desired font size when the score increments */
+    font-size: 3vw; /* Set the desired font size when the score increments */
     transition: all 0.05s 0s;
     outline: 15px red solid;
+}
+
+.animate_combo {
+    opacity: 100%;
+    font-size: var(--combo_fontsize);
+    transition: all 0.15s 0s !important;
+
+    outline: var(--combo_increased);
+    color: var(--combo_fontcolor);
+
 }
 
 
@@ -1120,7 +1153,7 @@ animation-duration: 2s;
     
     display: flex;
     margin: auto;
-    font-size: 50%;
+    font-size: 5em;
     color: white;
     align-self: center;
     align-items: center;
