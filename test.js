@@ -51,7 +51,7 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
-let targetScore = 25000;
+let targetScore = 1000000;
 
 
 
@@ -108,7 +108,8 @@ var r = document.querySelector(':root');
 
 function start_all() {
 
-    
+r.style.setProperty('--animstate', "running");
+
 
 
 
@@ -241,7 +242,7 @@ $(function() {
         if (isHoverStart) {
             hoverTime = Math.min(10, hoverTime + 1); // Increase hover time, max value is 5
         } else {
-            setTimeout(function(){hoverTime = 0;}, 50);
+            setTimeout(function(){hoverTime = 0;}, 100);
         }
         resetInactivity(); // Reset inactivity when hovering changes
     }
@@ -321,6 +322,108 @@ $(function() {
         onetimebtn2.classList.add("override-opacity");
     });
 
+    $("#onetimebtn_3").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn3 = document.getElementById("onetimebtn_3");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn3.classList.add("override-opacity");
+    });
+
+
+    $("#onetimebtn_4").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn4 = document.getElementById("onetimebtn_4");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn4.classList.add("override-opacity");
+    });
+
+
+    $("#onetimebtn_5").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn5 = document.getElementById("onetimebtn_5");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn5.classList.add("override-opacity");
+    });
+
+
+    $("#onetimebtn_6").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn6 = document.getElementById("onetimebtn_6");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn6.classList.add("override-opacity");
+    });
+
+
+    $("#onetimebtn_7").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn7 = document.getElementById("onetimebtn_7");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn7.classList.add("override-opacity");
+    });
+
+
+    $("#onetimebtn_8").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn8 = document.getElementById("onetimebtn_8");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn8.classList.add("override-opacity");
+    });
+
+
 
     
 
@@ -346,7 +449,7 @@ $(function() {
     // Interval to check and update the combo
     setInterval(() => {
     
-        if (clickCount >= 5) {
+        if (clickCount >= 3) {
             comboValue++;
 
 
@@ -363,7 +466,7 @@ $(function() {
             clickCount = 0; // Reset clickCount if clicked once
         }
     
-        if (hoverTime >= 5) {
+        if (hoverTime >= 3) {
             comboValue++;
             console.log("Combo increased! New comboValue:", comboValue);
 

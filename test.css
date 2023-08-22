@@ -755,14 +755,19 @@ button {
 
 :root {
     --onetime1anim: onetime1 45s 15s ease-out;
-    --onetime2anim: onetime2 45s ease-out;
-    --onetime3anim: onetime3 45s ease-out;
-    --onetime4anim: onetime4 45s ease-out;
-    --onetime5anim: onetime5 45s ease-out;
-    --onetime6anim: onetime6 45s ease-out;
-    --onetime7anim: onetime7 45s ease-out;
-    --onetime8anim: onetime8 45s ease-out;
+    --onetime2anim: onetime2 45s 30s ease-out;
+    --onetime3anim: onetime3 45s 45s ease-out;
+    --onetime4anim: onetime4 45s 60s ease-out;
 
+    /*
+    --onetime5anim: onetime5 5s ease-out;
+    --onetime6anim: onetime6 5s ease-out;
+    --onetime7anim: onetime7 5s ease-out;
+    --onetime8anim: onetime8 5s ease-out;
+
+    */
+    
+    --animstate: paused;
 }
 
 
@@ -811,7 +816,7 @@ button {
         98% {filter: hue-rotate(90deg);}
         99% {filter: hue-rotate(0deg);}
     
-        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+        100%{transform: translate(800%, 200%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
             
             transform-origin: 50% 50%;
 
@@ -823,7 +828,7 @@ button {
 
         transform-origin: 0% 0%;
 
-        transform: translate(0%, 0%) rotate(0deg);
+        transform: translate(2000%, 500%) rotate(0deg);
 
         filter: hue-rotate(0deg);
         opacity: 1;
@@ -834,13 +839,13 @@ button {
 
     20% {
 
-        transform-origin: 100% 100%;
+        transform-origin: -100% 100%;
 
-        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        transform: translate(800%, 40%) rotate(-360deg) scale(100%);
         filter: hue-rotate(0deg); animation-timing-function: ease-in;
     }
 
-    25% {transform-origin: 200% 200%;}
+    25% {transform-origin: 100% -200%;}
 
 
 
@@ -863,9 +868,9 @@ button {
         98% {filter: hue-rotate(90deg);}
         99% {filter: hue-rotate(0deg);}
     
-        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+        100%{transform: translate(600%, 100%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
             
-            transform-origin: 50% 50%;
+            transform-origin: 150% 50%;
 
         }
 }
@@ -875,7 +880,7 @@ button {
 
         transform-origin: 0% 0%;
 
-        transform: translate(0%, 0%) rotate(0deg);
+        transform: translate(-300%, 800%) rotate(0deg);
 
         filter: hue-rotate(0deg);
         opacity: 1;
@@ -886,9 +891,9 @@ button {
 
     20% {
 
-        transform-origin: 100% 100%;
+        transform-origin: 50% 120%;
 
-        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        transform: translate(900%, 0%) rotate(360deg) scale(100%);
         filter: hue-rotate(0deg); animation-timing-function: ease-in;
     }
 
@@ -940,11 +945,11 @@ button {
 
         transform-origin: 100% 100%;
 
-        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        transform: translate(1100%, 180%) rotate(360deg) scale(100%);
         filter: hue-rotate(0deg); animation-timing-function: ease-in;
     }
 
-    25% {transform-origin: 200% 200%;}
+    25% {transform-origin: -50% -200%;}
 
 
 
@@ -967,9 +972,9 @@ button {
         98% {filter: hue-rotate(90deg);}
         99% {filter: hue-rotate(0deg);}
     
-        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+        100%{transform: translate(1000%, 0%) rotate(-60deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
             
-            transform-origin: 50% 50%;
+            transform-origin: -150% 250%;
 
         }
 }
@@ -1190,49 +1195,49 @@ button {
 
 #onetimebtn_1 {
     animation: var(--onetime1anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_2 {
     animation: var(--onetime2anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_3 {
     animation: var(--onetime3anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_4 {
     animation: var(--onetime4anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_5 {
     animation: var(--onetime5anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_6 {
     animation: var(--onetime6anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_7 {
     animation: var(--onetime7anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
 #onetimebtn_8 {
     animation: var(--onetime7anim);
-    animation-play-state: paused;
+    animation-play-state: var(--animstate);
     animation-fill-mode: forwards;
 }
 
