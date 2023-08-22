@@ -57,6 +57,12 @@ let targetScore = 25000;
 
 
 
+let button2_effect_target = document.querySelector(".btn_2");
+
+
+
+
+
 
 
 
@@ -102,6 +108,10 @@ var r = document.querySelector(':root');
 
 function start_all() {
 
+    
+
+
+
 $(function() {
     let current_amount = 0;
     let intervalId;
@@ -116,6 +126,7 @@ $(function() {
 
         if (!isHovering) {
             isHovering = true;
+
             intervalId = setInterval(function() {
                 current_amount += 3 * comboValue;
                 update_score();
@@ -131,6 +142,7 @@ $(function() {
 
     $(".btn_2").mouseout(function() {
 
+
         checkScore();
 
         if (intervalId) {
@@ -141,6 +153,7 @@ $(function() {
         setTimeout(function(){hoverTime = 0;}, 50);
         handleHover(false);
         update_combo();
+
 
     },
     function() {
@@ -243,6 +256,7 @@ $(function() {
 
         update_combo();
 
+
     });
     
     $(".btn_3").click(function() {
@@ -252,9 +266,11 @@ $(function() {
 
         checkScore();
 
-
         handleClick();
+
         update_combo();
+
+
     });
 
     $(".btn_1").hover(function() {
@@ -264,9 +280,10 @@ $(function() {
 
         checkScore();
 
-
         handleClick();
+
         update_combo();
+
     });
 
 
@@ -288,6 +305,23 @@ $(function() {
         onetimebtn1.classList.add("override-opacity");
     });
 
+    $("#onetimebtn_2").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn2 = document.getElementById("onetimebtn_2");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn2.classList.add("override-opacity");
+    });
+
+
     
 
 
@@ -304,6 +338,8 @@ $(function() {
         setTimeout(function() {
             scoreDisplay.classList.remove('animate_score');
         }, 25);
+
+
     }
 
 
@@ -317,11 +353,11 @@ $(function() {
             console.log("Combo increased! New comboValue:", comboValue);
             clickCount = 0; // Reset clickCount after reaching 5
             
-            r.style.setProperty('--combo_increased', "15px red solid");
+            r.style.setProperty('--combo_increased', "1vw red solid");
 
-            setTimeout(function(){r.style.setProperty('--combo_increased', "0px black solid");}, 150);
+            setTimeout(function(){r.style.setProperty('--combo_increased', "0vw black solid");}, 150);
 
-            r.style.setProperty('--combo_fontsize', "3vw");
+            r.style.setProperty('--combo_fontsize', "2.5vw");
 
         } else if (clickCount > 0) {
             clickCount = 0; // Reset clickCount if clicked once
@@ -333,8 +369,8 @@ $(function() {
 
             setTimeout(function(){hoverTime = 0;}, 50);
 
-            r.style.setProperty('--combo_increased', "15px red solid");
-            setTimeout(function(){r.style.setProperty('--combo_increased', "0px black solid");}, 150);
+            r.style.setProperty('--combo_increased', "1vw red solid");
+            setTimeout(function(){r.style.setProperty('--combo_increased', "0vw black solid");}, 150);
         }
     
         if (inactivityTime >= 1 && comboValue > 0) {
@@ -904,39 +940,11 @@ obstacle_loop();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 function failstate(){
 
-r.style.setProperty("--failstate_opacity", "100%");
+r.style.setProperty("--failstate_opacity", "80%");
 r.style.setProperty("--failstate_fontsize", "1em");
 
 }
@@ -945,7 +953,7 @@ r.style.setProperty("--failstate_fontsize", "1em");
 
 function winstate(){
 
-r.style.setProperty("--winstate_opacity", "100%");
+r.style.setProperty("--winstate_opacity", "80%");
 
 }
 

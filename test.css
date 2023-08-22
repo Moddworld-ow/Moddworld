@@ -2,6 +2,8 @@ html {
     overflow: hidden;
     user-select: none;
 
+    font-family: 'Oswald';
+
 }
 
 
@@ -272,7 +274,7 @@ button {
     border-radius: 10px;
     display: block;
 
-    z-index: 11;
+    z-index: 101;
     position: absolute;
 
     left: 0;
@@ -311,7 +313,7 @@ button {
     height: 200vh;
     background-color: black;
     scale: 175%;
-    z-index: 10;
+    z-index: 100;
     box-shadow: 0 0 50px 0 black;
     
     animation: start_game 2s cubic-bezier(.09,.5,.18,.75) forwards;
@@ -328,7 +330,7 @@ button {
     background-color: rgb(64, 64, 64);
     rotate: 0deg;
     scale: 175%;
-    z-index: 9;
+    z-index: 99;
     box-shadow: 0 0 50px 0 black;
 
     animation: start_game 2s 0.1s cubic-bezier(.09,.5,.18,.75) forwards;
@@ -345,7 +347,7 @@ button {
     background-color: rgb(127, 127, 127);
     rotate: 0deg;
     scale: 175%;
-    z-index: 8;
+    z-index: 98;
     box-shadow: 0 0 50px 0 black;
 
     animation: start_game 2s 0.2s cubic-bezier(.09,.5,.18,.75) forwards;
@@ -816,6 +818,370 @@ button {
         }
 }
 
+@keyframes onetime2 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime3 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime4 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime5 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime6 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime7 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
+@keyframes onetime8 {
+    0% {
+
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
+}
+
 .override-opacity {
     opacity: 0 !important;
     pointer-events: none !important;
@@ -1105,8 +1471,8 @@ animation-duration: 2s;
 
 :root {
 
-    --combo_increased: 0px rgb(0, 0, 0) solid;
-    --combo_fontsize: 3vw;
+    --combo_increased: 0vw rgb(0, 0, 0) solid;
+    --combo_fontsize: 2.5vw;
     --combo_fontcolor: black;
 
 }
@@ -1126,6 +1492,7 @@ animation-duration: 2s;
     pointer-events: none;
     font-size: 2vw;
     margin-top: 1.5%;
+    z-index: 30;
 
 }
 
@@ -1194,7 +1561,7 @@ animation-duration: 2s;
     opacity: 100%;
     font-size: 3vw; /* Set the desired font size when the score increments */
     transition: all 0.05s 0s;
-    outline: 15px red solid;
+    outline: 1vw red solid;
 }
 
 .animate_combo {
@@ -1295,3 +1662,4 @@ animation-duration: 2s;
     align-items: center;
 
 }
+
