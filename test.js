@@ -141,6 +141,9 @@ $(function() {
         resetInactivity();
     });
 
+
+
+
     $(".btn_2").mouseout(function() {
 
 
@@ -292,7 +295,7 @@ $(function() {
 
     $("#onetimebtn_1").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -308,7 +311,7 @@ $(function() {
 
     $("#onetimebtn_2").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 7500 * comboValue;
         update_score();
     
         checkScore();
@@ -324,7 +327,7 @@ $(function() {
 
     $("#onetimebtn_3").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -341,7 +344,7 @@ $(function() {
 
     $("#onetimebtn_4").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -358,7 +361,7 @@ $(function() {
 
     $("#onetimebtn_5").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -375,7 +378,7 @@ $(function() {
 
     $("#onetimebtn_6").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -392,7 +395,7 @@ $(function() {
 
     $("#onetimebtn_7").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
@@ -409,7 +412,7 @@ $(function() {
 
     $("#onetimebtn_8").click(function() {
         resetInactivity();
-        current_amount += 1500 * comboValue;
+        current_amount += 5000 * comboValue;
         update_score();
     
         checkScore();
