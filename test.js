@@ -51,6 +51,14 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
+let targetScore = 25000;
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +111,9 @@ $(function() {
 
     // Track mouse movement over btn_2 to reset inactivityTime and trigger hover behavior
     $(".btn_2").mousemove(function() {
+
+        checkScore();
+
         if (!isHovering) {
             isHovering = true;
             intervalId = setInterval(function() {
@@ -119,7 +130,9 @@ $(function() {
     });
 
     $(".btn_2").mouseout(function() {
-        
+
+        checkScore();
+
         if (intervalId) {
             clearInterval(intervalId);
             intervalId = null;
@@ -142,6 +155,72 @@ $(function() {
     
     });
 
+
+
+    let startTime = null;
+    let endTime = null;
+
+
+    let timerInterval; // To store the interval ID
+    let elapsedTime = 0; // To store the elapsed time
+
+
+    function updateTimerDisplay(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
+
+      const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+      document.getElementById('timer_display').textContent = formattedTime;
+    }
+
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        elapsedTime++;
+        updateTimerDisplay(elapsedTime);
+      }, 1000);
+    }
+
+    function detailed_time() {
+  
+          hours = Math.floor(elapsedTime / 3600);
+          minutes = Math.floor(elapsedTime / 60);
+          seconds = Math.floor(elapsedTime) - minutes * 60;
+          hundredths = elapsedTime % 100; };
+
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      // Now `elapsedTime` contains the elapsed time in seconds
+      console.log(`Elapsed Time: ${elapsedTime} seconds`);
+
+      detailed_time();
+
+      var win_screen = document.getElementsByClassName('winstate')[0];
+      win_screen.innerHTML = "You reached the target score of " + targetScore + " points in " + minutes + "m " + seconds + "s";
+    }
+
+
+    startTimer();
+
+    
+
+    function checkScore() {
+        if (current_amount >= targetScore) {
+            console.log(`Target score of ${targetScore} reached!`);
+            
+            stopTimer();
+            winstate();
+
+        } else {
+            console.log(`Current score: ${current_amount}`);
+        }
+
+
+    }
+
+
+
     // ...
 
    // Function to handle button hover
@@ -159,6 +238,9 @@ $(function() {
         comboValue = comboValue + 1;
         
         update_score();
+
+        checkScore();
+
         update_combo();
 
     });
@@ -167,6 +249,10 @@ $(function() {
         resetInactivity()
         current_amount += parseInt($(this).text().replace("+", "") * comboValue);
         update_score();
+
+        checkScore();
+
+
         handleClick();
         update_combo();
     });
@@ -175,9 +261,36 @@ $(function() {
         resetInactivity()
         setInterval(current_amount += parseInt($(this).text().replace("+", "") * comboValue), 50);
         update_score();
+
+        checkScore();
+
+
         handleClick();
         update_combo();
     });
+
+
+
+
+    $("#onetimebtn_1").click(function() {
+        resetInactivity();
+        current_amount += 1500 * comboValue;
+        update_score();
+    
+        checkScore();
+    
+        handleClick();
+        update_combo();
+    
+        var onetimebtn1 = document.getElementById("onetimebtn_1");
+    
+        // Add a class to the element to apply the override with transition
+        onetimebtn1.classList.add("override-opacity");
+    });
+
+    
+
+
 
 
     function update_score() {
@@ -830,6 +943,14 @@ r.style.setProperty("--failstate_fontsize", "1em");
 
 
 
+function winstate(){
+
+r.style.setProperty("--winstate_opacity", "100%");
+
+}
+
+
+
 
 
 $(".rectangle_shape").mouseenter(function() {
@@ -863,3 +984,6 @@ function oneSecondFunction() {
     var width = div.width() * (50 / 100);
     div.css('height', width);
 }
+
+
+

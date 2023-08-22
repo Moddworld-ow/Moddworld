@@ -102,7 +102,7 @@ button {
     top: 0;
     padding: 5% 10% 5% 10%;
     animation: combo_effect 1s infinite;
-    overflow: visible;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
     user-select: none;
@@ -176,6 +176,8 @@ button {
 
     --failstate_opacity: 0%;
     --failstate_fontsize: 100px;
+
+    --winstate_opacity: 0%;
     
 
 }
@@ -376,6 +378,20 @@ button {
     top: 0;
     user-select: none;
     overflow: hidden;
+}
+
+.main_score_container {
+    margin: auto;
+    width: 70%;
+    aspect-ratio: 2/1;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    user-select: none;
+    overflow: visible;
 }
 
 @keyframes obstacle1movehard {
@@ -736,26 +752,74 @@ button {
 }
 
 :root {
-    --onetime1anim: onetime1 5s ease-in;
-    --onetime2anim: onetime2 45s ease-in;
-    --onetime3anim: onetime3 45s ease-in;
-    --onetime4anim: onetime4 45s ease-in;
-    --onetime5anim: onetime5 45s ease-in;
-    --onetime6anim: onetime6 45s ease-in;
-    --onetime7anim: onetime7 45s ease-in;
-    --onetime8anim: onetime8 45s ease-in;
+    --onetime1anim: onetime1 45s 15s ease-out;
+    --onetime2anim: onetime2 45s ease-out;
+    --onetime3anim: onetime3 45s ease-out;
+    --onetime4anim: onetime4 45s ease-out;
+    --onetime5anim: onetime5 45s ease-out;
+    --onetime6anim: onetime6 45s ease-out;
+    --onetime7anim: onetime7 45s ease-out;
+    --onetime8anim: onetime8 45s ease-out;
 
 }
 
 
 @keyframes onetime1 {
-    0% {transform: translate(0%, 0%);}
-    10% {transform: translate(1200%, 0%); filter: hue-rotate(0deg);}
-    90% {filter: hue-rotate(90deg);}
-    100%{transform: translate(1200%, 0%);}
+    0% {
 
+        transform-origin: 0% 0%;
+
+        transform: translate(0%, 0%) rotate(0deg);
+
+        filter: hue-rotate(0deg);
+        opacity: 1;
+
+        animation-timing-function: ease-out;
+    
+    }
+
+    20% {
+
+        transform-origin: 100% 100%;
+
+        transform: translate(1000%, 0%) rotate(360deg) scale(100%);
+        filter: hue-rotate(0deg); animation-timing-function: ease-in;
+    }
+
+    25% {transform-origin: 200% 200%;}
+
+
+
+        75% {filter: hue-rotate(0deg);}
+
+        76% {filter: hue-rotate(90deg);}
+        79% {filter: hue-rotate(0deg);}
+        82% {filter: hue-rotate(90deg);}
+        85% {filter: hue-rotate(0deg);}
+        88% {filter: hue-rotate(90deg);}
+        89% {filter: hue-rotate(0deg);}
+        90% {filter: hue-rotate(90deg);}
+        91% {filter: hue-rotate(0deg);}
+        92% {filter: hue-rotate(90deg);}
+        93% {filter: hue-rotate(0deg);}
+        94% {filter: hue-rotate(90deg);}
+        95% {filter: hue-rotate(0deg); opacity: 100%;}
+        96% {filter: hue-rotate(90deg);}
+        97% {filter: hue-rotate(0deg);}
+        98% {filter: hue-rotate(90deg);}
+        99% {filter: hue-rotate(0deg);}
+    
+        100%{transform: translate(1000%, 0%) rotate(0deg) scale(50%); filter: hue-rotate(90deg); opacity: 0;
+            
+            transform-origin: 50% 50%;
+
+        }
 }
 
+.override-opacity {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 
 
 #onetimebtn_1 {
@@ -1056,7 +1120,7 @@ animation-duration: 2s;
     height: 50%;
     left: 0;
     right: 0;
-    top: -20%;
+    top: -10.5%;
 
     z-index: 5;
     pointer-events: none;
@@ -1076,7 +1140,7 @@ animation-duration: 2s;
     margin: auto;
 
     background-color: white;
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 3px;
     vertical-align: middle;
     aspect-ratio: 2/1;
 
@@ -1095,11 +1159,32 @@ animation-duration: 2s;
 
     border: rgb(0, 0, 0) 3px solid;
     background-color: white;
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 0px;
     outline: none;
     vertical-align: middle;
     aspect-ratio: 1/1;
 
+}
+
+
+#timer_display {
+    
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: all 0.3s 0s;
+    width: 12%;
+    top: 204%;
+    left: 0;
+    right: 0;
+ 
+    outline: 3px red solid;
+    margin: auto;
+
+    background-color: white;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 3px;
+    aspect-ratio: 2/1;
+    position: absolute;
 }
 
 
@@ -1160,6 +1245,35 @@ animation-duration: 2s;
 
 }
 
+.winstate {
+    opacity: var(--winstate_opacity);
+    z-index: 100;
+    background-color: black;
+    pointer-events: none;
+    background-size: 100%;
+    transition-duration: 1s;
+    
+    width: 70%;
+    aspect-ratio: 2/1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    user-select: none;
+    overflow: hidden;
+    
+    display: flex;
+    margin: auto;
+    font-size: 5vw;
+    color: white;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+
 .failstate_text {
     display: flex;
     margin: auto;
@@ -1172,3 +1286,12 @@ animation-duration: 2s;
 
 }
 
+
+
+.winstate_text {
+    display: flex;
+    margin: auto;
+    align-self: center;
+    align-items: center;
+
+}
