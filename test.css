@@ -165,7 +165,7 @@ button {
 
     
     --left_mod2: 0px;
-    --top_mod2: 0px;
+    --top_mod2: 10%;
     --rotate_mod2: 0deg;
     --rotate_fix2: 0deg;
     --scale_mod2: 100%;
@@ -385,6 +385,7 @@ button {
     top: 0;
     user-select: none;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .main_score_container {
@@ -1673,5 +1674,51 @@ animation-duration: 2s;
     align-self: center;
     align-items: center;
 
+}
+
+
+
+
+
+
+
+
+.animation-box {
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    animation: scaleUp 1s ease forwards;
+    z-index: 35;
+    pointer-events: none;
+
+    font-size: 16px; /* Adjust as needed */
+    font-weight: bold; /* Adjust as needed */
+    color: #ffffff; /* Text color */
+    text-shadow: 
+        0 0 5px rgb(255, 0, 0),
+        0 0 10px rgba(172, 0, 0, 0.799),
+        0 0 15px rgba(98, 0, 0, 0.582);
+
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: translate(150%, 150%) scale(0.5);
+        rotate: 90deg;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+        rotate: 0deg;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(50%, 100%) scale(1);
+    }
 }
 

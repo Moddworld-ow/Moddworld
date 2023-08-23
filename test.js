@@ -131,6 +131,13 @@ $(function() {
             intervalId = setInterval(function() {
                 current_amount += 3 * comboValue;
                 update_score();
+
+                score_increase ="+" + 3 * comboValue;
+
+                triggerCustomEffect();
+
+
+
                 if (hoverTime < 5) {
                     hoverTime++;
                     handleHover(true);
@@ -260,6 +267,10 @@ $(function() {
 
         update_combo();
 
+        score_increase = "Combo Increased!";
+
+        triggerCustomEffect();
+
 
     });
     
@@ -274,6 +285,10 @@ $(function() {
 
         update_combo();
 
+        score_increase ="+" + 25 * comboValue;
+
+        triggerCustomEffect();
+
 
     });
 
@@ -287,6 +302,10 @@ $(function() {
         handleClick();
 
         update_combo();
+
+        score_increase ="+" + 15 * comboValue;
+
+        triggerCustomEffect();
 
     });
 
@@ -307,6 +326,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn1.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
     $("#onetimebtn_2").click(function() {
@@ -323,6 +346,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn2.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
     $("#onetimebtn_3").click(function() {
@@ -339,6 +366,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn3.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -356,6 +387,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn4.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -373,6 +408,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn5.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -390,6 +429,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn6.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -407,6 +450,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn7.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -424,6 +471,10 @@ $(function() {
     
         // Add a class to the element to apply the override with transition
         onetimebtn8.classList.add("override-opacity");
+
+        score_increase = 5000 * comboValue;
+
+        triggerCustomEffect();
     });
 
 
@@ -1098,6 +1149,55 @@ function oneSecondFunction() {
     var width = div.width() * (50 / 100);
     div.css('height', width);
 }
+
+
+
+
+
+
+
+
+const score_feedback = document.getElementById('score_feedback');
+const animationBoxTemplate = document.querySelector('.animation-box');
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+});
+
+function triggerCustomEffect() {
+    const newAnimationBox = animationBoxTemplate.cloneNode(true);
+
+    // Generate random displacement values between -10 and 10 pixels
+    const displacementX = getRandomValue(-50, 50);
+    const displacementY = getRandomValue(-50, 50);
+
+    newAnimationBox.style.left = mouseX + displacementX + 'px';
+    newAnimationBox.style.top = mouseY + displacementY + 'px';
+
+    // Set the text inside the animation box
+    const variableText = score_increase;
+    newAnimationBox.innerText = variableText;
+
+    score_feedback.appendChild(newAnimationBox);
+
+    // Start the animation by adding the 'animate' class
+    newAnimationBox.classList.add('animate');
+
+    // Remove the animation box after the animation is done
+    newAnimationBox.addEventListener('animationend', () => {
+        score_feedback.removeChild(newAnimationBox);
+    });
+}
+
+// Function to generate a random value between min and max
+function getRandomValue(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
 
 
 
