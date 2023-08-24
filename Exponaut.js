@@ -1168,8 +1168,13 @@ obstacle_loop();
 
 
 
-
 const feverElement = document.querySelector(".fever");
+const fevercover = document.querySelector(".fevermeter_cover");
+
+const fevertext1 = document.querySelector(".multiplied_text");
+const fevertext2 = document.querySelector(".multiplied_text_right");
+
+
 let decreaseTimeout;
 
 function increase_bar() {
@@ -1185,7 +1190,7 @@ function increase_bar() {
 
     decrease_bar(); // Start decrease animation after a delay
 
-  }, 500);
+  }, 300);
 }
 
 function decrease_bar() {
@@ -1200,7 +1205,7 @@ function check_barpos() {
     
     if (feverElement.offsetHeight === 0) {
 
-        if (current_amount > 100000) {
+        if (current_amount > 1000000) {
 
             var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
@@ -1211,7 +1216,7 @@ function check_barpos() {
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
-        if (current_amount > 100000) {
+        if (current_amount > 1000000) {
 
             var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
@@ -1219,6 +1224,19 @@ function check_barpos() {
             winstate();
 
         }
+
+        fevercover.style.animation = "fever_cover_effect 1s ease-out";
+
+        setTimeout(function() {
+
+            fevercover.style.animation = "none";
+
+        }, 1000)
+
+
+        fevertext1.style.animation = "multiplied_text forwards 2s";
+        fevertext2.style.animation = "multiplied_text_right forwards 2s 0.5s";
+
         
         feverElement.style.transitionDuration = "0s";
         feverElement.style.height = "25%";
