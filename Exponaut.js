@@ -12,6 +12,8 @@ let black_cover2 = document.querySelector(".cover_screen2");
 let black_cover3 = document.querySelector(".cover_screen3");
 
 let starter_btn = document.querySelector(".starter_btn");
+let starter_btn_endless = document.querySelector(".starter_btn_endless");
+let starter_btn_tutorial = document.querySelector(".starter_btn_tutorial");
 
 let targetcontainer1 = document.querySelector(".obstacle_container1");
 
@@ -51,14 +53,13 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
-let targetScore = 1000000;
+let targetScore = 10000;
 
 
 
 
 
 let button2_effect_target = document.querySelector(".btn_2");
-
 
 
 
@@ -93,7 +94,39 @@ let offset_rotate2 = 0;
 
 
 
+
+
+
+
+
+
+
+let endless_mode = false;
+
+
+
+
+
+
+
 $(".starter_btn").click(function() {
+    start_all();
+
+
+}
+
+)
+
+$(".starter_btn_endless").click(function() {
+    start_all();
+    endless_mode = true;
+
+
+}
+
+)
+
+$(".starter_btn_tutorial").click(function() {
     start_all();
 
 
@@ -108,13 +141,19 @@ var r = document.querySelector(':root');
 
 function start_all() {
 
+    
+let comboValue = 1;
+let current_amount = 0;
+
+
+
 r.style.setProperty('--animstate', "running");
 
 
 
 
 $(function() {
-    let current_amount = 0;
+
     let intervalId;
     let isHovering = false;
     let debounceInterval = 50; // Debounce interval time in milliseconds
@@ -131,6 +170,10 @@ $(function() {
             intervalId = setInterval(function() {
                 current_amount += 3 * comboValue;
                 update_score();
+
+
+                increase_bar();
+
 
                 score_increase ="+" + 3 * comboValue;
 
@@ -233,8 +276,12 @@ $(function() {
         if (current_amount >= targetScore) {
             console.log(`Target score of ${targetScore} reached!`);
             
-            stopTimer();
+            
+        
+
+            if (endless_mode == false) {
             winstate();
+            stopTimer(); }
 
         } else {
             console.log(`Current score: ${current_amount}`);
@@ -267,6 +314,12 @@ $(function() {
 
         update_combo();
 
+
+
+        increase_bar();
+
+
+
         score_increase = "Combo Increased!";
 
         triggerCustomEffect();
@@ -285,6 +338,12 @@ $(function() {
 
         update_combo();
 
+
+
+        increase_bar();
+
+
+
         score_increase ="+" + 25 * comboValue;
 
         triggerCustomEffect();
@@ -302,6 +361,12 @@ $(function() {
         handleClick();
 
         update_combo();
+
+
+
+        increase_bar();
+
+
 
         score_increase ="+" + 15 * comboValue;
 
@@ -895,6 +960,8 @@ function startall2() {}
 function runanims() {
 
     starter_btn.style.animationPlayState = 'running';
+    starter_btn_endless.style.animationPlayState = 'running';
+    starter_btn_tutorial.style.animationPlayState = 'running';
 
 
     targetanim1.style.animationPlayState = 'running';
@@ -1097,7 +1164,94 @@ obstacle_loop();
 
 
 
+
+
+
+
+
+const feverElement = document.querySelector(".fever");
+let decreaseTimeout;
+
+function increase_bar() {
+  
+  feverElement.style.transitionDuration = "5s"; // Set transition duration to 0 to instantly grow
+
+  feverElement.style.height = "100%";
+
+  clearTimeout(decreaseTimeout); // Clear any ongoing decrease animation
+  decreaseTimeout = setTimeout(() => {
+
+    feverElement.style.transitionDuration = "7.5s"; // Set transition duration to 0 to instantly grow
+
+    decrease_bar(); // Start decrease animation after a delay
+
+  }, 500);
 }
+
+function decrease_bar() {
+
+  feverElement.style.height = "0";
+
+
+};
+
+
+function check_barpos() {
+    
+    if (feverElement.offsetHeight === 0) {
+
+        if (current_amount > 100000) {
+
+            var win_screen = document.getElementsByClassName('winstate')[0];
+            win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
+
+            winstate();
+    
+            }
+
+    } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
+
+        if (current_amount > 100000) {
+
+            var win_screen = document.getElementsByClassName('winstate')[0];
+            win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
+
+            winstate();
+
+        }
+        
+        feverElement.style.transitionDuration = "0s";
+        feverElement.style.height = "25%";
+
+        current_amount *= 10 * comboValue;
+
+    }
+}
+
+setInterval(check_barpos, 250);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function failstate(){
 
@@ -1153,10 +1307,6 @@ function oneSecondFunction() {
 
 
 
-
-
-
-
 const score_feedback = document.getElementById('score_feedback');
 const animationBoxTemplate = document.querySelector('.animation-box');
 
@@ -1197,6 +1347,9 @@ function triggerCustomEffect() {
 function getRandomValue(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+
+
 
 
 
