@@ -10,7 +10,7 @@ html {
 
 
 button {
-    margin: 10px;
+    margin: 2vw;
 
 
 }
@@ -97,7 +97,7 @@ button {
     margin: auto;
     width: 50%;
 
-    border: 3px rgb(122, 0, 0) solid;
+    border: 0.3vw rgb(122, 0, 0) solid;
     display: block;
     position: absolute;
     left: 0;
@@ -108,16 +108,16 @@ button {
     animation: combo_effect 1s infinite;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0;
     user-select: none;
 }
 
 
 @keyframes combo_effect {
-    0% {outline: red 3px solid;}
-    5% {outline: red 9px solid; transition-timing-function: ease-in;}
-    80% {outline: red 3px solid;}
-    100% {outline: red 3px solid;}
+    0% {outline: red 0.3vw solid;}
+    5% {outline: red 0.9vw solid; transition-timing-function: ease-in;}
+    80% {outline: red 0.3vw solid;}
+    100% {outline: red 0.3vw solid;}
 
 
 
@@ -155,8 +155,8 @@ button {
     --feedback: none;
 
 
-    --left_mod: 0px;
-    --top_mod: 0px;
+    --left_mod: 0;
+    --top_mod: 0;
     --rotate_mod: 0deg;
     --rotate_fix: 0deg;
     --scale_mod: 100%;
@@ -164,14 +164,14 @@ button {
     --anim_time: 15s;
 
     
-    --left_mod2: 0px;
+    --left_mod2: 0;
     --top_mod2: 10%;
     --rotate_mod2: 0deg;
     --rotate_fix2: 0deg;
     --scale_mod2: 100%;
 
-    --left_mod3: 0px;
-    --top_mod3: 0px;
+    --left_mod3: 0;
+    --top_mod3: 0;
     --rotate_mod3: 0deg;
     --rotate_fix3: 0deg;
     --scale_mod3: 100%;
@@ -179,7 +179,7 @@ button {
 
 
     --failstate_opacity: 0%;
-    --failstate_fontsize: 100px;
+    --failstate_fontsize: 100;
 
     --winstate_opacity: 0%;
     
@@ -189,18 +189,23 @@ button {
 .btn1txt {
     rotate: var(--rotate_fix);
     font-size: 3vw;
-
+    color: rgb(0, 0, 0);
+    text-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.231);
     }
 
     .btn2txt {
         rotate: var(--rotate_fix2);
         font-size: 2vw;
+        color: rgb(0, 0, 0);
+        text-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.231);
 
         }
 
         .btn3txt {
             rotate: var(--rotate_fix3);
             font-size: 2vw;
+            color: rgb(0, 0, 0);
+            text-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.231);
         
             }
     
@@ -426,9 +431,12 @@ button {
     position: absolute;
     width: 4vw;
     height: 24vw;
+    top: 0vw;
 
     background-image: url(Fever_layer1.png);
     background-size: 100%;
+
+    opacity: 60%;
 
     animation: left_loop 1s infinite linear;
     z-index: 10;
@@ -440,12 +448,11 @@ button {
     position: absolute;
     width: 4vw;
     height: 24vw;
-    top: 12vw;
 
     background-image: url(Fever_layer2.png);
     background-size: 100%;
 
-    opacity: 50%;
+    opacity: 80%;
 
     animation: right_loop 8s infinite ease-in-out;
     z-index: 11;
@@ -458,14 +465,13 @@ button {
     position: absolute;
     width: 4vw;
     height: 24vw;
-    top: -12vw;
 
     background-image: url(Fever_layer1.png);
     background-size: 100%;
 
-    opacity: 25%;
+    opacity: 100%;
 
-    animation: right_loop 4s infinite ease-in-out;
+    animation: right_loop 4s 0.5s infinite ease-in-out;
     animation-direction: reverse;
     z-index: 12;
 
@@ -494,7 +500,7 @@ button {
 
     0% {
 
-        top: 3vw;
+        top: 2vw;
 
         background-position: 0% 0%;
 
@@ -503,7 +509,7 @@ button {
     
     50% {
 
-        top: 12vw;
+        top: 8vw;
 
         background-position: -4vw 0%;
 
@@ -512,7 +518,7 @@ button {
 
     100% {
 
-        top: 3vw;
+        top: 2vw;
 
         background-position: 0% 0%;
 
@@ -532,7 +538,7 @@ button {
     width: 25vw;
     height: 10vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 2px solid;
+    outline: #ab0000 0.5vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -554,7 +560,7 @@ button {
     width: 25vw;
     height: 10vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 2px solid;
+    outline: #ab0000 0.5vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -576,7 +582,7 @@ button {
     width: 25vw;
     height: 10vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 2px solid;
+    outline: #ab0000 0.5vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -614,8 +620,8 @@ button {
     font-size: 5vw;
     font-family: 'Oswald';
     font-weight: bold;
-    text-shadow: rgb(0, 0, 0) 3px 3px 0, black 0 0 5px;
-    letter-spacing: 3px;
+    text-shadow: rgb(0, 0, 0) 0.4vw 0.4vw 0, black 0 0 0.8vw;
+    letter-spacing: 0.5vw;
 }
 
 
@@ -630,7 +636,7 @@ button {
     background-color: black;
     scale: 175%;
     z-index: 100;
-    box-shadow: 0 0 50px 0 black;
+    box-shadow: 0 0 20vw 0 black;
     
     animation: start_game 2s cubic-bezier(.09,.5,.18,.75) forwards;
     animation-play-state: paused;
@@ -647,7 +653,7 @@ button {
     rotate: 0deg;
     scale: 175%;
     z-index: 99;
-    box-shadow: 0 0 50px 0 black;
+    box-shadow: 0 0 20vw 0 black;
 
     animation: start_game 2s 0.1s cubic-bezier(.09,.5,.18,.75) forwards;
     animation-play-state: paused;
@@ -664,7 +670,7 @@ button {
     rotate: 0deg;
     scale: 175%;
     z-index: 98;
-    box-shadow: 0 0 50px 0 black;
+    box-shadow: 0 0 20vw 0 black;
 
     animation: start_game 2s 0.2s cubic-bezier(.09,.5,.18,.75) forwards;
     animation-play-state: paused;
@@ -921,12 +927,11 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;    background-color: rgb(255, 210, 62);
-    font-size: 35px;
     border-radius: 100%;
-    border: 2px rgba(255, 0, 0, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    border: 0.5vw rgba(255, 0, 0, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     pointer-events: all;
 
     background-image: url(yellow_button_bg.png);
@@ -958,16 +963,15 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
-    font-size: 25px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 15px 15px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 2vw 2vw;
     background-color: rgba(124, 22, 22, 0.658);
-    border: 2px rgba(255, 50, 50, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    border: 0.5vw rgba(255, 50, 50, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     animation: btn2loop infinite 20s;
     position: absolute;
     pointer-events: all !important;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     background-image: url(red_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -987,12 +991,11 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
-    font-size: 15px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     background-color: rgba(7, 124, 23, 0.781);
-    border: 2px rgba(255, 234, 114, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    border: 0.5vw rgba(255, 234, 114, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     animation: btn3loop infinite 30s;
     position: absolute;
     left: 30%;
@@ -1019,12 +1022,11 @@ button {
     justify-content: center;
 
     font-family: 'Roboto Condensed', sans-serif;    background-color: rgba(255, 210, 62, 0.658);
-    font-size: 10px;
     border-radius: 100%;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     background-color: rgba(62, 162, 255, 0.658);
-    border: 2px rgba(159, 85, 255, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    border: 0.5vw rgba(159, 85, 255, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     animation: btn4loop infinite 25s;
     position: absolute;
     pointer-events: all;
@@ -1059,12 +1061,11 @@ button {
 
     font-family: 'Roboto Condensed', sans-serif;
     background-color: rgb(192, 22, 144);
-    font-size: 35px;
     border-radius: 100%;
-    border: 2px rgba(255, 0, 0, 0.39) solid;
-    outline: rgba(0, 0, 0, 0.315) 4px inset;
+    border: 0.5vw rgba(255, 0, 0, 0.39) solid;
+    outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.068) 7px 7px, rgba(0, 0, 0, 0.664) 0 0 50px 0, rgba(255, 0, 0, 0.34) inset 0 0 15px 0, rgba(0, 0, 0, 0.347) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     pointer-events: all;
     left: -100%;
 
@@ -1576,11 +1577,10 @@ button {
 
     font-family: 'Roboto Condensed', sans-serif;
     background-color: rgba(0, 0, 0, 0.2);
-    font-size: 35px;
     border-radius: 100%;
     animation: btn1loop infinite 15s 0.1s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.035) 7px 7px, rgba(0, 0, 0, 0.325) 0 0 50px 0, rgba(0, 0, 0, 0.175) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.035) 0.3vw 0.3vw, rgba(0, 0, 0, 0.325) 0 0 2vw 0, rgba(0, 0, 0, 0.175) 0 0 1vw 1vw;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 80%;
@@ -1600,11 +1600,10 @@ button {
 
     font-family: 'Roboto Condensed', sans-serif;
     background-color: rgba(0, 0, 0, 0.15);
-    font-size: 35px;
     border-radius: 100%;
     animation: btn1loop infinite 15s 0.2s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.025) 7px 7px, rgba(0, 0, 0, 0.25) 0 0 50px 0, rgba(0, 0, 0, 0.125) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.025) 0.3vw 0.3vw, rgba(0, 0, 0, 0.25) 0 0 2vw 0, rgba(0, 0, 0, 0.125) 0 0 1vw 1vw;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 65%;
@@ -1623,11 +1622,10 @@ button {
 
     font-family: 'Roboto Condensed', sans-serif;
     background-color: rgba(0, 0, 0, 0.1);
-    font-size: 35px;
     border-radius: 100%;
     animation: btn1loop infinite 15s 0.3s;
     position: absolute;
-    box-shadow: inset rgba(0, 0, 0, 0.02) 7px 7px, rgba(0, 0, 0, 0.2) 0 0 50px 0, rgba(0, 0, 0, 0.1) 0 0 10px 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.02) 0.3vw 0.3vw, rgba(0, 0, 0, 0.2) 0 0 2vw 0, rgba(0, 0, 0, 0.1) 0 0 1vw 1vw;
     transform: translate(10%, 10%);
     z-index: -1;
     scale: 50%;
@@ -1820,27 +1818,33 @@ animation-duration: 2s;
 
 }
 
+:root {
+
+    --variable_width: 8vw;
+}
+
 .score_display {
     display: inline-flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
     transition: all 0.3s 0s;
-    width: 12%;
+    width: var(--variable_width);
+    height: 4vw;
  
-    outline: 3px red solid;
+    outline: 0.3vw red solid;
     margin: auto;
 
     background-color: white;
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 3px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.5vw;
     vertical-align: middle;
-    aspect-ratio: 2/1;
 
 }
 
 .combo_display {
     display: inline-flex;
     position: relative;
-    width: 6%;
+    width: 4vw;
+    height: 4vw;
 
     align-items: center;
     text-align: center;
@@ -1848,12 +1852,11 @@ animation-duration: 2s;
     margin: auto;
     margin-left: 2%;
 
-    border: rgb(0, 0, 0) 3px solid;
+    border: rgb(0, 0, 0) 0.3vw solid;
     background-color: white;
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 0px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.1vw;
     outline: none;
     vertical-align: middle;
-    aspect-ratio: 1/1;
 
 }
 
@@ -1869,11 +1872,11 @@ animation-duration: 2s;
     left: 0;
     right: 0;
  
-    outline: 3px red solid;
+    outline: 0.3vw red solid;
     margin: auto;
 
     background-color: white;
-    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 25px 0px, black 5px 5px 10px 3px;
+    box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.5vw;
     aspect-ratio: 2/1;
     position: absolute;
 }
@@ -1995,8 +1998,8 @@ animation-duration: 2s;
 
 
 .animation-box {
-    width: 50px;
-    height: 50px;
+    width: 2vw;
+    height: 2vw;
     background-color: none;
     position: absolute;
     opacity: 0;
@@ -2009,9 +2012,9 @@ animation-duration: 2s;
     font-weight: bold; /* Adjust as needed */
     color: #ffffff; /* Text color */
     text-shadow: 
-        0 0 5px rgb(255, 0, 0),
-        0 0 10px rgba(172, 0, 0, 0.799),
-        0 0 15px rgba(98, 0, 0, 0.582);
+        0 0 0.5vw rgb(255, 0, 0),
+        0 0 1vw rgba(172, 0, 0, 0.799),
+        0 0 1vw rgba(98, 0, 0, 0.582);
 
 }
 

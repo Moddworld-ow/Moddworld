@@ -581,38 +581,6 @@ $(function() {
 
 
 
-    
-
-var isActive = false;
-
-
-    function update_score() {
-        var scoreDisplay = document.getElementsByClassName('score_display')[0];
-        scoreDisplay.innerHTML = current_amount;
-
-        // Add animation class
-        scoreDisplay.classList.add('animate_score');
-
-        // Remove animation class after a delay
-        setTimeout(function() {
-            scoreDisplay.classList.remove('animate_score');
-        }, 25);
-
-
-        if (current_amount >= 1000000 && isActive == false) {
-
-            const points_reached_loop = new Audio("coolloop.wav");
-        
-            points_reached_loop.loop=true;
-            points_reached_loop.play();
-        
-            isActive = true;
-            
-        
-        }
-
-    }
-
 
     // Interval to check and update the combo
     setInterval(() => {
@@ -1226,6 +1194,55 @@ const fevertext2 = document.querySelector(".multiplied_text_right");
 
 let decreaseTimeout;
 
+
+var isActive = false;
+
+
+    function update_score() {
+        var scoreDisplay = document.getElementsByClassName('score_display')[0];
+        scoreDisplay.innerHTML = current_amount;
+
+        // Add animation class
+        scoreDisplay.classList.add('animate_score');
+
+        // Remove animation class after a delay
+        setTimeout(function() {
+            scoreDisplay.classList.remove('animate_score');
+        }, 25);
+
+
+        if (current_amount >= 1000000 && isActive == false) {
+
+            const points_reached_loop = new Audio("coolloop.wav");
+        
+            points_reached_loop.loop=true;
+            points_reached_loop.play();
+        
+            isActive = true;
+            
+        
+        }
+
+
+            if (current_amount >= 1000000 && current_amount < 1000000000) {
+
+                r.style.setProperty('--variable_width', '12w');
+
+        }
+
+            else if (current_amount >= 1000000000) {
+
+                r.style.setProperty('--variable_width', '16vw');
+
+        }
+
+
+
+
+    }
+
+
+
 function increase_bar() {
   
   feverElement.style.transitionDuration = "5s"; // Set transition duration to 0 to instantly grow
@@ -1259,6 +1276,7 @@ function check_barpos() {
             var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
 
+            update_score();
             winstate();
     
             }
@@ -1272,6 +1290,7 @@ function check_barpos() {
             var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
 
+            update_score();
             winstate();
 
         }
@@ -1288,6 +1307,12 @@ function check_barpos() {
         fevertext1.style.animation = "multiplied_text forwards 2s";
         fevertext2.style.animation = "multiplied_text_right forwards 2s 0.5s";
 
+        setTimeout(function() {
+
+            fevertext1.style.animation = "none";
+            fevertext2.style.animation = "none";
+
+        }, 2000);
         
         feverElement.style.transitionDuration = "0s";
         feverElement.style.height = "25%";
