@@ -321,6 +321,8 @@ button {
     font-size: 3vw;
     font-weight: bold;
     opacity: 0;
+    color: rgba(0, 0, 0, 0.568);
+
 
   }
 
@@ -335,6 +337,7 @@ button {
     font-size: 2.5vw;
     font-weight: bold;
     opacity: 0;
+    color: rgba(0, 0, 0, 0.568);
 
 
   }
@@ -428,7 +431,7 @@ button {
     background-size: 100%;
 
     animation: left_loop 1s infinite linear;
-
+    z-index: 10;
 
   }
 
@@ -442,8 +445,29 @@ button {
     background-image: url(Fever_layer2.png);
     background-size: 100%;
 
-    animation: right_loop 8s infinite ease-in-out;
+    opacity: 50%;
 
+    animation: right_loop 8s infinite ease-in-out;
+    z-index: 11;
+
+
+  }
+
+  .feverlayer3 {
+
+    position: absolute;
+    width: 4vw;
+    height: 24vw;
+    top: -12vw;
+
+    background-image: url(Fever_layer1.png);
+    background-size: 100%;
+
+    opacity: 25%;
+
+    animation: right_loop 4s infinite ease-in-out;
+    animation-direction: reverse;
+    z-index: 12;
 
   }
 

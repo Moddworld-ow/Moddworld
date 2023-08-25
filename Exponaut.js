@@ -141,6 +141,8 @@ var r = document.querySelector(':root');
 
 function start_all() {
 
+const sound_click = new Audio("click.ogg");
+
     
 let comboValue = 1;
 let current_amount = 0;
@@ -178,6 +180,9 @@ $(function() {
                 score_increase ="+" + 3 * comboValue;
 
                 triggerCustomEffect();
+
+                const sound_click = new Audio("click.ogg");
+                sound_click.play();
 
 
 
@@ -314,9 +319,12 @@ $(function() {
 
         update_combo();
 
+        const sound_click = new Audio("click.ogg");
+        sound_click.play();
 
 
-        increase_bar();
+
+        increase_bar_strong();
 
 
 
@@ -338,9 +346,11 @@ $(function() {
 
         update_combo();
 
+        const sound_click = new Audio("click.ogg");
+        sound_click.play();
 
 
-        increase_bar();
+        increase_bar_strong();
 
 
 
@@ -361,6 +371,9 @@ $(function() {
         handleClick();
 
         update_combo();
+
+        const sound_click = new Audio("click.ogg");
+        sound_click.play();
 
 
 
@@ -395,6 +408,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
     $("#onetimebtn_2").click(function() {
@@ -415,6 +431,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
     $("#onetimebtn_3").click(function() {
@@ -435,6 +454,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
@@ -456,6 +478,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
@@ -477,6 +502,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
@@ -498,6 +526,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
@@ -519,6 +550,9 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
@@ -540,13 +574,16 @@ $(function() {
         score_increase = 5000 * comboValue;
 
         triggerCustomEffect();
+
+        increase_bar_strong();
+
     });
 
 
 
     
 
-
+var isActive = false;
 
 
     function update_score() {
@@ -561,6 +598,18 @@ $(function() {
             scoreDisplay.classList.remove('animate_score');
         }, 25);
 
+
+        if (current_amount >= 1000000 && isActive == false) {
+
+            const points_reached_loop = new Audio("coolloop.wav");
+        
+            points_reached_loop.loop=true;
+            points_reached_loop.play();
+        
+            isActive = true;
+            
+        
+        }
 
     }
 
@@ -1166,7 +1215,7 @@ obstacle_loop();
 
 
 
-
+const sound_meter_filled = new Audio("meter_filled.wav");
 
 const feverElement = document.querySelector(".fever");
 const fevercover = document.querySelector(".fevermeter_cover");
@@ -1216,6 +1265,8 @@ function check_barpos() {
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
+        fevercover.style.animation = "fever_cover_effect 1s ease-out";
+
         if (current_amount > 1000000) {
 
             var win_screen = document.getElementsByClassName('winstate')[0];
@@ -1225,7 +1276,7 @@ function check_barpos() {
 
         }
 
-        fevercover.style.animation = "fever_cover_effect 1s ease-out";
+        sound_meter_filled.play();
 
         setTimeout(function() {
 
@@ -1250,8 +1301,29 @@ setInterval(check_barpos, 250);
 
 
 
-}
 
+
+function increase_bar_strong() {
+  
+    feverElement.style.transitionDuration = "2.5s"; // Set transition duration to 0 to instantly grow
+  
+    feverElement.style.height = "100%";
+  
+    clearTimeout(decreaseTimeout); // Clear any ongoing decrease animation
+    decreaseTimeout = setTimeout(() => {
+  
+      feverElement.style.transitionDuration = "7.5s"; // Set transition duration to 0 to instantly grow
+  
+      decrease_bar(); // Start decrease animation after a delay
+  
+    }, 450);
+  }
+  
+
+
+
+
+}
 
 
 
@@ -1365,10 +1437,5 @@ function triggerCustomEffect() {
 function getRandomValue(min, max) {
     return Math.random() * (max - min) + min;
 }
-
-
-
-
-
 
 
