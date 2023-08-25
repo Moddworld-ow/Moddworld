@@ -1226,7 +1226,7 @@ var isActive = false;
 
             if (current_amount >= 1000000 && current_amount < 1000000000) {
 
-                r.style.setProperty('--variable_width', '12w');
+                r.style.setProperty('--variable_width', '12vw');
 
         }
 
@@ -1267,31 +1267,43 @@ function decrease_bar() {
 };
 
 
+var endscreen_triggered = false;
+
+
 function check_barpos() {
     
     if (feverElement.offsetHeight === 0) {
 
-        if (current_amount > 1000000) {
+        if (current_amount > 1000000 && endscreen_triggered == false) {
 
-            var win_screen = document.getElementsByClassName('winstate')[0];
+            endscreen_triggered = true;
+
+            setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
 
             update_score();
             winstate();
+
+        }, 400);
     
             }
+
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
         fevercover.style.animation = "fever_cover_effect 1s ease-out";
 
-        if (current_amount > 1000000) {
+        if (current_amount > 1000000 && endscreen_triggered == false) {
 
-            var win_screen = document.getElementsByClassName('winstate')[0];
+            endscreen_triggered = true;
+
+            setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
             win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
 
             update_score();
             winstate();
+
+        }, 100);
 
         }
 
@@ -1318,6 +1330,8 @@ function check_barpos() {
         feverElement.style.height = "25%";
 
         current_amount *= 10 * comboValue;
+
+
 
     }
 }
