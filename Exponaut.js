@@ -29,6 +29,8 @@ let targetcontainerwarning2 = document.querySelector(".obstacle_container2warnin
 
 let onetimebtn = document.querySelector(".onetimebtn");
 
+let permanent_display = document.querySelector(".permanent_display");
+
 
 
 
@@ -53,7 +55,7 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
-let targetScore = 10000;
+let targetScore = 1000000;
 
 
 
@@ -69,7 +71,7 @@ let button2_effect_target = document.querySelector(".btn_2");
 
 
 
-
+let permanent_multiplier_value = 1;
 let comboValue = 1;
 let hoverTime = 0;
 let clickCount = 0;
@@ -101,7 +103,8 @@ let offset_rotate2 = 0;
 
 
 
-let endless_mode = false;
+
+endless_mode = false;
 
 
 
@@ -112,6 +115,8 @@ let endless_mode = false;
 $(".starter_btn").click(function() {
     start_all();
 
+    r.style.setProperty('--meter_left_offset', "-200%");
+
 
 }
 
@@ -120,6 +125,9 @@ $(".starter_btn").click(function() {
 $(".starter_btn_endless").click(function() {
     start_all();
     endless_mode = true;
+
+    r.style.setProperty('--permanent_opacity', "100%");
+
 
 
 }
@@ -145,7 +153,7 @@ const sound_click = new Audio("click.ogg");
 
     
 let comboValue = 1;
-let current_amount = 0;
+current_amount = 0;
 
 
 
@@ -173,9 +181,9 @@ $(function() {
                 current_amount += 3 * comboValue;
                 update_score();
 
-
-                increase_bar();
-
+                if (endless_mode == true) {
+                    increase_bar();
+            }           
 
                 score_increase ="+" + 3 * comboValue;
 
@@ -269,7 +277,7 @@ $(function() {
       detailed_time();
 
       var win_screen = document.getElementsByClassName('winstate')[0];
-      win_screen.innerHTML = "You reached the target score of " + targetScore + " points in " + minutes + "m " + seconds + "s";
+      win_screen.innerHTML = "You reached the target score of " + targetScore + " points in:<br>" + minutes + "m " + seconds + "s";
     }
 
 
@@ -278,9 +286,7 @@ $(function() {
     
 
     function checkScore() {
-        if (current_amount >= targetScore) {
-            console.log(`Target score of ${targetScore} reached!`);
-            
+        if (current_amount >= targetScore) {            
             
         
 
@@ -323,8 +329,9 @@ $(function() {
         sound_click.play();
 
 
-
+if (endless_mode == true) {
         increase_bar_strong();
+}
 
 
 
@@ -350,8 +357,9 @@ $(function() {
         sound_click.play();
 
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
 
 
         score_increase ="+" + 25 * comboValue;
@@ -377,8 +385,9 @@ $(function() {
 
 
 
-        increase_bar();
-
+        if (endless_mode == true) {
+            increase_bar();
+    }
 
 
         score_increase ="+" + 15 * comboValue;
@@ -409,8 +418,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
     $("#onetimebtn_2").click(function() {
@@ -432,8 +442,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
     $("#onetimebtn_3").click(function() {
@@ -455,8 +466,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
 
@@ -479,10 +491,12 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
+    /*
 
     $("#onetimebtn_5").click(function() {
         resetInactivity();
@@ -503,8 +517,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
 
@@ -527,8 +542,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
 
@@ -551,8 +567,9 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
 
 
@@ -575,9 +592,12 @@ $(function() {
 
         triggerCustomEffect();
 
-        increase_bar_strong();
-
+        if (endless_mode == true) {
+            increase_bar_strong();
+    }
     });
+
+    */
 
 
 
@@ -660,7 +680,86 @@ $(function() {
 function resetInactivity() {
     inactivityTime = 0; // Reset inactivityTime when interaction occurs
 }
+
+
+
+
+
+
+
+
+
+
+function onetimebtnClickHandler(event) {
+    resetInactivity();
+    current_amount += 5000 * comboValue;
+    update_score();
+
+    checkScore();
+
+    handleClick();
+    update_combo();
+
+    var onetimebtn = event.currentTarget;
+
+    // Add a class to the element to apply the override with transition
+    onetimebtn.classList.add("override-opacity");
+
+    score_increase = 5000 * comboValue;
+
+    triggerCustomEffect();
+
+    if (endless_mode == true) {
+        increase_bar_strong();
+    }
+}
+
+function createButtonsAndAttachListeners() {
+    const parentElement = document.getElementById('reset_target'); // Replace with your parent element's ID
+    const elementsToReset = ['onetimebtn_1', 'onetimebtn_2', 'onetimebtn_3', 'onetimebtn_4'];
+
+    // Remove elements from the parent
+    elementsToReset.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            parentElement.removeChild(element);
+        }
+    });
+
+    // Re-add elements
+    elementsToReset.forEach(id => {
+        const newElement = document.createElement('div');
+        newElement.id = id;
+        newElement.className = 'onetimebtn'; // Add the class
+        parentElement.appendChild(newElement);
+    });
+
+    // Attach event listeners
+    $("#reset_target").off("click", ".onetimebtn");
+    $("#reset_target").on("click", ".onetimebtn", onetimebtnClickHandler);
+}
+
+setInterval(() => {
+    createButtonsAndAttachListeners();
+}, 110000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
 
 
 
@@ -1264,6 +1363,7 @@ function decrease_bar() {
   feverElement.style.height = "0";
 
 
+
 };
 
 
@@ -1271,6 +1371,12 @@ var endscreen_triggered = false;
 
 
 function check_barpos() {
+
+    if (current_amount >= 1000000) {
+
+        r.style.setProperty("--skull_opacity", "100%");
+
+        }
     
     if (feverElement.offsetHeight === 0) {
 
@@ -1279,7 +1385,7 @@ function check_barpos() {
             endscreen_triggered = true;
 
             setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
-            win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
+            win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + "!";
 
             update_score();
             winstate();
@@ -1291,6 +1397,20 @@ function check_barpos() {
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
+        feverElement.style.transitionDuration = "0s";
+        feverElement.style.height = "25%";
+
+
+
+
+        permanent_multiplier_value ++;
+
+        permanent_display.innerHTML = "x" + permanent_multiplier_value;
+
+
+
+
+
         fevercover.style.animation = "fever_cover_effect 1s ease-out";
 
         if (current_amount > 1000000 && endscreen_triggered == false) {
@@ -1298,7 +1418,7 @@ function check_barpos() {
             endscreen_triggered = true;
 
             setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
-            win_screen.innerHTML = "FEVERMETER destabilized! " + "You accumulated a total score of " + current_amount + " points!";
+            win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
 
             update_score();
             winstate();
@@ -1326,17 +1446,25 @@ function check_barpos() {
 
         }, 2000);
         
-        feverElement.style.transitionDuration = "0s";
-        feverElement.style.height = "25%";
 
-        current_amount *= 10 * comboValue;
+        current_amount *= comboValue;
 
 
 
     }
 }
 
-setInterval(check_barpos, 250);
+
+
+setInterval(function() {
+    
+    if (endless_mode == true) {check_barpos(); console.log
+
+
+    }
+    
+    
+    }, 250);
 
 
 
@@ -1378,6 +1506,7 @@ function increase_bar_strong() {
 
 
 
+const failtext = document.querySelector('.failstate');
 
 
 
@@ -1385,7 +1514,17 @@ function increase_bar_strong() {
 function failstate(){
 
 r.style.setProperty("--failstate_opacity", "80%");
-r.style.setProperty("--failstate_fontsize", "1em");
+
+endscreen_triggered = true;
+
+
+
+if (endless_mode == true) {
+
+    failtext.innerHTML = "OBSTACLE HIT!<br>" + "The final score is: " + current_amount + " !";
+
+
+}
 
 }
 
@@ -1476,5 +1615,18 @@ function triggerCustomEffect() {
 function getRandomValue(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

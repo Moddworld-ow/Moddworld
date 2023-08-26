@@ -179,7 +179,7 @@ button {
 
 
     --failstate_opacity: 0%;
-    --failstate_fontsize: 100;
+    --failstate_fontsize: 4vw;
 
     --winstate_opacity: 0%;
     
@@ -282,6 +282,8 @@ button {
 
 :root {
     --fever_state: "reverse";
+    --meter_left_offset: -14%;
+
   }
 
   .fevermeter {
@@ -291,10 +293,11 @@ button {
     height: 24vw;
     outline: black 1vh solid;
     z-index: 50;
-    left: -14%;
+    left: var(--meter_left_offset); /* -14% */
     top: 45%;
     background-color: none;
     border-radius: 3vw;
+    transition-duration: 0s;
     
   }
 
@@ -1265,7 +1268,7 @@ button {
 
         transform-origin: 100% 100%;
 
-        transform: translate(1100%, 180%) rotate(360deg) scale(100%);
+        transform: translate(975%, 180%) rotate(360deg) scale(100%);
         filter: hue-rotate(0deg); animation-timing-function: ease-in;
     }
 
@@ -1929,14 +1932,16 @@ animation-duration: 2s;
     top: 0;
     user-select: none;
     overflow: hidden;
-    
+
+    font-size: var(--failstate_fontsize);
+    color: white;
+
     display: flex;
     margin: auto;
-    font-size: 5em;
-    color: white;
-    align-self: center;
-    align-items: center;
 
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .winstate {
@@ -1957,13 +1962,15 @@ animation-duration: 2s;
     user-select: none;
     overflow: hidden;
     
+    font-size: var(--failstate_fontsize);
+    color: white;
+
     display: flex;
     margin: auto;
-    font-size: 5vw;
-    color: white;
-    align-self: center;
+
     align-items: center;
     text-align: center;
+    justify-content: center;
 
 }
 
@@ -1976,7 +1983,7 @@ animation-duration: 2s;
 
     font-size: var(--failstate_fontsize);
     color: white;
-    transition: 2s;
+
 
 }
 
@@ -1988,9 +1995,49 @@ animation-duration: 2s;
     align-self: center;
     align-items: center;
 
+    font-size: var(--failstate_fontsize);
+    color: white;
+
 }
 
 
+
+
+:root {
+
+    --skull_opacity: 0%;
+    --permanent_opacity: 0%;
+
+}
+
+
+.permanent_display {
+
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+
+    top: 0vw;
+    left: -12vw;
+    font-size: 3vw;
+
+    opacity: var(--permanent_opacity);
+
+}
+
+
+.permanent_skull {
+
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+
+    top: 0vw;
+    left: -7vw;
+    font-size: 3vw;
+
+    opacity: var(--skull_opacity);
+}
 
 
 
