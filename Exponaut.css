@@ -1643,16 +1643,16 @@ button {
     0% {left: 5%; top: 52%; opacity: 0%; pointer-events: none;}
     2% {opacity: 0%; pointer-events: none;}
     6.6% {left: 72%; top: 52%; opacity: 100%; pointer-events: all;}
-    13.2% {left: 72%; top: 10%;} 
-    19.8% {left: 10%; top: 10%;}
-    26.4% {left: 10%; top: 45%;}
+    13.2% {left: 72%; top: 7%;} 
+    19.8% {left: 7%; top: 7%;}
+    26.4% {left: 7%; top: 45%;}
     33% {left: 62%; top: 45%;}
     39.6% {left: 62%; top: 15%;}
     46.2% {left: 15%; top: 15%;}
     52.8% {left: 15%; top: 35%;}
-    59.4% {left: 42%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%; pointer-events: all;}
+    59.4% {left: 40%; top: 35%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%; pointer-events: all;}
     62.7% {opacity: 100%;}
-    66%, 100% {left: 42%; top: -300%; opacity: 0%; pointer-events: none;}
+    66%, 100% {left: 40%; top: -300%; opacity: 0%; pointer-events: none;}
 
 }
 
@@ -1912,14 +1912,16 @@ animation-duration: 2s;
 }
 
 
-
+:root {
+    --endscreen_pointerblock: none;
+}
 
 
 .failstate {
     opacity: var(--failstate_opacity);
     z-index: 40;
     background-color: black;
-    pointer-events: none;
+    pointer-events: var(--endscreen_pointerblock);
     background-size: 100%;
     transition-duration: 1s;
     
@@ -1948,7 +1950,7 @@ animation-duration: 2s;
     opacity: var(--winstate_opacity);
     z-index: 41;
     background-color: black;
-    pointer-events: none;
+    pointer-events: var(--endscreen_pointerblock);
     background-size: 100%;
     transition-duration: 1s;
     

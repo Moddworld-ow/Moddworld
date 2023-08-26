@@ -152,7 +152,6 @@ function start_all() {
 const sound_click = new Audio("click.ogg");
 
     
-let comboValue = 1;
 current_amount = 0;
 
 
@@ -163,6 +162,9 @@ r.style.setProperty('--animstate', "running");
 
 
 $(function() {
+
+
+    let playdelay = false;
 
     let intervalId;
     let isHovering = false;
@@ -178,20 +180,34 @@ $(function() {
             isHovering = true;
 
             intervalId = setInterval(function() {
-                current_amount += 3 * comboValue;
+                current_amount += 3 * comboValue * permanent_multiplier_value;
                 update_score();
 
                 if (endless_mode == true) {
                     increase_bar();
             }           
 
-                score_increase ="+" + 3 * comboValue;
+                score_increase ="+" + 3 * comboValue * permanent_multiplier_value;
 
                 triggerCustomEffect();
 
-                const sound_click = new Audio("click.ogg");
+
+                if (playdelay == false) {
+
+                playdelay = true;
+
+                const sound_click = new Audio("collect2.wav");
+                sound_click.volume = 0.25;
                 sound_click.play();
 
+                setTimeout(function() {
+
+                    playdelay = false;
+                }, 100);
+
+
+
+                }
 
 
                 if (hoverTime < 5) {
@@ -325,8 +341,22 @@ $(function() {
 
         update_combo();
 
-        const sound_click = new Audio("click.ogg");
-        sound_click.play();
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("medium_effect2.wav");
+            sound_click.volume = 1;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
 
 
 if (endless_mode == true) {
@@ -344,7 +374,7 @@ if (endless_mode == true) {
     
     $(".btn_3").click(function() {
         resetInactivity()
-        current_amount += parseInt($(this).text().replace("+", "") * comboValue);
+        current_amount += parseInt($(this).text().replace("+", "") * comboValue * permanent_multiplier_value);
         update_score();
 
         checkScore();
@@ -353,16 +383,29 @@ if (endless_mode == true) {
 
         update_combo();
 
-        const sound_click = new Audio("click.ogg");
-        sound_click.play();
+        if (playdelay == false) {
 
+            playdelay = true;
+
+            const sound_click = new Audio("collect1.wav");
+            sound_click.volume = 0.25;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
 
         if (endless_mode == true) {
             increase_bar_strong();
     }
 
 
-        score_increase ="+" + 25 * comboValue;
+        score_increase ="+" + 25 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
 
@@ -371,7 +414,8 @@ if (endless_mode == true) {
 
     $(".btn_1").hover(function() {
         resetInactivity()
-        setInterval(current_amount += parseInt($(this).text().replace("+", "") * comboValue), 50);
+        
+        current_amount += parseInt($(this).text().replace("+", "") * comboValue * permanent_multiplier_value);
         update_score();
 
         checkScore();
@@ -380,8 +424,22 @@ if (endless_mode == true) {
 
         update_combo();
 
-        const sound_click = new Audio("click.ogg");
-        sound_click.play();
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("btn_slash.wav");
+            sound_click.volume = 0.5;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 50);
+
+
+
+            }
 
 
 
@@ -390,7 +448,7 @@ if (endless_mode == true) {
     }
 
 
-        score_increase ="+" + 15 * comboValue;
+        score_increase ="+" + 15 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
 
@@ -401,7 +459,7 @@ if (endless_mode == true) {
 
     $("#onetimebtn_1").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue;
+        current_amount += 5000 * comboValue * permanent_multiplier_value;
         update_score();
     
         checkScore();
@@ -414,9 +472,27 @@ if (endless_mode == true) {
         // Add a class to the element to apply the override with transition
         onetimebtn1.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue;
+        score_increase = 5000 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
+
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("collect3.wav");
+            sound_click.volume = 0.25;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
+
 
         if (endless_mode == true) {
             increase_bar_strong();
@@ -425,7 +501,7 @@ if (endless_mode == true) {
 
     $("#onetimebtn_2").click(function() {
         resetInactivity();
-        current_amount += 7500 * comboValue;
+        current_amount += 7500 * comboValue * permanent_multiplier_value;
         update_score();
     
         checkScore();
@@ -438,9 +514,28 @@ if (endless_mode == true) {
         // Add a class to the element to apply the override with transition
         onetimebtn2.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue;
+        score_increase = 5000 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
+
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("collect3.wav");
+            sound_click.volume = 0.25;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
+
+
 
         if (endless_mode == true) {
             increase_bar_strong();
@@ -449,7 +544,7 @@ if (endless_mode == true) {
 
     $("#onetimebtn_3").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue;
+        current_amount += 5000 * comboValue * permanent_multiplier_value;
         update_score();
     
         checkScore();
@@ -462,9 +557,28 @@ if (endless_mode == true) {
         // Add a class to the element to apply the override with transition
         onetimebtn3.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue;
+        score_increase = 5000 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
+
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("collect3.wav");
+            sound_click.volume = 0.25;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
+
+
 
         if (endless_mode == true) {
             increase_bar_strong();
@@ -474,7 +588,7 @@ if (endless_mode == true) {
 
     $("#onetimebtn_4").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue;
+        current_amount += 5000 * comboValue * permanent_multiplier_value;
         update_score();
     
         checkScore();
@@ -487,9 +601,28 @@ if (endless_mode == true) {
         // Add a class to the element to apply the override with transition
         onetimebtn4.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue;
+        score_increase = 5000 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
+
+        if (playdelay == false) {
+
+            playdelay = true;
+
+            const sound_click = new Audio("collect3.wav");
+            sound_click.volume = 0.25;
+            sound_click.play();
+
+            setTimeout(function() {
+
+                playdelay = false;
+            }, 100);
+
+
+
+            }
+
+
 
         if (endless_mode == true) {
             increase_bar_strong();
@@ -603,6 +736,11 @@ if (endless_mode == true) {
 
 
     // Interval to check and update the combo
+
+
+
+    combo_feedback_buffer = true;
+
     setInterval(() => {
     
         if (clickCount >= 3) {
@@ -612,11 +750,12 @@ if (endless_mode == true) {
             console.log("Combo increased! New comboValue:", comboValue);
             clickCount = 0; // Reset clickCount after reaching 5
             
-            r.style.setProperty('--combo_increased', "1vw red solid");
+            r.style.setProperty('--combo_increased', "0.5vw red solid");
 
             setTimeout(function(){r.style.setProperty('--combo_increased', "0vw black solid");}, 150);
 
             r.style.setProperty('--combo_fontsize', "2.5vw");
+
 
         } else if (clickCount > 0) {
             clickCount = 0; // Reset clickCount if clicked once
@@ -628,12 +767,33 @@ if (endless_mode == true) {
 
             setTimeout(function(){hoverTime = 0;}, 50);
 
-            r.style.setProperty('--combo_increased', "1vw red solid");
+            r.style.setProperty('--combo_increased', "0.5vw red solid");
             setTimeout(function(){r.style.setProperty('--combo_increased', "0vw black solid");}, 150);
+        }
+
+        if (comboValue >= 2) {
+
+            combo_feedback_buffer = true;
         }
     
         if (inactivityTime >= 1 && comboValue > 0) {
-            comboValue = 1; // Reset comboValue if no interaction for 1 second
+
+            comboValue = 1;
+
+            
+            setTimeout(function(){
+
+                if (comboValue == 1 && combo_feedback_buffer == true) {
+                    const sound_click = new Audio("combo_reset.wav");
+                    sound_click.volume = 1;
+                    sound_click.play();
+
+                    combo_feedback_buffer = false;
+
+                    }
+    
+                }, 100);
+    
             console.log("Combo reset!");
             inactivityTime = 1; // Reset inactivityTime
 
@@ -675,6 +835,7 @@ if (endless_mode == true) {
     function update_combo() {
         var comboDisplay = document.getElementsByClassName('combo_display')[0];
         comboDisplay.innerHTML = "x" + comboValue;
+
     }
 
 function resetInactivity() {
@@ -1138,7 +1299,7 @@ function startnormalanims() {
     r.style.setProperty('--obstacle2left', '0%');
     r.style.setProperty('--obstacle2scale', '150%');
 
-    obstacleanimduration = 45000;
+    obstacleanimduration = 40000;
 
 
 }
@@ -1185,7 +1346,7 @@ function starthardanims() {
     r.style.setProperty('--obstacle2left', '-30%');
     r.style.setProperty('--obstacle2scale', '80%');
 
-    obstacleanimduration = 35000;
+    obstacleanimduration = 40000;
 
 
 }
@@ -1225,7 +1386,7 @@ function starthard2anims() {
     r.style.setProperty('--obstacle2scale', '80%');
 
 
-    obstacleanimduration = 40000;
+    obstacleanimduration = 30000;
 
 }
 
@@ -1278,11 +1439,11 @@ function obstacle_loop (){
 
 obstacle_loop();
 
+const meter_deadly_loop = new Audio("ambience_loop2.wav");
+meter_deadly_loop.loop=true;
 
 
-
-
-const sound_meter_filled = new Audio("meter_filled.wav");
+const sound_meter_filled = new Audio("longer_bonus1.wav");
 
 const feverElement = document.querySelector(".fever");
 const fevercover = document.querySelector(".fevermeter_cover");
@@ -1295,6 +1456,14 @@ let decreaseTimeout;
 
 
 var isActive = false;
+
+
+
+
+
+
+
+
 
 
     function update_score() {
@@ -1311,11 +1480,36 @@ var isActive = false;
 
 
         if (current_amount >= 1000000 && isActive == false) {
-
-            const points_reached_loop = new Audio("coolloop.wav");
         
-            points_reached_loop.loop=true;
-            points_reached_loop.play();
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            let meterDeadlyLoopSource;
+            
+            // Create a GainNode and set the gain to 0.5
+            const gainNode = audioContext.createGain();
+            gainNode.gain.value = 0.15;
+            
+            // Load the looping audio file
+            fetch('meter_deadly_loop.wav')
+              .then(response => response.arrayBuffer())
+              .then(buffer => {
+                audioContext.decodeAudioData(buffer, decodedBuffer => {
+                  // Create a buffer source node
+                  meterDeadlyLoopSource = audioContext.createBufferSource();
+                  meterDeadlyLoopSource.buffer = decodedBuffer;
+                  meterDeadlyLoopSource.loop = true;
+                  meterDeadlyLoopSource.playbackRate.value = 1; // Set playback rate to half speed
+
+            
+                  // Connect the source node to the gain node
+                  meterDeadlyLoopSource.connect(gainNode);
+            
+                  // Connect the gain node to the destination (output)
+                  gainNode.connect(audioContext.destination);
+            
+                  // Start the audio immediately to preload it
+                  meterDeadlyLoopSource.start(0);
+                });
+              });
         
             isActive = true;
             
@@ -1385,7 +1579,7 @@ function check_barpos() {
             endscreen_triggered = true;
 
             setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
-            win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + "!";
+            win_screen.innerHTML = "MULTIMETER EMPTIED!<br>" + "The final score is:<br>" + current_amount + " !";
 
             update_score();
             winstate();
@@ -1447,7 +1641,7 @@ function check_barpos() {
         }, 2000);
         
 
-        current_amount *= comboValue;
+        current_amount *= comboValue * permanent_multiplier_value;
 
 
 
@@ -1514,6 +1708,7 @@ const failtext = document.querySelector('.failstate');
 function failstate(){
 
 r.style.setProperty("--failstate_opacity", "80%");
+r.style.setProperty("--endscreen_pointerblock", "all");
 
 endscreen_triggered = true;
 
@@ -1533,6 +1728,8 @@ if (endless_mode == true) {
 function winstate(){
 
 r.style.setProperty("--winstate_opacity", "80%");
+r.style.setProperty("--endscreen_pointerblock", "all");
+
 
 }
 
