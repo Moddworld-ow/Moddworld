@@ -317,6 +317,8 @@ tutorial = false;
 
 disableCombo = false;
 
+disableCombo = false;
+
 
 
 
@@ -384,7 +386,19 @@ $(".starter_btn_tutorial").click(function() {
 
     disableCombo = true;
 
+    disableBar = true;
+
+    stop_onetimebtn = true;
+
+    
     tutorialText.innerHTML = "Welcome to Exponaut! Here are the rules, try to keep up.";
+
+    setInterval(() => {
+        if (stop_onetimebtn == true) {
+            
+        onetimebtn.style.animationPlayState = 'paused';
+        }
+    }, 2000);
 
 
     setInterval(() => {
@@ -416,10 +430,39 @@ $(".starter_btn_tutorial").click(function() {
     black_cover1.style.animationPlayState = 'running';
     black_cover2.style.animationPlayState = 'running';
     black_cover3.style.animationPlayState = 'running';
+
+
+    const btn_1 = ".btn_1"
+    const btn_2 = ".btn_2"
+    const btn_3 = ".btn_3"
+    const btn_4 = ".btn_4"
+
+function remove_btn(x) {
+
+
+    document.querySelector(".btn_" + x).style.animation = 'none';
+    document.querySelector(".btn_" + x).style.opacity = '0%';
+    document.querySelector(".btn_" + x).style.pointerEvents = 'none';
+
+    }
+
+function readd_btn(x) {
+
+
+    document.querySelector(".btn_" + x).style.animation = 'initial';
+    document.querySelector(".btn_" + x).style.opacity = 'initial';
+    document.querySelector(".btn_" + x).style.pointerEvents = 'all';
+
+    }
+
+
+
+    
     
 
 
     $(".progress1").click(function() {
+
 
         tutorialText.innerHTML = "Each circle has a slightly different effect, and correct way of interacting with it.<br> Yellow circles need to be SLASHED, try scoring 500 points so that you may proceed.";
 
@@ -434,10 +477,12 @@ $(".starter_btn_tutorial").click(function() {
                     progress2.style.animationPlayState = 'running';
 
                     progress1check = true;
+
+                    remove_btn(1);
                 }
 
 
-            }, 100);
+            }, 500);
 
 
     });
@@ -445,7 +490,7 @@ $(".starter_btn_tutorial").click(function() {
 
     $(".progress2").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Red circles need to be HOVERED over, to provide points consistently.";
 
 
         progress2.style.animation = 'progress_btn_leave 1s ease-in';
@@ -459,10 +504,12 @@ $(".starter_btn_tutorial").click(function() {
                     progress3.style.animationPlayState = 'running';
 
                     progress2check = true;
+
+                    remove_btn(2);
                 }
 
 
-            }, 100);
+            }, 500);
 
 
 
@@ -471,7 +518,7 @@ $(".starter_btn_tutorial").click(function() {
 
     $(".progress3").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Green circles need to be CLICKED, no rocket science there.";
 
 
         progress3.style.animation = 'progress_btn_leave 1s ease-in';
@@ -488,17 +535,19 @@ $(".starter_btn_tutorial").click(function() {
                     progress4.style.animationPlayState = 'running';
 
                     progress3check = true;
+
+                    remove_btn(3);
                 }
 
 
-            }, 100);
+            }, 500);
 
     });
 
 
     $(".progress4").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Alright, it's time for the more advanced stuff: The POINTS MULTIPLIER!";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -507,28 +556,27 @@ $(".starter_btn_tutorial").click(function() {
 
         progress4.style.animation = 'progress_btn_leave 1s ease-in';
 
-        targetanim4.style.animationPlayState = 'running';
-
             setInterval(function() {
 
                 console.log(current_amount)
                 console.log(progress4check)
 
-                if (current_amount >= 2000 && progress4check == false) {
+                if (current_amount >= 1500 && progress4check == false) {
 
                     progress5.style.animationPlayState = 'running';
 
                     progress4check = true;
+
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
     $(".progress5").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "The Points Multiplier is the key to scoring BIG. To increase your Multiplier, interact with any of the circles for a while. But be careful - NOT INTERACTING with any of the buttons resets your multiplier, so try to keep your Score Multiplier REFRESHED, by briefly interacting with any of the buttons before the Refresh Period runs out.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -549,14 +597,14 @@ $(".starter_btn_tutorial").click(function() {
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
 
     $(".progress6").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Try to reach the Points Multiplier of x10. Remember to try and at least briefly interact with a circle about every single second, it may not increase the Multiplier but it's better to have it refreshed rather than completely reset to x1.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -575,18 +623,22 @@ $(".starter_btn_tutorial").click(function() {
                     progress7.style.animationPlayState = 'running';
 
                     progress6check = true;
+
+                    remove_btn(4);
+
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
 
     $(".progress7").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Great job! You really are getting a hang of this. Increasing your combo doesn't always need to require such good moves though, sometimes you can just WHALE on the Blue circle, which gives you +1 Multiplier on each CLICK!";
 
+        targetanim4.style.animationPlayState = 'running';
 
         r.style.setProperty('--tutorial_position', 'relative');
         r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
@@ -607,14 +659,14 @@ $(".starter_btn_tutorial").click(function() {
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
 
     $(".progress8").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Now its getting real HOT in here... uh, anyway here's the MULTIMETER! Now this is where it gets seriously fast. Understanding this baby is gonna be real useful for racking up points, but there is a more DEADLY side to this thing as well.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -636,7 +688,7 @@ $(".starter_btn_tutorial").click(function() {
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
@@ -665,7 +717,7 @@ $(".starter_btn_tutorial").click(function() {
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
@@ -693,7 +745,7 @@ $(".starter_btn_tutorial").click(function() {
                 }
 
 
-            }, 100);
+            }, 500);
         
     });
 
@@ -748,7 +800,7 @@ $(function() {
                 current_amount += 3 * comboValue * permanent_multiplier_value;
                 update_score();
 
-                if (endless_mode == true) {
+                if (endless_mode == true || disableBar == false) {
                     increase_bar();
             }           
 
@@ -871,7 +923,7 @@ $(function() {
             
         
 
-            if (endless_mode == false) {
+            if (endless_mode == true || disableBar == false) {
             winstate();
             stopTimer(); }
 
@@ -924,7 +976,7 @@ $(function() {
             }
 
 
-if (endless_mode == true) {
+if (endless_mode == true || disableBar == false) {
         increase_bar_strong();
 }
 
@@ -965,7 +1017,7 @@ if (endless_mode == true) {
 
             }
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar_strong();
     }
 
@@ -1008,7 +1060,7 @@ if (endless_mode == true) {
 
 
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar();
     }
 
@@ -1059,7 +1111,7 @@ if (endless_mode == true) {
             }
 
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar_strong();
     }
     });
@@ -1102,7 +1154,7 @@ if (endless_mode == true) {
 
 
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar_strong();
     }
     });
@@ -1145,7 +1197,7 @@ if (endless_mode == true) {
 
 
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar_strong();
     }
     });
@@ -1189,7 +1241,7 @@ if (endless_mode == true) {
 
 
 
-        if (endless_mode == true) {
+        if (endless_mode == true || disableBar == false) {
             increase_bar_strong();
     }
     });
@@ -1439,7 +1491,7 @@ function onetimebtnClickHandler(event) {
 
     triggerCustomEffect();
 
-    if (endless_mode == true) {
+    if (endless_mode == true || disableBar == false) {
         increase_bar_strong();
     }
 }
@@ -1782,6 +1834,10 @@ function reroll_anim_speed_mod() {
 
 function updateAnimation() {
 
+    if (tutorial == false) {
+        
+    
+
     randomizemodvalues();
     randomizemod1();
     reroll_anim_speed_mod();
@@ -1797,6 +1853,8 @@ function updateAnimation() {
     });
   
     console.log(newAnimationDuration);
+
+    }
   }
   
   // Initial call to start the animation loop
@@ -2026,7 +2084,7 @@ function check_barpos() {
 
 setInterval(function() {
     
-    if (endless_mode == true) {check_barpos(); console.log
+    if (endless_mode == true || disableBar == false) {check_barpos(); console.log
 
 
     }
@@ -2088,7 +2146,7 @@ endscreen_triggered = true;
 
 
 
-if (endless_mode == true) {
+if (endless_mode == true || disableBar == false) {
 
     failtext.innerHTML = "OBSTACLE HIT!<br>" + "The final score is: " + current_amount + " !";
 

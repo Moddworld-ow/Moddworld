@@ -1879,7 +1879,7 @@ animation-duration: 2s;
 
 @keyframes comboAnim {
     0% {left: 200%; opacity: 0%;}
-    50% {opacity: 0%;}
+    70% {opacity: 0%;}
     100% {left: 0; opacity: 100%;}
 
 }
@@ -1903,6 +1903,7 @@ animation-duration: 2s;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.5vw;
     aspect-ratio: 2/1;
     position: absolute;
+    opacity: var(--tutorial_opacity);
 }
 
 
@@ -2117,6 +2118,8 @@ animation-duration: 2s;
     line-height: 2.5vw;
     padding-top: 0.5vw;
     padding-bottom: 0.75vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
 
     opacity: var(--tutorialtxt_opacity);
     width: 85%;
@@ -2124,14 +2127,14 @@ animation-duration: 2s;
     text-align: center;
     display: block;
     position: absolute;
-    top: 70%;
+    top: 77%;
     z-index: 75;
     background-color: white;
-    border-radius: 2vw;
+    border-radius: 1vw;
     margin: auto;
     left: 0;
     right: 0;
-    outline: black 0.5vw inset;
+    outline: black 0.4vw inset;
 }
 
 
@@ -2146,7 +2149,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2161,7 +2164,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2176,7 +2179,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2191,7 +2194,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2206,7 +2209,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2221,7 +2224,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2236,7 +2239,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2251,7 +2254,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2266,7 +2269,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
@@ -2281,7 +2284,7 @@ animation-duration: 2s;
     bottom: 0;
     margin: auto;
     left: -100%;
-    animation: progress_btn 2s 1s ease-out forwards;
+    animation: progress_btn 2s ease-out forwards;
     animation-play-state: paused;
     pointer-events: all;
 }
