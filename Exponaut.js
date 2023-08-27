@@ -96,6 +96,213 @@ let offset_rotate2 = 0;
 
 
 
+function runanims() {
+
+    starter_btn.style.animationPlayState = 'running';
+    starter_btn_endless.style.animationPlayState = 'running';
+    starter_btn_tutorial.style.animationPlayState = 'running';
+
+
+    targetanim1.style.animationPlayState = 'running';
+    targetanim2.style.animationPlayState = 'running';
+    targetanim3.style.animationPlayState = 'running';
+    targetanim4.style.animationPlayState = 'running';
+
+    targetanimshadow1.style.animationPlayState = 'running';
+    targetanimshadow2.style.animationPlayState = 'running';
+    targetanimshadow3.style.animationPlayState = 'running';
+
+
+    black_cover1.style.animationPlayState = 'running';
+    black_cover2.style.animationPlayState = 'running';
+    black_cover3.style.animationPlayState = 'running';
+
+
+    targetcontainer1.style.animationPlayState = 'running';
+    targetcontainer2.style.animationPlayState = 'running';
+    targetcontainershadow1.style.animationPlayState = 'running';
+    targetcontainershadow2.style.animationPlayState = 'running';
+    targetcontainerwarning1.style.animationPlayState = 'running';
+    targetcontainerwarning2.style.animationPlayState = 'running';
+
+
+    onetimebtn.style.animationPlayState = "running";
+
+}
+
+
+function startnormalanims() {
+
+    r.style.setProperty('--anim1type', 'obstacle1move 30s 8s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2move 40s 24s infinite');
+
+
+    r.style.setProperty("--anim1wdur", "15s")
+
+    r.style.setProperty("--anim2wdur", "10s")
+
+    r.style.setProperty("--anim1wdel", "8s")
+
+    r.style.setProperty("--anim2wdel", "24s")
+
+
+    r.style.setProperty("--shadow1delay", "8.05s")
+
+    r.style.setProperty("--shadow2delay", "24.1s")
+
+
+    r.style.setProperty('--containerrotate', '90deg');
+
+    r.style.setProperty('--obstacle1top', '300%');
+    r.style.setProperty('--obstacle1left', '80%');
+    r.style.setProperty('--obstacle1scale', '200%');
+
+    r.style.setProperty('--obstacle2top', '50%');
+    r.style.setProperty('--obstacle2left', '0%');
+    r.style.setProperty('--obstacle2scale', '150%');
+
+    obstacleanimduration = 40000;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function starthardanims() {
+
+    r.style.setProperty('--anim1type', 'obstacle1movehard 7.5s 10s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2movehard 10s 20s infinite');
+
+
+
+    r.style.setProperty("--anim1wdur", "2s")
+
+    r.style.setProperty("--anim2wdur", "2s")
+
+    r.style.setProperty("--anim1wdel", "9s")
+
+    r.style.setProperty("--anim2wdel", "19s")
+
+
+    r.style.setProperty("--shadow1delay", "10.05s")
+
+    r.style.setProperty("--shadow2delay", "20.05s")
+
+
+    r.style.setProperty('--containerrotate', '0%');
+
+    r.style.setProperty('--obstacle1top', '-40%');
+    r.style.setProperty('--obstacle1left', '200%');
+    r.style.setProperty('--obstacle1scale', '80%');
+
+    r.style.setProperty('--obstacle2top', '-200%');
+    r.style.setProperty('--obstacle2left', '-30%');
+    r.style.setProperty('--obstacle2scale', '80%');
+
+    obstacleanimduration = 40000;
+
+
+}
+
+
+
+function starthard2anims() {
+    starthardanims();
+
+    r.style.setProperty('--anim1type', 'obstacle1movehard2 15s 10s infinite');
+    r.style.setProperty('--anim2type', 'obstacle2movehard2 25s 20s infinite ease-in');
+
+
+
+    r.style.setProperty("--anim1wdur", "2s")
+
+    r.style.setProperty("--anim2wdur", "4s")
+
+    r.style.setProperty("--anim1wdel", "9s")
+
+    r.style.setProperty("--anim2wdel", "19s")
+
+
+    r.style.setProperty("--shadow1delay", "10.05s")
+
+    r.style.setProperty("--shadow2delay", "20.05s")
+
+
+    r.style.setProperty('--containerrotate', '0%');
+
+    r.style.setProperty('--obstacle1top', '150%');
+    r.style.setProperty('--obstacle1left', '0%');
+    r.style.setProperty('--obstacle1scale', '80%');
+
+    r.style.setProperty('--obstacle2top', '-230%');
+    r.style.setProperty('--obstacle2left', '-30%');
+    r.style.setProperty('--obstacle2scale', '80%');
+
+
+    obstacleanimduration = 30000;
+
+}
+
+setTimeout(starthardanims, obstacleanimduration);
+
+
+function select_obstacleset(){
+    obstacle_setID = Math.floor(Math.random() * 3 + 1);
+
+}
+
+function runchoosenset() {
+
+
+        if (obstacle_setID == 1) {console.log("set1");
+
+        startnormalanims();
+
+
+        } else if (obstacle_setID  == 2) {console.log("set2");
+
+        starthardanims();
+
+
+        
+
+        } else if (obstacle_setID  == 3) {console.log("set3");
+
+        starthard2anims();    
+       
+               }
+        else {console.log("this cant happen");
+      }
+
+    }
+
+function deployobstacle() {
+    select_obstacleset();
+    runchoosenset();
+}
+
+
+
+function obstacle_loop (){
+
+    setInterval(deployobstacle, obstacleanimduration)
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -106,6 +313,39 @@ let offset_rotate2 = 0;
 
 endless_mode = false;
 
+tutorial = false;
+
+disableCombo = false;
+
+
+
+
+
+
+
+let progress1 = document.querySelector(".progress1");
+let progress2 = document.querySelector(".progress2");
+let progress3 = document.querySelector(".progress3");
+let progress4 = document.querySelector(".progress4");
+let progress5 = document.querySelector(".progress5");
+let progress6 = document.querySelector(".progress6");
+let progress7 = document.querySelector(".progress7");
+let progress8 = document.querySelector(".progress8");
+let progress9 = document.querySelector(".progress9");
+let progress10 = document.querySelector(".progress10");
+
+let progress1check = false;
+let progress2check = false;
+let progress3check = false;
+let progress4check = false;
+let progress5check = false;
+let progress6check = false;
+let progress7check = false;
+let progress8check = false;
+let progress9check = false;
+let progress10check = false;
+
+const tutorialText = document.querySelector(".tutorialtext");
 
 
 
@@ -117,6 +357,7 @@ $(".starter_btn").click(function() {
 
     r.style.setProperty('--meter_left_offset', "-200%");
 
+    runanims();
 
 }
 
@@ -124,10 +365,12 @@ $(".starter_btn").click(function() {
 
 $(".starter_btn_endless").click(function() {
     start_all();
+
     endless_mode = true;
 
     r.style.setProperty('--permanent_opacity', "100%");
 
+    runanims();
 
 
 }
@@ -136,6 +379,331 @@ $(".starter_btn_endless").click(function() {
 
 $(".starter_btn_tutorial").click(function() {
     start_all();
+
+    tutorial = true;
+
+    disableCombo = true;
+
+    tutorialText.innerHTML = "Welcome to Exponaut! Here are the rules, try to keep up.";
+
+
+    setInterval(() => {
+
+        if (disableCombo == true) {
+            
+            inactivityTime = 1;
+            clickCount = -100;
+            hoverTime = -100;
+            comboValue = 1;
+
+        }
+        
+    }, 100);
+
+    r.style.setProperty('--tutorial_position', 'absolute');
+    r.style.setProperty('--tutorial_opacity', '0%');
+    r.style.setProperty('--tutorial_top', '0.25vw');
+    r.style.setProperty('--tutorialtxt_opacity', '100%');
+
+
+
+    progress1.style.animationPlayState = 'running';
+
+    starter_btn.style.animationPlayState = 'running';
+    starter_btn_endless.style.animationPlayState = 'running';
+    starter_btn_tutorial.style.animationPlayState = 'running';
+
+    black_cover1.style.animationPlayState = 'running';
+    black_cover2.style.animationPlayState = 'running';
+    black_cover3.style.animationPlayState = 'running';
+    
+
+
+    $(".progress1").click(function() {
+
+        tutorialText.innerHTML = "Each circle has a slightly different effect, and correct way of interacting with it.<br> Yellow circles need to be SLASHED, try scoring 500 points so that you may proceed.";
+
+        progress1.style.animation = 'progress_btn_leave 1s ease-in';
+
+        targetanim1.style.animationPlayState = 'running';
+
+            setInterval(function() {
+
+                if (current_amount >= 500 && progress1check == false) {
+
+                    progress2.style.animationPlayState = 'running';
+
+                    progress1check = true;
+                }
+
+
+            }, 100);
+
+
+    });
+
+
+    $(".progress2").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        progress2.style.animation = 'progress_btn_leave 1s ease-in';
+
+        targetanim2.style.animationPlayState = 'running';
+
+            setInterval(function() {
+
+                if (current_amount >= 750 && progress2check == false) {
+
+                    progress3.style.animationPlayState = 'running';
+
+                    progress2check = true;
+                }
+
+
+            }, 100);
+
+
+
+    });
+
+
+    $(".progress3").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        progress3.style.animation = 'progress_btn_leave 1s ease-in';
+
+        targetanim3.style.animationPlayState = 'running';
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress3check)
+
+                if (current_amount >= 1500 && progress3check == false) {
+
+                    progress4.style.animationPlayState = 'running';
+
+                    progress3check = true;
+                }
+
+
+            }, 100);
+
+    });
+
+
+    $(".progress4").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards ease-out');
+        r.style.setProperty('--tutorial_top', 'initial');
+
+        progress4.style.animation = 'progress_btn_leave 1s ease-in';
+
+        targetanim4.style.animationPlayState = 'running';
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress4check)
+
+                if (current_amount >= 2000 && progress4check == false) {
+
+                    progress5.style.animationPlayState = 'running';
+
+                    progress4check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+    $(".progress5").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress5.style.animation = 'progress_btn_leave 1s ease-in';
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress5check)
+
+                if (current_amount >= 2000 && progress5check == false) {
+
+                    progress6.style.animationPlayState = 'running';
+
+                    progress5check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+
+    $(".progress6").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress6.style.animation = 'progress_btn_leave 1s ease-in';
+
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress1check)
+
+                if (current_amount >= 2000 && progress6check == false) {
+
+                    progress7.style.animationPlayState = 'running';
+
+                    progress6check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+
+    $(".progress7").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress7.style.animation = 'progress_btn_leave 1s ease-in';
+
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress1check)
+
+                if (current_amount >= 2000 && progress7check == false) {
+
+                    progress8.style.animationPlayState = 'running';
+
+                    progress7check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+
+    $(".progress8").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress8.style.animation = 'progress_btn_leave 1s ease-in';
+
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress1check)
+
+                if (current_amount >= 2000 && progress8check == false) {
+
+                    progress9.style.animationPlayState = 'running';
+
+                    progress8check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+
+    $(".progress9").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress9.style.animation = 'progress_btn_leave 1s ease-in';
+
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress1check)
+
+                if (current_amount >= 2000 && progress9check == false) {
+
+                    progress10.style.animationPlayState = 'running';
+
+                    progress9check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+    $(".progress10").click(function() {
+
+        tutorialText.innerHTML = "another t";
+
+
+        r.style.setProperty('--tutorial_position', 'relative');
+        r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
+
+        progress10.style.animation = 'progress_btn_leave 1s ease-in';
+
+
+            setInterval(function() {
+
+                console.log(current_amount)
+                console.log(progress1check)
+
+                if (current_amount >= 2000 && progress10check == false) {
+
+                    /* winstate goes here */
+
+                    progress10check = true;
+                }
+
+
+            }, 100);
+        
+    });
+
+
+
+
+
+
+
+    
 
 
 }
@@ -148,9 +716,6 @@ var r = document.querySelector(':root');
 
 
 function start_all() {
-
-const sound_click = new Audio("click.ogg");
-
     
 current_amount = 0;
 
@@ -783,7 +1348,7 @@ if (endless_mode == true) {
             
             setTimeout(function(){
 
-                if (comboValue == 1 && combo_feedback_buffer == true) {
+                if (comboValue == 1 && combo_feedback_buffer == true && disableCombo == false) {
                     const sound_click = new Audio("combo_reset.wav");
                     sound_click.volume = 1;
                     sound_click.play();
@@ -833,9 +1398,13 @@ if (endless_mode == true) {
 
     // Function to update combo display
     function update_combo() {
+
+        if (disableCombo == false) {
+
         var comboDisplay = document.getElementsByClassName('combo_display')[0];
         comboDisplay.innerHTML = "x" + comboValue;
 
+        }
     }
 
 function resetInactivity() {
@@ -1079,11 +1648,14 @@ function randomizemodvaluesmod2() {
 
 function reroll_mod2() {
 
-    randomizemodvaluesmod2();
-    randomizemod2();
-            
+    if (tutorial == false) {
+
+        randomizemodvaluesmod2();
+        randomizemod2();
+
     }
-            
+
+        }
     setInterval(reroll_mod2, 20000);
 
 
@@ -1091,19 +1663,26 @@ function reroll_mod2() {
 function reroll_mod3() {
 
    
+    if (tutorial == false) {
+
         randomizemodvaluesmod3();
         randomizemod3();
-                console.log(offset_scale3);
-        }
 
+    }
+
+        }
         setInterval(reroll_mod3, 30000);
         reroll_mod3();
 
     
 function reroll_mod4() {
 
+    if (tutorial == false) {
+
         randomizemodvaluesmod4();
         randomizemod4();
+
+    }
 
         }
         
@@ -1229,211 +1808,6 @@ function updateAnimation() {
 
 
 
-
-function startall2() {}
-
-
-
-function runanims() {
-
-    starter_btn.style.animationPlayState = 'running';
-    starter_btn_endless.style.animationPlayState = 'running';
-    starter_btn_tutorial.style.animationPlayState = 'running';
-
-
-    targetanim1.style.animationPlayState = 'running';
-    targetanim2.style.animationPlayState = 'running';
-    targetanim3.style.animationPlayState = 'running';
-    targetanim4.style.animationPlayState = 'running';
-
-    targetanimshadow1.style.animationPlayState = 'running';
-    targetanimshadow2.style.animationPlayState = 'running';
-    targetanimshadow3.style.animationPlayState = 'running';
-
-
-    black_cover1.style.animationPlayState = 'running';
-    black_cover2.style.animationPlayState = 'running';
-    black_cover3.style.animationPlayState = 'running';
-
-
-    targetcontainer1.style.animationPlayState = 'running';
-    targetcontainer2.style.animationPlayState = 'running';
-    targetcontainershadow1.style.animationPlayState = 'running';
-    targetcontainershadow2.style.animationPlayState = 'running';
-    targetcontainerwarning1.style.animationPlayState = 'running';
-    targetcontainerwarning2.style.animationPlayState = 'running';
-
-
-    onetimebtn.style.animationPlayState = "running";
-
-}
-
-
-function startnormalanims() {
-
-    r.style.setProperty('--anim1type', 'obstacle1move 30s 8s infinite');
-    r.style.setProperty('--anim2type', 'obstacle2move 40s 24s infinite');
-
-
-    r.style.setProperty("--anim1wdur", "15s")
-
-    r.style.setProperty("--anim2wdur", "10s")
-
-    r.style.setProperty("--anim1wdel", "8s")
-
-    r.style.setProperty("--anim2wdel", "24s")
-
-
-    r.style.setProperty("--shadow1delay", "8.05s")
-
-    r.style.setProperty("--shadow2delay", "24.1s")
-
-
-    r.style.setProperty('--containerrotate', '90deg');
-
-    r.style.setProperty('--obstacle1top', '300%');
-    r.style.setProperty('--obstacle1left', '80%');
-    r.style.setProperty('--obstacle1scale', '200%');
-
-    r.style.setProperty('--obstacle2top', '50%');
-    r.style.setProperty('--obstacle2left', '0%');
-    r.style.setProperty('--obstacle2scale', '150%');
-
-    obstacleanimduration = 40000;
-
-
-}
-
-
-
-
-
-
-runanims();
-
-
-
-
-
-function starthardanims() {
-
-    r.style.setProperty('--anim1type', 'obstacle1movehard 7.5s 10s infinite');
-    r.style.setProperty('--anim2type', 'obstacle2movehard 10s 20s infinite');
-
-
-
-    r.style.setProperty("--anim1wdur", "2s")
-
-    r.style.setProperty("--anim2wdur", "2s")
-
-    r.style.setProperty("--anim1wdel", "9s")
-
-    r.style.setProperty("--anim2wdel", "19s")
-
-
-    r.style.setProperty("--shadow1delay", "10.05s")
-
-    r.style.setProperty("--shadow2delay", "20.05s")
-
-
-    r.style.setProperty('--containerrotate', '0%');
-
-    r.style.setProperty('--obstacle1top', '-40%');
-    r.style.setProperty('--obstacle1left', '200%');
-    r.style.setProperty('--obstacle1scale', '80%');
-
-    r.style.setProperty('--obstacle2top', '-200%');
-    r.style.setProperty('--obstacle2left', '-30%');
-    r.style.setProperty('--obstacle2scale', '80%');
-
-    obstacleanimduration = 40000;
-
-
-}
-
-
-
-function starthard2anims() {
-    starthardanims();
-
-    r.style.setProperty('--anim1type', 'obstacle1movehard2 15s 10s infinite');
-    r.style.setProperty('--anim2type', 'obstacle2movehard2 25s 20s infinite ease-in');
-
-
-
-    r.style.setProperty("--anim1wdur", "2s")
-
-    r.style.setProperty("--anim2wdur", "4s")
-
-    r.style.setProperty("--anim1wdel", "9s")
-
-    r.style.setProperty("--anim2wdel", "19s")
-
-
-    r.style.setProperty("--shadow1delay", "10.05s")
-
-    r.style.setProperty("--shadow2delay", "20.05s")
-
-
-    r.style.setProperty('--containerrotate', '0%');
-
-    r.style.setProperty('--obstacle1top', '150%');
-    r.style.setProperty('--obstacle1left', '0%');
-    r.style.setProperty('--obstacle1scale', '80%');
-
-    r.style.setProperty('--obstacle2top', '-230%');
-    r.style.setProperty('--obstacle2left', '-30%');
-    r.style.setProperty('--obstacle2scale', '80%');
-
-
-    obstacleanimduration = 30000;
-
-}
-
-setTimeout(starthardanims, obstacleanimduration);
-
-
-function select_obstacleset(){
-    obstacle_setID = Math.floor(Math.random() * 3 + 1);
-
-}
-
-function runchoosenset() {
-
-
-        if (obstacle_setID == 1) {console.log("set1");
-
-        startnormalanims();
-
-
-        } else if (obstacle_setID  == 2) {console.log("set2");
-
-        starthardanims();
-
-
-        
-
-        } else if (obstacle_setID  == 3) {console.log("set3");
-
-        starthard2anims();    
-       
-               }
-        else {console.log("this cant happen");
-      }
-
-    }
-
-function deployobstacle() {
-    select_obstacleset();
-    runchoosenset();
-}
-
-
-
-function obstacle_loop (){
-
-    setInterval(deployobstacle, obstacleanimduration)
-}
 
 
 

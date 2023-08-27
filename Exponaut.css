@@ -1824,9 +1824,17 @@ animation-duration: 2s;
 :root {
 
     --variable_width: 8vw;
+
+    --tutorial_position: relative;
+    --tutorial_opacity: 100%;
+    --tutorial_anim: none;
+    --tutorial_top: initial;
 }
 
 .score_display {
+
+    position: var(--tutorial_position);
+
     display: inline-flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
@@ -1836,6 +1844,9 @@ animation-duration: 2s;
  
     outline: 0.3vw red solid;
     margin: auto;
+    left: 0;
+    right: 0;
+    top: var(--tutorial_top);
 
     background-color: white;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.5vw;
@@ -1849,6 +1860,8 @@ animation-duration: 2s;
     width: 4vw;
     height: 4vw;
 
+    opacity: var(--tutorial_opacity);
+
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -1860,6 +1873,14 @@ animation-duration: 2s;
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0, rgba(0, 0, 0, 0.66) 0.3vw 0.3vw 1vw 0.1vw;
     outline: none;
     vertical-align: middle;
+
+    animation: var(--tutorial_anim);
+}
+
+@keyframes comboAnim {
+    0% {left: 200%; opacity: 0%;}
+    50% {opacity: 0%;}
+    100% {left: 0; opacity: 100%;}
 
 }
 
@@ -1895,7 +1916,7 @@ animation-duration: 2s;
 }
 
 .animate_combo {
-    opacity: 100%;
+    
     font-size: var(--combo_fontsize);
     transition: all 0.15s 0s !important;
 
@@ -2085,3 +2106,198 @@ animation-duration: 2s;
     }
 }
 
+
+:root {
+    --tutorialtxt_opacity: 0%;
+
+}
+
+.tutorialtext {
+    font-size: 2vw;
+    line-height: 2.5vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.75vw;
+
+    opacity: var(--tutorialtxt_opacity);
+    width: 85%;
+    height: auto;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 70%;
+    z-index: 75;
+    background-color: white;
+    border-radius: 2vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    outline: black 0.5vw inset;
+}
+
+
+
+.progress1 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress2 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress3 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress4 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress5 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress6 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress7 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress8 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress9 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+.progress10 {
+    width: 15vw;
+    height: 5vw;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s 1s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
+}
+
+
+
+
+@keyframes progress_btn {
+    0% {left: -100%; opacity: 0;}
+    50% {opacity: 0;}
+    100% {left: 0%; right: 0; opacity: 1;}
+
+}
+
+@keyframes progress_btn_leave {
+    0% {left: 0%; right: 0; opacity: 1;}
+    100% {left: 200%; opacity: 0;}
+
+}
