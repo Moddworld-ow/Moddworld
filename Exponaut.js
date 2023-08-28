@@ -3,6 +3,9 @@ let targetanim2 = document.querySelector(".btn_2");
 let targetanim3 = document.querySelector(".btn_3");
 let targetanim4 = document.querySelector(".btn_4");
 
+let targetanim4box = document.querySelector(".rotating_btn_container4");
+
+
 let targetanimshadow1 = document.querySelector(".btn1shadow");
 let targetanimshadow2 = document.querySelector(".btn1shadow2");
 let targetanimshadow3 = document.querySelector(".btn1shadow3");
@@ -311,13 +314,11 @@ function obstacle_loop (){
 
 
 
-endless_mode = false;
+var endless_mode = false;
 
-tutorial = false;
+var tutorial = false;
 
-disableCombo = false;
-
-disableCombo = false;
+var disableCombo = false;
 
 
 
@@ -350,6 +351,11 @@ let progress10check = false;
 const tutorialText = document.querySelector(".tutorialtext");
 
 
+const onetimebtn1 = document.querySelector("#onetimebtn_1");
+const onetimebtn2 = document.querySelector("#onetimebtn_2");
+const onetimebtn3 = document.querySelector("#onetimebtn_3");
+const onetimebtn4 = document.querySelector("#onetimebtn_4");
+
 
 
 
@@ -360,6 +366,8 @@ $(".starter_btn").click(function() {
     r.style.setProperty('--meter_left_offset', "-200%");
 
     runanims();
+
+    disableBar = true;
 
 }
 
@@ -390,13 +398,26 @@ $(".starter_btn_tutorial").click(function() {
 
     stop_onetimebtn = true;
 
+    targetanim4.style.animation = 'none';
+    targetanim4.style.opacity = '0%';
+
+    targetanim4box.style.animation = 'none';
+
+    r.style.setProperty('--meter_left_offset', '-200%');
+
+
     
     tutorialText.innerHTML = "Welcome to Exponaut! Here are the rules, try to keep up.";
 
-    setInterval(() => {
+    setTimeout(() => {
         if (stop_onetimebtn == true) {
+
+            console.log("went off")
             
-        onetimebtn.style.animationPlayState = 'paused';
+            r.style.setProperty('--animstate', 'paused');
+
+
+
         }
     }, 2000);
 
@@ -406,8 +427,6 @@ $(".starter_btn_tutorial").click(function() {
         if (disableCombo == true) {
             
             inactivityTime = 1;
-            clickCount = -100;
-            hoverTime = -100;
             comboValue = 1;
 
         }
@@ -490,7 +509,7 @@ function readd_btn(x) {
 
     $(".progress2").click(function() {
 
-        tutorialText.innerHTML = "Red circles need to be HOVERED over, to provide points consistently.";
+        tutorialText.innerHTML = "Red circles need to be HOVERED over, to provide points consistently.<br> 750 points to continue.";
 
 
         progress2.style.animation = 'progress_btn_leave 1s ease-in';
@@ -518,17 +537,16 @@ function readd_btn(x) {
 
     $(".progress3").click(function() {
 
-        tutorialText.innerHTML = "Green circles need to be CLICKED, no rocket science there.";
-
+        tutorialText.innerHTML = "Green circles need to be CLICKED, no rocket science here.<br> 1500 points to proceed.";
 
         progress3.style.animation = 'progress_btn_leave 1s ease-in';
 
         targetanim3.style.animationPlayState = 'running';
+        targetanim3.style.animation = "btn3loop infinite 60s";
+
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress3check)
 
                 if (current_amount >= 1500 && progress3check == false) {
 
@@ -549,7 +567,6 @@ function readd_btn(x) {
 
         tutorialText.innerHTML = "Alright, it's time for the more advanced stuff: The POINTS MULTIPLIER!";
 
-
         r.style.setProperty('--tutorial_position', 'relative');
         r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards ease-out');
         r.style.setProperty('--tutorial_top', 'initial');
@@ -558,14 +575,15 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress4check)
-
-                if (current_amount >= 1500 && progress4check == false) {
+              
+                if (progress4check == false) {
 
                     progress5.style.animationPlayState = 'running';
 
                     progress4check = true;
+
+                    remove_btn(1);
+
 
                 }
 
@@ -577,6 +595,16 @@ function readd_btn(x) {
     $(".progress5").click(function() {
 
         tutorialText.innerHTML = "The Points Multiplier is the key to scoring BIG. To increase your Multiplier, interact with any of the circles for a while. But be careful - NOT INTERACTING with any of the buttons resets your multiplier, so try to keep your Score Multiplier REFRESHED, by briefly interacting with any of the buttons before the Refresh Period runs out.";
+            
+        readd_btn(1);
+
+
+        targetanim1.style.animationPlayState = 'running';
+        targetanim1.style.animation = "btn1loop infinite 15s";
+
+
+
+        disableCombo = false;
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -586,14 +614,14 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress5check)
 
-                if (current_amount >= 2000 && progress5check == false) {
+                if (comboValue >= 3 && progress5check == false) {
 
                     progress6.style.animationPlayState = 'running';
 
                     progress5check = true;
+
+                    remove_btn(1);
                 }
 
 
@@ -606,6 +634,17 @@ function readd_btn(x) {
 
         tutorialText.innerHTML = "Try to reach the Points Multiplier of x10. Remember to try and at least briefly interact with a circle about every single second, it may not increase the Multiplier but it's better to have it refreshed rather than completely reset to x1.";
 
+        readd_btn(1);
+
+        targetanim2.style.animation = "btn2loop infinite 20s";
+        targetanim2.style.animationPlayState = 'running';
+        targetanim2.style.pointerEvents = 'all';
+
+        targetanim1.style.animation = "btn1loop infinite 15s"
+
+        targetanim3.style.animation = "btn3loop infinite 60s";
+
+
 
         r.style.setProperty('--tutorial_position', 'relative');
         r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
@@ -615,16 +654,17 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress1check)
 
-                if (current_amount >= 2000 && progress6check == false) {
+                if (comboValue >= 10 && progress6check == false) {
 
                     progress7.style.animationPlayState = 'running';
 
                     progress6check = true;
 
                     remove_btn(4);
+                    remove_btn(1);
+                    remove_btn(2);
+                    remove_btn(3);
 
                 }
 
@@ -636,9 +676,19 @@ function readd_btn(x) {
 
     $(".progress7").click(function() {
 
-        tutorialText.innerHTML = "Great job! You really are getting a hang of this. Increasing your combo doesn't always need to require such good moves though, sometimes you can just WHALE on the Blue circle, which gives you +1 Multiplier on each CLICK!";
+        targetanim4.style.opacity = '0%';
+
+
+        tutorialText.innerHTML = "Great job! You really are getting the hang of this. Increasing your combo doesn't always need to require such good moves though, sometimes you can just WHALE on the Blue circle, which gives you +1 Multiplier on each CLICK!";
 
         targetanim4.style.animationPlayState = 'running';
+        targetanim4.style.animation = "btn4loop infinite 25s";
+        targetanim4.style.opacity = '100%';
+        targetanim4.style.pointerEvents = "all";
+
+        targetanim4box.style.animation = "container_movement 25s ease-in-out infinite";
+
+
 
         r.style.setProperty('--tutorial_position', 'relative');
         r.style.setProperty('--tutorial_anim', 'comboAnim 2s forwards');
@@ -648,10 +698,8 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress1check)
-
-                if (current_amount >= 2000 && progress7check == false) {
+             
+                if (comboValue >= 5 && progress7check == false) {
 
                     progress8.style.animationPlayState = 'running';
 
@@ -666,7 +714,12 @@ function readd_btn(x) {
 
     $(".progress8").click(function() {
 
-        tutorialText.innerHTML = "Now its getting real HOT in here... uh, anyway here's the MULTIMETER! Now this is where it gets seriously fast. Understanding this baby is gonna be real useful for racking up points, but there is a more DEADLY side to this thing as well.";
+
+        disableBar = false;
+
+        r.style.setProperty('--meter_left_offset', '-14%');
+        
+        tutorialText.innerHTML = "Now its getting real HOT in here... uh, anyway here's the MULTIMETER! Now this is where it gets seriously fast. Understanding this baby is gonna be really useful for racking up points, but there is a more DEADLY side to this thing as well.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -677,12 +730,14 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress1check)
 
-                if (current_amount >= 2000 && progress8check == false) {
+                if (comboValue >= 5 && progress8check == false) {
 
-                    progress9.style.animationPlayState = 'running';
+                    setTimeout(() => {
+
+                        progress9.style.animationPlayState = 'running';
+                        
+                    }, 2000);
 
                     progress8check = true;
                 }
@@ -695,7 +750,18 @@ function readd_btn(x) {
 
     $(".progress9").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        readd_btn(1);
+
+        targetanim2.style.animation = "btn2loop infinite 20s";
+        targetanim2.style.animationPlayState = 'running';
+        targetanim2.style.pointerEvents = 'all';
+
+        targetanim1.style.animation = "btn1loop infinite 15s"
+
+        targetanim3.style.animation = "btn3loop infinite 60s";
+
+
+        tutorialText.innerHTML = "Fill the Multimeter to proceed. Remember that in the actual game - The ENDLESS Mode, the Bar will actually END YOUR (endless) GAME upon filling up, so learn to keep the meter from filling up completely.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -706,10 +772,8 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress1check)
 
-                if (current_amount >= 2000 && progress9check == false) {
+                if (permanent_multiplier_value >= 2 && progress9check == false) {
 
                     progress10.style.animationPlayState = 'running';
 
@@ -723,7 +787,7 @@ function readd_btn(x) {
 
     $(".progress10").click(function() {
 
-        tutorialText.innerHTML = "another t";
+        tutorialText.innerHTML = "Congratulations! You are now ready for the real deal, try finishing the TARGET SCORE mode now, as that will be a good basic scoring practice. Good luck!";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -734,12 +798,13 @@ function readd_btn(x) {
 
             setInterval(function() {
 
-                console.log(current_amount)
-                console.log(progress1check)
 
-                if (current_amount >= 2000 && progress10check == false) {
+                if (progress10check == false) {
 
-                    /* winstate goes here */
+                    var win_screen = document.getElementsByClassName('winstate')[0];
+                    win_screen.innerHTML = "CONGRATULATIONS<br> You finished the introduction!";
+
+                    winstate();
 
                     progress10check = true;
                 }
@@ -1022,7 +1087,7 @@ if (endless_mode == true || disableBar == false) {
     }
 
 
-        score_increase ="+" + 25 * comboValue * permanent_multiplier_value;
+        score_increase ="+" + 50 * comboValue * permanent_multiplier_value;
 
         triggerCustomEffect();
 
@@ -1360,7 +1425,7 @@ if (endless_mode == true || disableBar == false) {
 
     setInterval(() => {
     
-        if (clickCount >= 3) {
+        if (clickCount >= 5) {
             comboValue++;
 
 
@@ -1378,7 +1443,7 @@ if (endless_mode == true || disableBar == false) {
             clickCount = 0; // Reset clickCount if clicked once
         }
     
-        if (hoverTime >= 3) {
+        if (hoverTime >= 5) {
             comboValue++;
             console.log("Combo increased! New comboValue:", comboValue);
 
@@ -1545,9 +1610,6 @@ setInterval(() => {
 
 
 
-function get_var() {
-var rs = getComputedStyle(r);
-}
 
 function change_btn_offset_left() {
 r.style.setProperty('--left_mod', offset_left);
@@ -1574,6 +1636,11 @@ r.style.setProperty('--scale_mod', offset_scale);
 }
 
 function randomizemod1() {
+
+    setTimeout(() => {
+        
+
+    if (tutorial == false) {
     
     fix_btn_offset_rotate();
     change_btn_offset_rotate();
@@ -1584,9 +1651,18 @@ function randomizemod1() {
 
     change_btn_offset_scale();
 
+    }
+
+}, 200);
+
 }
 
 function randomizemod2() {
+
+    setTimeout(() => {
+        
+
+    if (tutorial == false) {
 
 
         r.style.setProperty('--left_mod2', offset_left2);
@@ -1608,10 +1684,19 @@ function randomizemod2() {
         r.style.setProperty('--scale_mod2', offset_scale2);
 
 
+    }
+
+}, 200);
     
 }
 
+
 function randomizemod3() {
+
+    setTimeout(() => {
+        
+
+if (tutorial == false) {
 
     r.style.setProperty('--left_mod3', offset_left3);
     
@@ -1631,12 +1716,19 @@ function randomizemod3() {
     
     r.style.setProperty('--scale_mod3', offset_scale3);
 
+    }
 
+}, 200);
 
 }
 
 
 function randomizemod4() {
+
+    setTimeout(() => {
+        
+
+if (tutorial == false) {
 
     r.style.setProperty('--left_mod4', offset_left4);
     
@@ -1656,7 +1748,9 @@ function randomizemod4() {
     
     r.style.setProperty('--scale_mod4', offset_scale4);
 
+    }
 
+}, 200);
 
 }
 
@@ -1729,17 +1823,31 @@ function reroll_mod3() {
     
 function reroll_mod4() {
 
-    if (tutorial == false) {
+    setTimeout(() => {
 
-        randomizemodvaluesmod4();
-        randomizemod4();
+        if (tutorial == false) {
+                
+            randomizemodvaluesmod4();
+            randomizemod4();
+        }
+        
+    }, 200);
+
 
     }
 
-        }
+
+        setTimeout(() => {
+
+            if (tutorial == false) {
+
+                setInterval(reroll_mod4, 25000);
+                reroll_mod4();    
+                
+            }
+
+        }, 100);
         
-        setInterval(reroll_mod4, 25000);
-        reroll_mod4();
 
 
 

@@ -170,11 +170,16 @@ button {
     --rotate_fix2: 0deg;
     --scale_mod2: 100%;
 
-    --left_mod3: 0;
-    --top_mod3: 0;
-    --rotate_mod3: 0deg;
-    --rotate_fix3: 0deg;
-    --scale_mod3: 100%;
+    --left_mod3: 10%;
+    --top_mod3: 37%;
+    --rotate_mod3: -25deg;
+    --rotate_fix3: 25deg;
+    --scale_mod3: 130%;
+
+    --left_mod4: 72%;
+    --top_mod4: 65%;
+    --rotate_mod4: -25deg;
+    --scale_mod4: 150%;
 
 
 
@@ -297,7 +302,7 @@ button {
     top: 45%;
     background-color: none;
     border-radius: 3vw;
-    transition-duration: 0s;
+    transition-duration: 1s;
     
   }
 
@@ -973,7 +978,7 @@ button {
     outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
     animation: btn2loop infinite 20s;
     position: absolute;
-    pointer-events: all !important;
+    pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     background-image: url(red_button_bg.png);
     background-size: cover;
@@ -1680,27 +1685,81 @@ button {
 }
 
 @keyframes btn3loop {
-    0% {left: 50%; top: 50%; opacity: 0%; pointer-events: none;}
+    0% {left: 50%; top: 75%; opacity: 0%; pointer-events: none;}
    
+    2% {left: 75%; top: 75%; opacity: 100%; pointer-events: all;}
+
     5% {left: 75%; top: 75%; opacity: 100%; pointer-events: all;}
+
+    7% {left: 75%; top: 25%;}
+
     10% {left: 75%; top: 25%;} 
+
+    12% {left: 25%; top: 25%;}
+
     15% {left: 25%; top: 25%;}
+
+    17% {left: 25%; top: 50%;}
+
     20% {left: 25%; top: 50%;}
+
+    22% {left: 50%; top: 50%;}
+
     25% {left: 50%; top: 50%;}
+
+    27% {left: 50%; top: 0%;}
+
     30% {left: 50%; top: 0%;}
+
+    32% {left: 0%; top: 0%;}
+
     35% {left: 0%; top: 0%;}
+
+    37% {left: 0%; top: -25%;}
+
     40% {left: 0%; top: -25%;}
+
+    42% {left: -50%; top: -25%;}
+
     45% {left: -50%; top: -25%;}
+
+    47% {left: -50%; top: 25%;}
+
     50% {left: -50%; top: 25%;}
+
+    52% {left: 0%; top: 25%;}
+
     55% {left: 0%; top: 25%;}
+
+    57% {left: 0%; top: -25%;}
+    
     60% {left: 0%; top: -25%;} 
+
+    62% {left: 25%; top: -25%;}
+
     65% {left: 25%; top: -25%;}
+
+    67% {left: 25%; top: 50%;}
+
     70% {left: 25%; top: 50%;}
+
+    72% {left: 0%; top: 50%;}
+
     75% {left: 0%; top: 50%;}
+
+    77% {left: 0%; top: 25%;}
+
     80% {left: 0%; top: 25%;}
+
+    82% {left: 75%; top: 25%;}
+
     85% {left: 75%; top: 25%;}
+
+    87% {left: 75%; top: -25%;}
+
     90% {left: 75%; top: -25%;}
-    95% {left: 25%; top: -25%; opacity: 100%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%; pointer-events: all;}
+
+    92% {left: 25%; top: -25%; opacity: 100%; animation-timing-function: cubic-bezier(.63,.01,.80,.26); opacity: 100%; pointer-events: all;}
     100% {left: 25%; top: -300%; opacity: 0%; pointer-events: none;}
     
 }
@@ -2122,7 +2181,8 @@ animation-duration: 2s;
     padding-right: 0.6vw;
 
     opacity: var(--tutorialtxt_opacity);
-    width: 85%;
+    width: fit-content;
+    max-width: 85%;
     height: auto;
     text-align: center;
     display: block;
@@ -2135,14 +2195,18 @@ animation-duration: 2s;
     left: 0;
     right: 0;
     outline: black 0.4vw inset;
+    pointer-events: none;
 }
 
 
 
 .progress1 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    width: 50vw;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2155,9 +2219,11 @@ animation-duration: 2s;
 }
 
 .progress2 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2170,9 +2236,11 @@ animation-duration: 2s;
 }
 
 .progress3 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2185,9 +2253,11 @@ animation-duration: 2s;
 }
 
 .progress4 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2200,9 +2270,11 @@ animation-duration: 2s;
 }
 
 .progress5 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2215,9 +2287,11 @@ animation-duration: 2s;
 }
 
 .progress6 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2230,9 +2304,11 @@ animation-duration: 2s;
 }
 
 .progress7 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2245,9 +2321,11 @@ animation-duration: 2s;
 }
 
 .progress8 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2260,9 +2338,11 @@ animation-duration: 2s;
 }
 
 .progress9 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2275,9 +2355,11 @@ animation-duration: 2s;
 }
 
 .progress10 {
-    width: 15vw;
-    height: 5vw;
-    background-color: red;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -2293,14 +2375,15 @@ animation-duration: 2s;
 
 
 @keyframes progress_btn {
-    0% {left: -100%; opacity: 0;}
+    0% {left: -200%; opacity: 0;}
     50% {opacity: 0;}
     100% {left: 0%; right: 0; opacity: 1;}
 
 }
 
 @keyframes progress_btn_leave {
-    0% {left: 0%; right: 0; opacity: 1;}
-    100% {left: 200%; opacity: 0;}
+    0% {left: 0%; right: 0; opacity: 1; animation-timing-function: ease-in;}
+    40% {opacity: 0; animation-timing-function: ease-in}
+    100% {left: 200%; opacity: 0; animation-timing-function: ease-in}
 
 }
