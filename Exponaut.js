@@ -250,7 +250,7 @@ function starthard2anims() {
     r.style.setProperty('--obstacle2scale', '80%');
 
 
-    obstacleanimduration = 30000;
+    obstacleanimduration = 40000;
 
 }
 
@@ -968,14 +968,20 @@ $(function() {
 
 
     function stopTimer() {
-      clearInterval(timerInterval);
-      // Now `elapsedTime` contains the elapsed time in seconds
-      console.log(`Elapsed Time: ${elapsedTime} seconds`);
 
-      detailed_time();
+        if (endless_mode == false) {
 
-      var win_screen = document.getElementsByClassName('winstate')[0];
-      win_screen.innerHTML = "You reached the target score of " + targetScore + " points in:<br>" + minutes + "m " + seconds + "s";
+            clearInterval(timerInterval);
+            // Now `elapsedTime` contains the elapsed time in seconds
+            console.log(`Elapsed Time: ${elapsedTime} seconds`);
+      
+            detailed_time();
+      
+            var win_screen = document.getElementsByClassName('winstate')[0];
+            win_screen.innerHTML = "You reached the target score of " + targetScore + " points in:<br>" + minutes + "m " + seconds + "s";
+            
+        }
+
     }
 
 
@@ -2147,19 +2153,25 @@ function check_barpos() {
 
         fevercover.style.animation = "fever_cover_effect 1s ease-out";
 
-        if (current_amount > 1000000 && endscreen_triggered == false) {
+setTimeout(() => {
 
-            endscreen_triggered = true;
+    if (current_amount > 1000000 && endscreen_triggered == false) {
 
-            setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
-            win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
+        endscreen_triggered = true;
 
-            update_score();
-            winstate();
+        setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
+        win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
 
-        }, 100);
+        update_score();
+        winstate();
 
-        }
+    }, 100);
+
+    }
+    
+}, 500);
+
+        
 
         sound_meter_filled.play();
 
