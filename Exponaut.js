@@ -58,7 +58,7 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
-let targetScore = 10000;
+let targetScore = 1000000;
 
 
 
