@@ -55,7 +55,7 @@ let anim1wdur;
 let anim2wdur;
 
 
-let obstacleanimduration = 35000;
+let obstacleanimduration = 40000;
 
 
 let targetScore = 1000000;
@@ -776,7 +776,7 @@ function readd_btn(x) {
         targetanim3.style.animation = "btn3loop infinite 60s";
 
 
-        tutorialText.innerHTML = "Fill the Multimeter to proceed. Remember that in the actual game - The ENDLESS Mode, the Bar will actually END YOUR (endless) GAME upon filling up, so learn to keep the meter from filling up completely.";
+        tutorialText.innerHTML = "Fill the Multimeter to proceed. Remember that in the actual game - The ENDLESS Mode, once you reach 1000000 score, the Bar will actually END YOUR (endless) GAME upon filling up, so learn to keep the meter from filling up completely.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -986,18 +986,19 @@ $(function() {
 
     function stopTimer() {
 
-        if (endless_mode == false) {
-
             clearInterval(timerInterval);
             // Now `elapsedTime` contains the elapsed time in seconds
             console.log(`Elapsed Time: ${elapsedTime} seconds`);
       
             detailed_time();
       
-            var win_screen = document.getElementsByClassName('winstate')[0];
-            win_screen.innerHTML = "You reached the target score of " + targetScore + " points in:<br>" + minutes + "m " + seconds + "s";
-            
-        }
+            if (endless_mode == false) {
+
+                var win_screen = document.getElementsByClassName('winstate')[0];
+                win_screen.innerHTML = "You reached the target score of " + targetScore + " points in:<br>" + minutes + "m " + seconds + "s";    
+                
+            }
+
 
     }
 
@@ -2263,20 +2264,31 @@ function increase_bar_strong() {
 
   function deadly_check() {
 
-            if (enable_deadly_check == true && current_amount > 1000000 && endscreen_triggered == false) {
+        if (enable_deadly_check == true && current_amount > 1000000 && endscreen_triggered == false) {
     
-    
-                var win_screen = document.getElementsByClassName('winstate')[0];
-                win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
+            setTimeout(() => {
+
+        var win_screen = document.getElementsByClassName('winstate')[0];
+        win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
+
+        update_score();
+        winstate();
+
+
+        endscreen_triggered = true;
+
+        permanent_display.style.opacity = "0%";
+
+        const permanent_skull = document.getElementsByClassName('permanent_skull')[0];
+        permanent_skull.style.opacity = "0%";
+
+        const scoreContainer = document.getElementsByClassName('score_container')[0];
+        scoreContainer.style.opacity = "0%";
+
         
-                update_score();
-                winstate();
+        }, 250);
         
-                console.log("went off")
-        
-                endscreen_triggered = true;
-        
-            }
+    }
             
   }
   
