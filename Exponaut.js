@@ -58,7 +58,7 @@ let anim2wdur;
 let obstacleanimduration = 35000;
 
 
-let targetScore = 1000000;
+let targetScore = 10000;
 
 
 
@@ -312,7 +312,7 @@ function obstacle_loop (){
 
 
 
-
+var normal_mode = false;
 
 var endless_mode = false;
 
@@ -357,6 +357,9 @@ const onetimebtn3 = document.querySelector("#onetimebtn_3");
 const onetimebtn4 = document.querySelector("#onetimebtn_4");
 
 
+var enable_deadly_check = false;
+
+
 
 
 
@@ -368,6 +371,9 @@ $(".starter_btn").click(function() {
     runanims();
 
     disableBar = true;
+
+    normal_mode = true;
+
 
 }
 
@@ -381,6 +387,13 @@ $(".starter_btn_endless").click(function() {
     r.style.setProperty('--permanent_opacity', "100%");
 
     runanims();
+
+    disableBar = false;
+
+    enable_deadly_check = false;
+
+    permanent_applyBuffer = true;
+
 
 
 }
@@ -397,6 +410,8 @@ $(".starter_btn_tutorial").click(function() {
     disableBar = true;
 
     stop_onetimebtn = true;
+
+    enable_deadly_check = false;
 
     targetanim4.style.animation = 'none';
     targetanim4.style.opacity = '0%';
@@ -731,7 +746,7 @@ function readd_btn(x) {
             setInterval(function() {
 
 
-                if (comboValue >= 5 && progress8check == false) {
+                if (progress8check == false) {
 
                     setTimeout(() => {
 
@@ -805,6 +820,8 @@ function readd_btn(x) {
                     win_screen.innerHTML = "CONGRATULATIONS<br> You finished the introduction!";
 
                     winstate();
+
+                    endscreen_triggered = true;
 
                     progress10check = true;
                 }
@@ -990,13 +1007,15 @@ $(function() {
     
 
     function checkScore() {
-        if (current_amount >= targetScore) {            
+        if (current_amount >= targetScore && normal_mode == true) {            
             
         
 
-            if (endless_mode == true || disableBar == false) {
+            if (endless_mode == false || disableBar == false) {
             winstate();
-            stopTimer(); }
+            stopTimer();
+
+        }
 
         } else {
             console.log(`Current score: ${current_amount}`);
@@ -2025,7 +2044,7 @@ var isActive = false;
         }, 25);
 
 
-        if (current_amount >= 1000000 && isActive == false) {
+        if (current_amount >= 1000000 && isActive == false && endless_mode == true) {
         
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             let meterDeadlyLoopSource;
@@ -2114,6 +2133,24 @@ function check_barpos() {
 
     if (current_amount >= 1000000) {
 
+        setTimeout(() => {
+
+            enable_deadly_check = true
+        
+            
+        }, 500);
+         
+        }
+setTimeout(() => {
+
+    permanent_applyBuffer = true;
+
+    
+}, 0);
+
+
+    if (current_amount >= 1000000) {
+
         r.style.setProperty("--skull_opacity", "100%");
 
         }
@@ -2137,39 +2174,19 @@ function check_barpos() {
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
+        deadly_check();
+            
+
         feverElement.style.transitionDuration = "0s";
         feverElement.style.height = "25%";
 
 
 
 
-        permanent_multiplier_value ++;
-
-        permanent_display.innerHTML = "x" + permanent_multiplier_value;
-
-
 
 
 
         fevercover.style.animation = "fever_cover_effect 1s ease-out";
-
-setTimeout(() => {
-
-    if (current_amount > 1000000 && endscreen_triggered == false) {
-
-        endscreen_triggered = true;
-
-        setTimeout(function(){var win_screen = document.getElementsByClassName('winstate')[0];
-        win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
-
-        update_score();
-        winstate();
-
-    }, 100);
-
-    }
-    
-}, 500);
 
         
 
@@ -2192,9 +2209,18 @@ setTimeout(() => {
 
         }, 2000);
         
+    if (permanent_applyBuffer == true) {
 
-        current_amount *= comboValue * permanent_multiplier_value;
+            current_amount *= comboValue * permanent_multiplier_value;
 
+            permanent_multiplier_value ++;
+            permanent_display.innerHTML = "x" + permanent_multiplier_value;
+
+
+            permanent_applyBuffer = false;
+
+    
+}
 
 
     }
@@ -2204,7 +2230,9 @@ setTimeout(() => {
 
 setInterval(function() {
     
-    if (endless_mode == true || disableBar == false) {check_barpos(); console.log
+    if (endless_mode == true || disableBar == false) {
+        
+        check_barpos();
 
 
     }
@@ -2231,16 +2259,32 @@ function increase_bar_strong() {
   
     }, 450);
   }
+
+
+  function deadly_check() {
+
+            if (enable_deadly_check == true && current_amount > 1000000 && endscreen_triggered == false) {
+    
+    
+                var win_screen = document.getElementsByClassName('winstate')[0];
+                win_screen.innerHTML = "MULTIMETER OVERFLOW!<br>" + "The final score is:<br>" + current_amount + " !";
+        
+                update_score();
+                winstate();
+        
+                console.log("went off")
+        
+                endscreen_triggered = true;
+        
+            }
+            
+  }
   
 
 
 
 
 }
-
-
-
-
 
 
 
@@ -2263,7 +2307,6 @@ r.style.setProperty("--failstate_opacity", "80%");
 r.style.setProperty("--endscreen_pointerblock", "all");
 
 endscreen_triggered = true;
-
 
 
 if (endless_mode == true || disableBar == false) {
