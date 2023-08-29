@@ -55,7 +55,7 @@ let anim1wdur;
 let anim2wdur;
 
 
-let obstacleanimduration = 40000;
+let obstacleanimduration = 45000;
 
 
 let targetScore = 1000000;
@@ -164,7 +164,7 @@ function startnormalanims() {
     r.style.setProperty('--obstacle2left', '0%');
     r.style.setProperty('--obstacle2scale', '150%');
 
-    obstacleanimduration = 40000;
+    obstacleanimduration = 45000;
 
 
 }
@@ -210,7 +210,7 @@ function starthardanims() {
     r.style.setProperty('--obstacle2left', '-30%');
     r.style.setProperty('--obstacle2scale', '80%');
 
-    obstacleanimduration = 40000;
+    obstacleanimduration = 45000;
 
 
 }
@@ -250,7 +250,7 @@ function starthard2anims() {
     r.style.setProperty('--obstacle2scale', '80%');
 
 
-    obstacleanimduration = 40000;
+    obstacleanimduration = 45000;
 
 }
 
@@ -1209,7 +1209,7 @@ if (endless_mode == true || disableBar == false) {
 
     $("#onetimebtn_2").click(function() {
         resetInactivity();
-        current_amount += 7500 * comboValue * permanent_multiplier_value;
+        current_amount += 5000 * comboValue * permanent_multiplier_value;
         update_score();
     
         checkScore();
@@ -2147,7 +2147,7 @@ setTimeout(() => {
     permanent_applyBuffer = true;
 
     
-}, 0);
+}, 50);
 
 
     if (current_amount >= 1000000) {
@@ -2209,25 +2209,36 @@ setTimeout(() => {
             fevertext2.style.animation = "none";
 
         }, 2000);
-        
-    if (permanent_applyBuffer == true) {
 
-            current_amount *= comboValue * permanent_multiplier_value;
 
-            permanent_multiplier_value ++;
-            permanent_display.innerHTML = "x" + permanent_multiplier_value;
 
+        if (permanent_applyBuffer == true) {
 
             permanent_applyBuffer = false;
 
+        }
+     
+        setTimeout(() => {
+
+            if (permanent_applyBuffer == true) {
+
+                current_amount *= comboValue * permanent_multiplier_value;
     
-}
+                permanent_multiplier_value ++;
+                permanent_display.innerHTML = "x" + permanent_multiplier_value;
+        
+                permanent_applyBuffer = false;
+
+        
+    }
+            
+        }, 100);
 
 
     }
 }
 
-
+        
 
 setInterval(function() {
     
@@ -2286,7 +2297,7 @@ function increase_bar_strong() {
         scoreContainer.style.opacity = "0%";
 
         
-        }, 250);
+        }, 200);
         
     }
             
