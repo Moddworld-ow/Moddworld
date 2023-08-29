@@ -2219,6 +2219,7 @@ animation-duration: 2s;
 }
 
 .progress2 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2236,6 +2237,7 @@ animation-duration: 2s;
 }
 
 .progress3 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2253,6 +2255,7 @@ animation-duration: 2s;
 }
 
 .progress4 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2270,6 +2273,7 @@ animation-duration: 2s;
 }
 
 .progress5 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2287,6 +2291,7 @@ animation-duration: 2s;
 }
 
 .progress6 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2304,6 +2309,7 @@ animation-duration: 2s;
 }
 
 .progress7 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2321,6 +2327,7 @@ animation-duration: 2s;
 }
 
 .progress8 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2338,6 +2345,7 @@ animation-duration: 2s;
 }
 
 .progress9 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2355,6 +2363,7 @@ animation-duration: 2s;
 }
 
 .progress10 {
+    width: 50vw;
     height: 25vw;
     line-height: 25vw;
     text-align: center;
@@ -2386,4 +2395,25 @@ animation-duration: 2s;
     40% {opacity: 0; animation-timing-function: ease-in}
     100% {left: 200%; opacity: 0; animation-timing-function: ease-in}
 
+}
+
+
+
+
+.ender_btn {
+    width: 50vw;
+    height: 25vw;
+    line-height: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    background-color: none;
+    z-index: 100;
+    position: absolute;
+    top: 117%;
+    bottom: 0;
+    margin: auto;
+    left: -100%;
+    animation: progress_btn 2s ease-out forwards;
+    animation-play-state: paused;
+    pointer-events: all;
 }

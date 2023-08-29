@@ -2320,6 +2320,10 @@ r.style.setProperty("--endscreen_pointerblock", "all");
 
 endscreen_triggered = true;
 
+const ender_btn = document.querySelector(".ender_btn");
+ender_btn.style.animationPlayState = "running";
+
+
 
 if (endless_mode == true || disableBar == false) {
 
@@ -2337,6 +2341,8 @@ function winstate(){
 r.style.setProperty("--winstate_opacity", "80%");
 r.style.setProperty("--endscreen_pointerblock", "all");
 
+const ender_btn = document.querySelector(".ender_btn");
+ender_btn.style.animationPlayState = "running";
 
 }
 
@@ -2419,6 +2425,16 @@ function triggerCustomEffect() {
 function getRandomValue(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+
+
+
+
+$(".ender_btn").click(function() {
+
+    location.reload();
+    
+});
 
 
 
