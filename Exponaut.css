@@ -2417,3 +2417,125 @@ animation-duration: 2s;
     animation-play-state: paused;
     pointer-events: all;
 }
+
+
+
+
+.deco_container {
+    margin: auto;
+    width: 50%;
+    aspect-ratio: 2/1;
+
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 5% 10% 5% 10%;
+    overflow: visible;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.347) 0 0 4vw 0;
+    user-select: none;
+    z-index: -15;
+    opacity: 20%;
+    pointer-events: none;
+}
+
+.spinner {
+    height: 25vw;
+    width: 25vw;
+    border-radius: 25vw;
+    outline: black 2vw solid;
+    position: absolute;
+    animation: spinner_rotate1 5s infinite ease-in-out;
+    top: 120%;
+    left: 120%;
+
+}
+
+.long_box {
+    height: 125%;
+    width: 8%;
+    background-color: black;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+
+}
+
+
+@keyframes spinner_rotate1 {
+    0% {rotate: 0deg;}
+    100% {rotate: 720deg;}
+}
+
+@keyframes spinner_rotate1back {
+    0% {rotate: -50deg;}
+    100% {rotate: -770deg;}
+}
+
+
+.spinnerset {
+    position: absolute;
+    background-color: none;
+    width: 5vw;
+    height: 5vw;
+
+    left: 105%;
+    right: 0;
+    bottom: 0;
+    top: 105%;
+}
+
+
+.spinner2 {
+    height: 25vw;
+    width: 25vw;
+    border-radius: 25vw;
+    outline: black 2vw solid;
+    position: absolute;
+    animation: spinner_rotate1back 5s infinite ease-in-out;
+    top: 120%;
+    left: 120%;
+
+}
+
+.all_spinners {
+    animation: spinners_slow_move 60s infinite ease-in;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes spinners_slow_move {
+    0% {transform: translate(0%, 0%);}
+    50% {transform: translate(-50%, -150%);}
+    100% {transform: translate(-400%, -500%);}
+
+    0% {opacity: 0%;}
+    15% {opacity: 100%;}
+
+    85% {opacity: 100%;}
+    100% {opacity: 0%;}
+
+
+}
+
+
+.circle_fill {
+    height: 40%;
+    width: 40%;
+    background-color: black;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    border-radius: 100%;
+
+}

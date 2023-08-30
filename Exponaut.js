@@ -363,6 +363,9 @@ var enable_deadly_check = false;
 
 
 
+
+
+
 $(".starter_btn").click(function() {
     start_all();
 
@@ -2026,6 +2029,36 @@ var isActive = false;
 
 
 
+function fever_filled_anim() {
+
+    feverElement.style.transitionDuration = "0s";
+    feverElement.style.height = "25%";
+
+
+    
+    fevercover.style.animation = "fever_cover_effect 1s ease-out";
+
+    
+    sound_meter_filled.play();
+
+    setTimeout(function() {
+
+        fevercover.style.animation = "none";
+
+    }, 1000)
+
+
+    fevertext1.style.animation = "multiplied_text forwards 2s";
+    fevertext2.style.animation = "multiplied_text_right forwards 2s 0.5s";
+
+    setTimeout(function() {
+
+        fevertext1.style.animation = "none";
+        fevertext2.style.animation = "none";
+
+    }, 2000);
+
+}
 
 
 
@@ -2175,41 +2208,10 @@ setTimeout(() => {
 
     } else if (Math.abs(feverElement.offsetHeight - feverElement.parentElement.offsetHeight) < 1) {
 
+        fever_filled_anim();
+
         deadly_check();
             
-
-        feverElement.style.transitionDuration = "0s";
-        feverElement.style.height = "25%";
-
-
-
-
-
-
-
-        fevercover.style.animation = "fever_cover_effect 1s ease-out";
-
-        
-
-        sound_meter_filled.play();
-
-        setTimeout(function() {
-
-            fevercover.style.animation = "none";
-
-        }, 1000)
-
-
-        fevertext1.style.animation = "multiplied_text forwards 2s";
-        fevertext2.style.animation = "multiplied_text_right forwards 2s 0.5s";
-
-        setTimeout(function() {
-
-            fevertext1.style.animation = "none";
-            fevertext2.style.animation = "none";
-
-        }, 2000);
-
 
 
         if (permanent_applyBuffer == true) {
