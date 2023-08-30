@@ -725,7 +725,7 @@ function readd_btn(x) {
                 }
 
 
-            }, 500);
+            }, 1000);
         
     });
 
@@ -737,7 +737,7 @@ function readd_btn(x) {
 
         r.style.setProperty('--meter_left_offset', '-14%');
         
-        tutorialText.innerHTML = "Now its getting real HOT in here... uh, anyway here's the MULTIMETER! Now this is where it gets seriously fast. Understanding this baby is gonna be really useful for racking up points, but there is a more DEADLY side to this thing as well.";
+        tutorialText.innerHTML = "Now it's getting real HOT in here... uh, anyway here's the MULTIMETER! Now this is where it gets seriously fast. Filling the Meter grants you +1 PERMANENT MULTIPLIER, alongside with 10000 points, multiplied by your current points multiplier AND your Permanent Multiplier, but there is a more DEADLY side to this thing as well.";
 
 
         r.style.setProperty('--tutorial_position', 'relative');
@@ -1049,6 +1049,8 @@ $(function() {
         update_score();
 
         checkScore();
+
+        handleClick();
 
         update_combo();
 
@@ -2201,6 +2203,15 @@ setTimeout(() => {
             update_score();
             winstate();
 
+            permanent_display.style.opacity = "0%";
+
+            const permanent_skull = document.getElementsByClassName('permanent_skull')[0];
+            permanent_skull.style.opacity = "0%";
+    
+            const scoreContainer = document.getElementsByClassName('score_container')[0];
+            scoreContainer.style.opacity = "0%";
+    
+
         }, 400);
     
             }
@@ -2224,7 +2235,7 @@ setTimeout(() => {
 
             if (permanent_applyBuffer == true) {
 
-                current_amount *= comboValue * permanent_multiplier_value;
+                current_amount += 10000 * comboValue * permanent_multiplier_value;
     
                 permanent_multiplier_value ++;
                 permanent_display.innerHTML = "x" + permanent_multiplier_value;

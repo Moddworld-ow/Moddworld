@@ -2119,6 +2119,9 @@ animation-duration: 2s;
     left: -7vw;
     font-size: 3vw;
 
+    background-image: url(skull_icon.png);
+    background-size: cover;
+
     opacity: var(--skull_opacity);
 }
 
@@ -2401,9 +2404,9 @@ animation-duration: 2s;
 
 
 .ender_btn {
-    width: 50vw;
-    height: 25vw;
-    line-height: 25vw;
+    width: 22vw;
+    height: 11vw;
+    line-height: 11vw;
     text-align: center;
     font-size: 4vw;
     background-color: none;
@@ -2517,10 +2520,10 @@ animation-duration: 2s;
     100% {transform: translate(-400%, -500%);}
 
     0% {opacity: 0%;}
-    15% {opacity: 100%;}
+    60% {opacity: 100%;}
 
-    85% {opacity: 100%;}
-    100% {opacity: 0%;}
+    60% {opacity: 100%;}
+    90% {opacity: 0%;}
 
 
 }
@@ -2537,5 +2540,33 @@ animation-duration: 2s;
     bottom: 0;
     position: absolute;
     border-radius: 100%;
+
+}
+
+.long_box_filler {
+    height: 500%;
+    width: 15%;
+    background-color: black;
+    margin: auto;
+    left: 85%;
+    right: 0;
+    top: 400%;
+    bottom: 0;
+    position: absolute;
+    rotate: 18deg;
+
+}
+
+.long_box_filler2 {
+    height: 200%;
+    width: 15%;
+    background-color: black;
+    margin: auto;
+    left: 20%;
+    right: 0;
+    top: 320%;
+    bottom: 0;
+    position: absolute;
+    rotate: -60deg;
 
 }
