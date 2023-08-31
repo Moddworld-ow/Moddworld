@@ -947,14 +947,14 @@ $(function() {
             isHovering = true;
 
             intervalId = setInterval(function() {
-                current_amount += 3 * comboValue * permanent_multiplier_value;
+                current_amount += 3 * (comboValue * permanent_multiplier_value);
                 update_score();
 
                 if (endless_mode == true || disableBar == false) {
                     increase_bar();
             }           
 
-                score_increase ="+" + 3 * comboValue * permanent_multiplier_value;
+                score_increase ="+" + 3 * (comboValue * permanent_multiplier_value);
 
                 triggerCustomEffect();
 
@@ -1152,7 +1152,7 @@ if (endless_mode == true || disableBar == false) {
     
     $(".btn_3").click(function() {
         resetInactivity()
-        current_amount += parseInt($(this).text().replace("+", "") * comboValue * permanent_multiplier_value);
+        current_amount += parseInt($(this).text().replace("+", "") * (comboValue * permanent_multiplier_value));
         update_score();
 
         checkScore();
@@ -1184,7 +1184,7 @@ if (endless_mode == true || disableBar == false) {
     }
 
 
-        score_increase ="+" + 50 * comboValue * permanent_multiplier_value;
+        score_increase ="+" + 50 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -1194,7 +1194,7 @@ if (endless_mode == true || disableBar == false) {
     $(".btn_1").hover(function() {
         resetInactivity()
         
-        current_amount += parseInt($(this).text().replace("+", "") * comboValue * permanent_multiplier_value);
+        current_amount += parseInt($(this).text().replace("+", "") * (comboValue * permanent_multiplier_value));
         update_score();
 
         checkScore();
@@ -1227,7 +1227,7 @@ if (endless_mode == true || disableBar == false) {
     }
 
 
-        score_increase ="+" + 15 * comboValue * permanent_multiplier_value;
+        score_increase ="+" + 15 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -1238,7 +1238,7 @@ if (endless_mode == true || disableBar == false) {
 
     $("#onetimebtn_1").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue * permanent_multiplier_value;
+        current_amount += 5000 * (comboValue * permanent_multiplier_value);
         update_score();
     
         checkScore();
@@ -1251,7 +1251,7 @@ if (endless_mode == true || disableBar == false) {
         // Add a class to the element to apply the override with transition
         onetimebtn1.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue * permanent_multiplier_value;
+        score_increase = 5000 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -1280,7 +1280,7 @@ if (endless_mode == true || disableBar == false) {
 
     $("#onetimebtn_2").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue * permanent_multiplier_value;
+        current_amount += 5000 * (comboValue * permanent_multiplier_value);
         update_score();
     
         checkScore();
@@ -1293,7 +1293,7 @@ if (endless_mode == true || disableBar == false) {
         // Add a class to the element to apply the override with transition
         onetimebtn2.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue * permanent_multiplier_value;
+        score_increase = 5000 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -1323,7 +1323,7 @@ if (endless_mode == true || disableBar == false) {
 
     $("#onetimebtn_3").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue * permanent_multiplier_value;
+        current_amount += 5000 * (comboValue * permanent_multiplier_value);
         update_score();
     
         checkScore();
@@ -1336,7 +1336,7 @@ if (endless_mode == true || disableBar == false) {
         // Add a class to the element to apply the override with transition
         onetimebtn3.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue * permanent_multiplier_value;
+        score_increase = 5000 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -1367,7 +1367,7 @@ if (endless_mode == true || disableBar == false) {
 
     $("#onetimebtn_4").click(function() {
         resetInactivity();
-        current_amount += 5000 * comboValue * permanent_multiplier_value;
+        current_amount += 5000 * (comboValue * permanent_multiplier_value);
         update_score();
     
         checkScore();
@@ -1380,7 +1380,7 @@ if (endless_mode == true || disableBar == false) {
         // Add a class to the element to apply the override with transition
         onetimebtn4.classList.add("override-opacity");
 
-        score_increase = 5000 * comboValue * permanent_multiplier_value;
+        score_increase = 5000 * (comboValue * permanent_multiplier_value);
 
         triggerCustomEffect();
 
@@ -2301,8 +2301,8 @@ setTimeout(() => {
 
             if (permanent_applyBuffer == true) {
 
-                current_amount += 10000 * comboValue * permanent_multiplier_value;
-    
+                current_amount += 10000 * (comboValue * permanent_multiplier_value);
+
                 permanent_multiplier_value ++;
                 permanent_display.innerHTML = "x" + permanent_multiplier_value;
         
@@ -2317,6 +2317,11 @@ setTimeout(() => {
     }
 }
 
+setInterval(() => {
+
+    console.log(permanent_multiplier_value)
+    
+}, 50);
         
 
 setInterval(function() {
