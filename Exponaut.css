@@ -661,7 +661,7 @@ button {
 .info {
 
     width: 60%;
-    background-image: url(/graphics/info_board.png);
+    background-image: url(graphics/info_board.png);
     background-color: none;
     z-index: 150;
     position: absolute;
