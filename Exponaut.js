@@ -913,6 +913,13 @@ function start_all() {
 current_amount = 0;
 
 
+document.querySelector(".info").style.top = '100%';
+document.querySelector(".info").style.opacity = '0%';
+
+document.querySelector(".title_top").style.opacity = '0%';
+document.querySelector(".title_top").style.top = '-15%';
+
+
 
 r.style.setProperty('--animstate', "running");
 

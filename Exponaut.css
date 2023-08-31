@@ -546,10 +546,10 @@ button {
 
 
 .starter_btn {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -558,7 +558,7 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
@@ -574,10 +574,10 @@ button {
 }
 
 .starter_btn_endless {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -586,7 +586,7 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
@@ -602,10 +602,10 @@ button {
     }
 
 .starter_btn_tutorial {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -614,7 +614,7 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
@@ -631,28 +631,70 @@ button {
 
 .starter_btn_container {
     display: flex;
-    height: 50vh;
-    width: 100vw;
+    height: 30vh;
+    width: 59vw;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
     position: absolute;
 }
 
 .start_text {
     text-align: center;
-    line-height: 10vw;
+    line-height: 6vw;
     margin: 0;
 
     color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 5vw;
+    font-size: 2vw;
     font-family: 'Oswald';
     font-weight: bold;
-    text-shadow: rgb(0, 0, 0) 0.4vw 0.4vw 0, black 0 0 0.8vw;
-    letter-spacing: 0.5vw;
+    text-shadow: rgb(0, 0, 0) 0.2vw 0.2vw 0, black 0 0 0.4vw;
+    letter-spacing: 0.2vw;
 }
 
+
+
+
+.info {
+
+    width: 60%;
+    background-image: url(/graphics/info_board.png);
+    background-color: none;
+    z-index: 150;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+    aspect-ratio: 3/1;
+}
+
+.title_top {
+
+    display: block;
+    position: absolute;
+    font-size: 6vw;
+    color: white;
+    z-index: 200;
+    text-align: center;
+
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 8%;
+
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+}
 
 
 .cover_screen1 {
