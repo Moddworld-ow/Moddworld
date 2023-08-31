@@ -361,6 +361,23 @@ var enable_deadly_check = false;
 
 
 
+const music_endless = new Audio("sounds/music_loop_endless.mp3");
+
+music_endless.loop=true;
+
+var vol = 1;
+
+
+
+const music_tutorial = new Audio("sounds/tutorial_loop.mp3");
+
+music_tutorial.loop=true;
+
+
+const music_scoreTarget = new Audio("sounds/score_target_loop.mp3");
+
+music_scoreTarget.loop=true;
+
 
 
 
@@ -376,6 +393,11 @@ $(".starter_btn").click(function() {
     disableBar = true;
 
     normal_mode = true;
+
+    document.querySelector(".fever_deco").style.opacity = '0%';
+
+
+    music_scoreTarget.play();
 
 
 }
@@ -399,9 +421,36 @@ $(".starter_btn_endless").click(function() {
 
 
 
+    music_endless.volume = vol;
+
+    music_endless.play();
+
+
+
+
+
 }
 
 )
+
+function fadeout() {
+
+    setInterval(function() {
+
+  if (vol > 0.05) {
+    vol -= 0.05;
+    music_endless.volume = vol;
+  }
+  else {
+
+    clearInterval(fadeout);
+  }
+
+}, 250);
+
+
+
+}
 
 $(".starter_btn_tutorial").click(function() {
     start_all();
@@ -416,12 +465,19 @@ $(".starter_btn_tutorial").click(function() {
 
     enable_deadly_check = false;
 
+
+    music_tutorial.play();
+
+
+
     targetanim4.style.animation = 'none';
     targetanim4.style.opacity = '0%';
 
     targetanim4box.style.animation = 'none';
 
     r.style.setProperty('--meter_left_offset', '-200%');
+
+    document.querySelector(".fever_deco").style.opacity = '0%';
 
 
     
@@ -857,8 +913,17 @@ function start_all() {
 current_amount = 0;
 
 
+document.querySelector(".info").style.top = '100%';
+document.querySelector(".info").style.opacity = '0%';
+
+document.querySelector(".title_top").style.opacity = '0%';
+document.querySelector(".title_top").style.top = '-15%';
+
+
 
 r.style.setProperty('--animstate', "running");
+
+document.querySelector(".btns_container").style.animationPlayState = 'running';
 
 
 
@@ -898,7 +963,7 @@ $(function() {
 
                 playdelay = true;
 
-                const sound_click = new Audio("collect2.wav");
+                const sound_click = new Audio("sounds/collect2.wav");
                 sound_click.volume = 0.25;
                 sound_click.play();
 
@@ -1058,7 +1123,7 @@ $(function() {
 
             playdelay = true;
 
-            const sound_click = new Audio("medium_effect2.wav");
+            const sound_click = new Audio("sounds/combo_increased.wav");
             sound_click.volume = 1;
             sound_click.play();
 
@@ -1096,11 +1161,12 @@ if (endless_mode == true || disableBar == false) {
 
         update_combo();
 
+
         if (playdelay == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("collect1.wav");
+            const sound_click = new Audio("sounds/collect1.wav");
             sound_click.volume = 0.25;
             sound_click.play();
 
@@ -1141,7 +1207,7 @@ if (endless_mode == true || disableBar == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("btn_slash.wav");
+            const sound_click = new Audio("sounds/btn_slash.wav");
             sound_click.volume = 0.5;
             sound_click.play();
 
@@ -1193,7 +1259,7 @@ if (endless_mode == true || disableBar == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("collect3.wav");
+            const sound_click = new Audio("sounds/collect3.wav");
             sound_click.volume = 0.25;
             sound_click.play();
 
@@ -1235,7 +1301,7 @@ if (endless_mode == true || disableBar == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("collect3.wav");
+            const sound_click = new Audio("sounds/collect3.wav");
             sound_click.volume = 0.25;
             sound_click.play();
 
@@ -1278,7 +1344,7 @@ if (endless_mode == true || disableBar == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("collect3.wav");
+            const sound_click = new Audio("sounds/collect3.wav");
             sound_click.volume = 0.25;
             sound_click.play();
 
@@ -1322,7 +1388,7 @@ if (endless_mode == true || disableBar == false) {
 
             playdelay = true;
 
-            const sound_click = new Audio("collect3.wav");
+            const sound_click = new Audio("sounds/collect3.wav");
             sound_click.volume = 0.25;
             sound_click.play();
 
@@ -1497,7 +1563,7 @@ if (endless_mode == true || disableBar == false) {
             setTimeout(function(){
 
                 if (comboValue == 1 && combo_feedback_buffer == true && disableCombo == false) {
-                    const sound_click = new Audio("combo_reset.wav");
+                    const sound_click = new Audio("sounds/combo_reset.wav");
                     sound_click.volume = 1;
                     sound_click.play();
 
@@ -1848,7 +1914,7 @@ function reroll_mod3() {
     }
 
         }
-        setInterval(reroll_mod3, 30000);
+        setInterval(reroll_mod3, 45000);
         reroll_mod3();
 
     
@@ -2010,11 +2076,8 @@ function updateAnimation() {
 
 obstacle_loop();
 
-const meter_deadly_loop = new Audio("ambience_loop2.wav");
-meter_deadly_loop.loop=true;
 
-
-const sound_meter_filled = new Audio("longer_bonus1.wav");
+const sound_meter_filled = new Audio("sounds/bar_filled.wav");
 
 const feverElement = document.querySelector(".fever");
 const fevercover = document.querySelector(".fevermeter_cover");
@@ -2087,10 +2150,10 @@ function fever_filled_anim() {
             
             // Create a GainNode and set the gain to 0.5
             const gainNode = audioContext.createGain();
-            gainNode.gain.value = 0.15;
+            gainNode.gain.value = 0.5;
             
             // Load the looping audio file
-            fetch('meter_deadly_loop.wav')
+            fetch('sounds/meter_deadly_loop.wav')
               .then(response => response.arrayBuffer())
               .then(buffer => {
                 audioContext.decodeAudioData(buffer, decodedBuffer => {
@@ -2207,6 +2270,9 @@ setTimeout(() => {
 
             const permanent_skull = document.getElementsByClassName('permanent_skull')[0];
             permanent_skull.style.opacity = "0%";
+
+            const permanent_bg = document.getElementsByClassName('permanent_bg')[0];
+            permanent_bg.style.opacity = "0%";
     
             const scoreContainer = document.getElementsByClassName('score_container')[0];
             scoreContainer.style.opacity = "0%";
@@ -2306,6 +2372,9 @@ function increase_bar_strong() {
         const permanent_skull = document.getElementsByClassName('permanent_skull')[0];
         permanent_skull.style.opacity = "0%";
 
+        const permanent_bg = document.getElementsByClassName('permanent_bg')[0];
+        permanent_bg.style.opacity = "0%";
+
         const scoreContainer = document.getElementsByClassName('score_container')[0];
         scoreContainer.style.opacity = "0%";
 
@@ -2347,6 +2416,8 @@ endscreen_triggered = true;
 const ender_btn = document.querySelector(".ender_btn");
 ender_btn.style.animationPlayState = "running";
 
+fadeout();
+
 
 
 if (endless_mode == true || disableBar == false) {
@@ -2367,6 +2438,8 @@ r.style.setProperty("--endscreen_pointerblock", "all");
 
 const ender_btn = document.querySelector(".ender_btn");
 ender_btn.style.animationPlayState = "running";
+
+fadeout();
 
 }
 

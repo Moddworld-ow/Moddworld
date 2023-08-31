@@ -110,6 +110,7 @@ button {
     background-color: rgba(0, 0, 0, 0);
     box-shadow: inset rgba(0, 0, 0, 0.719) 0 0 2vw 0;
     user-select: none;
+    animation-play-state: paused;
 }
 
 
@@ -123,6 +124,7 @@ button {
 
 
 }
+
 
 
 :root {
@@ -303,6 +305,7 @@ button {
     background-color: none;
     border-radius: 3vw;
     transition-duration: 1s;
+    background-color: white;
     
   }
 
@@ -441,7 +444,7 @@ button {
     height: 24vw;
     top: 0vw;
 
-    background-image: url(Fever_layer1.png);
+    background-image: url(graphics/Fever_layer1.png);
     background-size: 100%;
 
     opacity: 60%;
@@ -457,7 +460,7 @@ button {
     width: 4vw;
     height: 24vw;
 
-    background-image: url(Fever_layer2.png);
+    background-image: url(graphics/Fever_layer2.png);
     background-size: 100%;
 
     opacity: 80%;
@@ -474,7 +477,7 @@ button {
     width: 4vw;
     height: 24vw;
 
-    background-image: url(Fever_layer1.png);
+    background-image: url(graphics/Fever_layer1.png);
     background-size: 100%;
 
     opacity: 100%;
@@ -543,10 +546,10 @@ button {
 
 
 .starter_btn {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -555,20 +558,26 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
     animation: start_game_btn 0.5s ease-out forwards;
     animation-play-state: paused;
+
+}
+
+.starter_btn:hover {
+    transition-duration: 0.2s;
+    filter: brightness(50%);
 
 }
 
 .starter_btn_endless {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -577,7 +586,7 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
@@ -585,12 +594,18 @@ button {
     animation-play-state: paused;
 
 }
+
+.starter_btn_endless:hover {
+    transition-duration: 0.2s;
+    filter: brightness(50%);
+    
+    }
 
 .starter_btn_tutorial {
-    width: 25vw;
-    height: 10vw;
+    width: 12vw;
+    height: 6vw;
     background-color: rgb(99, 0, 0);
-    outline: #ab0000 0.5vw solid;
+    outline: #ab0000 0.3vw solid;
     border-radius: 1vw;
     display: inline-block;
 
@@ -599,7 +614,7 @@ button {
 
     left: 0;
     right: 0;
-    top: 0;
+    top: -6vw;
     bottom: 0;
     margin: auto;
 
@@ -607,31 +622,79 @@ button {
     animation-play-state: paused;
 
 }
+
+.starter_btn_tutorial:hover {
+    transition-duration: 0.2s;
+    filter: brightness(50%);
+    
+    }
 
 .starter_btn_container {
     display: flex;
-    height: 50vh;
-    width: 100vw;
+    height: 30vh;
+    width: 59vw;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
     position: absolute;
 }
 
 .start_text {
     text-align: center;
-    line-height: 10vw;
+    line-height: 6vw;
     margin: 0;
 
     color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 5vw;
+    font-size: 2vw;
     font-family: 'Oswald';
     font-weight: bold;
-    text-shadow: rgb(0, 0, 0) 0.4vw 0.4vw 0, black 0 0 0.8vw;
-    letter-spacing: 0.5vw;
+    text-shadow: rgb(0, 0, 0) 0.2vw 0.2vw 0, black 0 0 0.4vw;
+    letter-spacing: 0.2vw;
 }
 
+
+
+
+.info {
+
+    width: 60%;
+    background-image: url(/graphics/info_board.png);
+    background-color: none;
+    z-index: 150;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+    aspect-ratio: 3/1;
+}
+
+.title_top {
+
+    display: block;
+    position: absolute;
+    font-size: 6vw;
+    color: white;
+    z-index: 200;
+    text-align: center;
+
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 8%;
+
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+}
 
 
 .cover_screen1 {
@@ -942,7 +1005,7 @@ button {
     box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
     pointer-events: all;
 
-    background-image: url(yellow_button_bg.png);
+    background-image: url(graphics/yellow_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -980,7 +1043,7 @@ button {
     position: absolute;
     pointer-events: all;
     box-shadow: inset rgba(0, 0, 0, 0.068) 0.3vw 0.3vw, rgba(0, 0, 0, 0.664) 0 0 2vw 0, rgba(255, 0, 0, 0.34) inset 0 0 2vw 0, rgba(0, 0, 0, 0.347) 0 0 1vw 1vw;
-    background-image: url(red_button_bg.png);
+    background-image: url(graphics/red_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -1004,12 +1067,12 @@ button {
     background-color: rgba(7, 124, 23, 0.781);
     border: 0.5vw rgba(255, 234, 114, 0.39) solid;
     outline: rgba(0, 0, 0, 0.315) 0.5vw inset;
-    animation: btn3loop infinite 30s;
+    animation: btn3loop infinite 45s;
     position: absolute;
     left: 30%;
     pointer-events: all;
 
-    background-image: url(green_button_bg.png);
+    background-image: url(graphics/green_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -1039,7 +1102,7 @@ button {
     position: absolute;
     pointer-events: all;
 
-    background-image: url(blue_button_bg.png);
+    background-image: url(graphics/blue_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -1059,7 +1122,7 @@ button {
 .onetimebtn {
     width: 15%;
     height: 30%;
-    background-image: url(onetime_button_bg.png);
+    background-image: url(graphics/onetime_button_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -2100,9 +2163,10 @@ animation-duration: 2s;
     height: 4vw;
     width: 4vw;
 
-    top: 0vw;
+    top: 0.3vw;
     left: -12vw;
     font-size: 3vw;
+    font-weight: bold;
 
     opacity: var(--permanent_opacity);
 
@@ -2112,18 +2176,64 @@ animation-duration: 2s;
 .permanent_skull {
 
     position: absolute;
-    height: 4vw;
-    width: 4vw;
+    height: 8vw;
+    width: 8vw;
 
-    top: 0vw;
-    left: -7vw;
+    top: -3vw;
+    left: -9vw;
     font-size: 3vw;
 
-    background-image: url(skull_icon.png);
+    background-image: url(graphics/skull_icon.png);
     background-size: cover;
 
     opacity: var(--skull_opacity);
+
+    z-index: 11;
+
+
+    animation: skull_anim 1s infinite ease-in-out, opacity 1s;
+
 }
+
+@keyframes skull_anim {
+
+    0% {rotate: -15deg;}
+    50% {rotate: 15deg;}
+    100% {rotate: -15deg;}
+
+}
+
+@keyframes skull_bg_anim {
+
+    0% {rotate: 15deg;}
+    50% {rotate: -15deg;}
+    100% {rotate: 15deg;}
+
+}
+
+
+.permanent_bg {
+
+    position: absolute;
+    height: 9vw;
+    width: 9vw;
+
+    top: -3vw;
+    left: -8.8vw;
+    font-size: 3vw;
+
+    background-image: url(graphics/skull_bg.png);
+    background-size: cover;
+
+    opacity: var(--skull_opacity);
+
+    z-index: 10;
+
+
+    animation: skull_bg_anim 1.2s infinite ease-in-out, opacity 1s;
+
+}
+
 
 
 
@@ -2520,18 +2630,18 @@ animation-duration: 2s;
     100% {transform: translate(-400%, -500%);}
 
     0% {opacity: 0%;}
-    60% {opacity: 100%;}
+    40% {opacity: 100%;}
 
-    60% {opacity: 100%;}
-    90% {opacity: 0%;}
+    50% {opacity: 100%;}
+    80% {opacity: 0%;}
 
 
 }
 
 
 .circle_fill {
-    height: 40%;
-    width: 40%;
+    height: 10vw;
+    width: 10vw;
     background-color: black;
     margin: auto;
     left: 0;
