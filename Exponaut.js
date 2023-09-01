@@ -1636,7 +1636,7 @@ function resetInactivity() {
 
 function onetimebtnClickHandler(event) {
     resetInactivity();
-    current_amount += 5000 * comboValue;
+    current_amount += 5000 * (comboValue * permanent_multiplier_value);
     update_score();
 
     checkScore();
@@ -1649,7 +1649,7 @@ function onetimebtnClickHandler(event) {
     // Add a class to the element to apply the override with transition
     onetimebtn.classList.add("override-opacity");
 
-    score_increase = 5000 * comboValue;
+    score_increase = 5000 * (comboValue * permanent_multiplier_value);
 
     triggerCustomEffect();
 
