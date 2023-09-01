@@ -147,10 +147,7 @@ background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
     
   }
 
-  .work {
 
-    background: url("thingy.jpg") #99f repeat-y fixed;
-  }
   .switcher2 {
 background: rgb(165, 255, 187);
 color:#00a2ff;
@@ -194,7 +191,7 @@ width: 400px;
   font-family: 'Roboto Condensed', sans-serif;
   background: rgb(107, 0, 0);
   color:#000000;
-  background-image:  url(Map_bg.jpg);
+  background-image: url(moddworld_graphics/Map_bg.jpg);
   background-size: 6000px;
   animation: bgmovement 1200s infinite;
   position: fixed;
@@ -284,20 +281,6 @@ height: 1200px;
 transition-duration: 1s;
 }
 
-.midsection3{
-	background-image: url("https://wallpaperaccess.com/full/1124086.jpg");
-  height: auto;
-  transition-duration: 1s;
-  padding-bottom: 50px;
-  padding-top: 50px;
-  
-}
-
-.midsection4{
-	background-image: url("https://i.pinimg.com/originals/35/fd/82/35fd826fd7bb4cae8d2d62cba7b6f643.jpg");
-  height: 800px;
-}
-
 .scroll {
 
 position: relative;
@@ -319,7 +302,7 @@ top: 5%;
   font-family: 'Fjalla One', sans-serif;
   padding-bottom: 50px;
 
-  background-image: url(sign.png) ;
+  background-image: url(moddworld_graphics/sign.png) ;
   background-size: 100%;
   height: 200px;
   width: 480px;
@@ -382,7 +365,7 @@ outline: none !important;
 color: black;
 text-decoration: none;
 text-align: center;
-background-image: url(mod_info_bg.png);
+background-image: url(moddworld_graphics/mod_info_bg.png);
 background-size: 100% 100%;
 position: relative;
 top: 4px;
@@ -391,7 +374,7 @@ outline-style: ridge;
 transition-duration: 1.5s;
 overflow: hidden;
 filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
-shape-outside: url(mod_info_bg.png);
+shape-outside: url(moddworld_graphics/mod_info_bg.png);
 margin-left: 320px;
 
 }
@@ -686,7 +669,7 @@ background-color: red;
  
   height: 500px;
   background-position: top 0% left 0%;
-  background-image: url(mod1img.jpg);
+  background-image: url(moddworld_graphics/mod1img.jpg);
   background-size: 350%;
   background-position: top 0% left 0%;
   width: 900px;
@@ -701,7 +684,7 @@ background-color: red;
 
 .mod1img{
 
-  background-image: url(mod1img.jpg);
+  background-image: url(moddworld_graphics/mod1img.jpg);
   background-size: 1350%;
   background-position: top 0% left 0%;
   width: 300px;
@@ -719,7 +702,7 @@ background-color: red;
 
 #mod2img {
 
-background-image: url(mod2img.jpg);
+background-image: url(moddworld_graphics/mod2img.jpg);
 background-size: 500%;
 background-position: top 0% left 0%;
 border: 3px solid black;
@@ -735,7 +718,7 @@ pointer-events: all;
 
 #mod3img {
  
-background-image: url(mod3img.jpg);
+background-image: url(moddworld_graphics/mod3img.jpg);
 background-size: 700%;
 background-position: top 0% left 0%;
 border: 3px solid black;
@@ -751,7 +734,7 @@ pointer-events: all;
 
   #mod4img {
 
-    background-image: url(mod4img.jpg);
+    background-image: url(moddworld_graphics/mod4img.jpg);
     background-size: 250%;
     background-position: top 0% left 0%;
     border: 3px solid black;
@@ -823,7 +806,7 @@ pointer-events: all;
   display: inline-block;
   opacity: 0%;
   transition: height 0.5s, width 0.5s, rotate 0.5s ease-in, opacity 0.3s, margin-left 0.5s 0.5s, margin-right 0.5s 0.5s;
-background-image: url(owbtn.png);
+background-image: url(moddworld_graphics/owbtn.png);
 background-size: contain;
 background-position: center;
 padding: 0px;
@@ -912,7 +895,7 @@ scale: 100%;
 
 .btn_p {
 
-background-image: url(back_btn.png) !important;
+background-image: url(moddworld_graphics/back_btn.png) !important;
 
 }
 
@@ -944,7 +927,7 @@ transition-delay: 0.3s;
   border-radius: 25px;
   top: 56%; 
   background-color: rgb(255, 187, 0);
-  background-image: url(download_btn.png);
+  background-image: url(moddworld_graphics/download_btn.png);
   box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 border: #9c0000 7px solid;
 border-left-color: #5f0000;
@@ -993,7 +976,7 @@ pointer-events: all;
   border-radius: 25px;
   top: 58.5%; 
   background-color: rgb(255, 187, 0);
-  background-image: url(main_page_button.png);
+  background-image: url(moddworld_graphics/main_page_button.png);
   box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 border: #9c0000 7px solid;
 border-left-color: #5f0000;
@@ -1006,7 +989,7 @@ border-bottom-color: #5f0000;
   border-radius: 25px;
   top: 58.5%; 
   background-color: rgb(255, 187, 0);
-  background-image: url(main_page_button.png);
+  background-image: url(moddworld_graphics/main_page_button.png);
   box-shadow: inset 0px 0px 15px 15px rgba(0, 0, 0, 0.411), 0px 0px 30px 15px #000000a2, 0px 0px 15px 1px #ff2222;
 border: #9c0000 7px solid;
 border-left-color: #5f0000;
@@ -1047,7 +1030,7 @@ position: absolute;
 top: 0%;
 left: 0;
 opacity: 0;
-shape-outside: url(scroll_more_info.png);
+shape-outside: url(moddworld_graphics/scroll_more_info.png);
 filter: drop-shadow(5px 5px 0px rgb(0, 0, 0));
 pointer-events: none;
 }
@@ -1083,7 +1066,7 @@ display: block;
   height: 100%;
   width: 100%;
 
-background-image: url(mod_info_bg.png);
+background-image: url(moddworld_graphics/mod_info_bg.png);
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
@@ -1802,7 +1785,7 @@ width: 500px;
 top: 0;
 margin-left: 45%;
 display: grid;
-background-image: url(scroll_transparent.png);
+background-image: url(moddworld_graphics/scroll_transparent.png);
 background-repeat: no-repeat;
 background-size: 100%;
 background-position: 0% -270px;
@@ -1840,15 +1823,15 @@ left: 20%;
 
 @keyframes introbtnanim {
 
-      100% {background-image: url(button1websiteremakealt.png);
+      100% {background-image: url(moddworld_graphics/button1websiteremakealt.png);
 
       }
       }
         
 @keyframes btn_flip {
 
-      0% {background-image: url(button1websiteremakealt.png);}
-      85% {background-image: url(button1websiteremake.png);}
+      0% {background-image: url(moddworld_graphics/button1websiteremakealt.png);}
+      85% {background-image: url(moddworld_graphics/button1websiteremake.png);}
       
       }
 
@@ -1858,7 +1841,7 @@ left: 20%;
 
 height: 45px;
 width: 105px;
-background-image: url(button1websiteremake.png);
+background-image: url(moddworld_graphics/button1websiteremake.png);
 background-size: cover;
 position: relative;
 top: 173px;
@@ -1866,7 +1849,7 @@ background-color: rgba(255, 255, 255, 0);
 border: none;
 right: -4px;
 animation: introbtnanim 1s steps(1, end) forwards, introrotate 0.5s 0.7s ease-in-out, hue_change 40s infinite;
-shape-outside: url(button1websiteremake.png);
+shape-outside: url(moddworld_graphics/button1websiteremake.png);
 filter: drop-shadow(0px 0px 5px rgb(0, 0, 0)) hue-rotate(0deg);
 
 }
@@ -1896,7 +1879,7 @@ filter: drop-shadow(0px 0px 5px rgb(0, 0, 0)) hue-rotate(0deg);
  
 
 animation: btn_flip 1s steps(1, end) forwards, introrotate2 0.5s 0.7s ease-in-out, hue_change 40s infinite;
-background-image: url(button1websiteremake.png);
+background-image: url(moddworld_graphics/button1websiteremake.png);
 
 
 }
@@ -1935,7 +1918,7 @@ height: 400px;
 margin: auto;
 margin-top: 60px;
 
-background-image: url(moddworld_logo.png);
+background-image: url(moddworld_graphics/moddworld_logo.png);
 background-repeat: no-repeat;
 background-size: 100%;
 background-size: cover;
