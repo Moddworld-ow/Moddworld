@@ -1673,9 +1673,9 @@ scale: 50% !important;
       height: 230px;
       width: 200%;
       position: fixed;
-      left: 83vw;
+      left: 87vw;
       margin: 5px;
-      top: -175px;
+      top: -170px;
       z-index: 35;
       border: 5px #e9a54f solid;
       transition: 1s ease-out 0s;
@@ -1800,11 +1800,11 @@ grid-template-rows: 60px 60px 60px;
   transition: opacity 0.7s 0s;
   }
 
-  .odd_on2 {
+.odd_on2 {
 
-left: 20%;
+left: 10%;
       
-    }
+  }
 
     @keyframes introrotate {
 
@@ -2368,6 +2368,31 @@ right: 0;
 left: 0;
 position: absolute;
 font-size: 15px;
+
+}
+
+.divtop {
+
+scale: 80%;
+left: 55%;
+top: -29%;
+overflow: visible ;
+}
+
+.odd_on2 {
+
+  left: -102%;
+}
+
+.zindexfix {
+
+  top: 69%;
+  left: 15%;
+}
+
+.btnflip      {
+
+left: 53%;
 
 }
 
