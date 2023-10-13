@@ -11,21 +11,9 @@ label {
 left: 12px;
 display: inline-block;
 position: relative;
+font-size: 12px;
 }
 
-.main_bg {
-
-  background-image: url(bg.png);
-  z-index: 0;
-  width: 100%;
-  height: 111%;
-  background-size: 80%;
-  position: absolute;
-  opacity: 3%;
-  animation: diag_move 360s linear infinite;
-  background-repeat: repeat;
-
-}
 
 @keyframes diag_move {
 
@@ -56,29 +44,18 @@ position: relative;
   .navbar_bg {
 
     height: 200px;
-    width: 110px;
+    width: 75px;
+    display: inline;
     background-color: #354585;
     position: absolute;
-    z-index: 1;
-    rotate: -10deg;
-    transform: translateY(-110.4px);
-    left: 50.7px;
-    box-shadow: -3px 2px 0px 0px rgb(38, 119, 225);
+    z-index: -1;
+    left: -3px;
+    border-left: 3px solid rgb(38, 119, 225);
+    top: -160px;
 
 
   }
 
-  .navbar_bg_filler {
-
-    height: 20px;
-    width: 110px;
-    background-color: rgb(38, 119, 225);
-    position: absolute;
-    z-index: 0;
-    transform: translateY(82px);
-    left: 47px;
-  
-  }
   
   /* The blue bar at the top */
   .navbar {
@@ -91,7 +68,10 @@ position: relative;
     z-index: 3;
     position: relative;
     min-width: 200px;
-    box-shadow: 0px 3px 0px 0px rgb(38, 119, 225);
+    border-bottom: 3px solid rgb(38, 119, 225);
+    border-left: 3px solid rgb(38, 119, 225);
+    top: 0;
+    height: 50px;
   }
 
   
@@ -115,7 +95,7 @@ position: relative;
   
  
   .dashboard {
-    margin-top: 20px;
+    margin-top: 35px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -143,18 +123,15 @@ position: relative;
   
   .expenses-table th,
   .expenses-table td {
-    padding: 10px;
-    padding: 0 ;
-    text-align: left;
+    padding: 5px;
     border-bottom: 3px solid #cccccc2c;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #333;
   }
   
-  .expenses-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
   
   .expenses-table td {
     font-weight: normal;
@@ -188,7 +165,7 @@ position: relative;
   .name-input,
   .amount-input {
     display: block;
-    width: 85%;
+    width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -199,7 +176,7 @@ position: relative;
 
   .category-select {
 
-    width: 90%;
+    width: 80%;
 
   }
   
@@ -225,10 +202,6 @@ position: relative;
     z-index: 2;
   }
   
-  .expenses-table th {
-    background-color: #f1f1f1;
-    color: #333;
-  }
   
   .expenses-table td {
     color: #765f5f;
@@ -255,11 +228,12 @@ position: relative;
   .swiping_back {
 
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.147) inset;
-    font-size: 33px; 
-    height: 50px;
+    font-size: 30px;
+    line-height: 35px;
+    height: 35px;
     background-color: rgb(0, 206, 138);
     border-top: 8px rgba(0, 0, 0, 0.13) solid;
-    border-bottom: 16px rgba(0, 0, 0, 0.14) solid;
+    border-bottom: 12px rgba(0, 0, 0, 0.14) solid;
     width: 140%;
     animation: swipe 3s ease-in-out forwards;
     position: absolute;
@@ -317,23 +291,30 @@ position: relative;
 }
 
 
+
 .card_on_top {
   z-index: 5;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.147) inset;
-  padding-top: 100px;
+  padding-top: 85px;
   animation: cards_move_up 2s forwards;
   padding-bottom: 100px;
   }
 
   .text_on_top {
-    top: 148px;
+    top: 146px;
     z-index: 25;
-    background-color: #3367d600;
+    background-color: #00000000;
     position: absolute;
     animation: delayed_text 3.9s forwards;
-    display: inline;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
 
   }
 
@@ -355,19 +336,63 @@ position: relative;
 
   #top_card {
   animation-delay: 0s;
+  padding-top: 85px;
+
   }
   
   #middle_card {
   
     animation-delay: 0.025s;
-  
+    background-color: rgb(255, 241, 200);
+
   }
   
   #bottom_card {
     animation-delay: 0.05s;
   
+  }
+
+
+  .card_filler {
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: left;
+    border-bottom: 3px solid #cccccc2c;
+    text-align: center;
+    font-size: 14px;
+    text-wrap: nowrap;
+    padding-top: 7px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #333;
+    margin-top: 20px;
   
   }
+
+
+  .top_adjust {
+    font-size: 14px !important;
+    padding-top: 7px !important;
+            
+  }
+
+  .text_on_top_alt {
+    opacity: 0;
+    width: 250px;
+    text-align: center;
+    position: absolute;
+    z-index: 101;
+    margin: auto;
+    left: 0;
+    right: 0;
+    font-size: 25px;
+    line-height: 20px;
+    top: 167px;
+    animation: none;
+  }
+
+
 
 
 
@@ -377,17 +402,11 @@ position: relative;
 
 
  /* Responsive styles */
- @media (max-width: 768px) {
+ @media (max-width: 860px) {
   .dashboard {
     grid-template-columns: 1fr;
   }
 
-  .period-select,
-  .category-select,
-  .name-input,
-  .amount-input {
-    width: 80%;
-  }
 
   .card_on_top {
 
@@ -396,9 +415,20 @@ position: relative;
 
   #top_card {
 
-    margin-top: 140px;
+    margin-top: 0px;
 
 
   }
 
+  .text_on_top {
+
+    opacity: 0 !important;
+  }
+
+  .text_on_top_alt {
+    animation: delayed_text 3.9s forwards;
+  }
+
+
 }
+

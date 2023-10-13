@@ -11,15 +11,13 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-<div class="main_bg"></div>
 
   <div class="container">
 
-    <div class="navbar_bg"></div>
-    <div class="navbar_bg_filler"></div>
 
     <nav class="navbar">
+      <div class="navbar_bg"></div>
+      
       <h1>The Clear List</h1>
       <ul>
         <li><a href="#">thing1</a></li>
@@ -29,15 +27,25 @@
     </nav>
     <div class="swiping_back"></div>
     <div class="dashboard">
-     
-      <h2 class="text_on_top" style="left: 3.2%;">Submit Your Clear</h2>
 
+      <div class="text_on_top">
+     
+        <h2 style="display: inline; width: 25%; text-align: center; margin-left: 2%; text-wrap: nowrap;">Submit Your Clear</h2>
+        <h2 style="display: inline; width: 25%; text-align: center;">Top Clears</h2>
+        <h2 style="display: inline; width: 25%; text-align: center; margin-right: 2%">All Clears</h2>
+
+      </div>
+
+      <div class="text_on_top_alt">Submit your clear!</div>
 
 
       <div class="card_on_top" id="top_card">
+
+        <div class="card_filler">Submit mod info:</div>
+
         <form>
-          <label for="which_mod">Custom Level Mod</label>
-          <select id="category" class="category-select">
+          <label for="mod" style="margin-top: 15px">Custom Level Mod</label>
+          <select id="mod" class="category-select">
             <option value="mod1">The Smegpack</option>
             <option value="mod2">Evenwurst Weenerz</option>
             <option value="mod3">Oddysee Redux</option>
@@ -46,24 +54,22 @@
             <option value="mod6">The Oddysee Continues</option>
           </select>
           <br>
-          <label for="which_game">Game</label>
-          <select id="category" class="category-select">
+          <label for="game">Game</label>
+          <select id="game" class="category-select">
             <option value="oddysee">Abe's Oddysee</option>
             <option value="exoddus">Abe's Exoddus</option>
           </select>
           <br>
-          <label for="amount_saved">Mudokons Saved</label>
-          <input type="number" id="muds" class="amount-input" placeholder="How many have you rescued?">
+          <label for="saved">Mudokons Saved</label>
+          <input type="number" id="saved" class="amount-input" placeholder="How many have you rescued?">
           <br>
-          <label for="amount_time">Playtime</label>
+          <label for="time">Playtime</label>
           <input type="time" id="time" class="amount-input" step="1" placeholder="time">
           <br>
-          <button type="submit" class="button" style="margin-left: 18px;">Add Expense</button>
+          <button type="submit" class="button" style="margin-left: 18px;">Add Your Clear</button>
         </form>
       </div>
   
-      <h2 class="text_on_top" style="left: 35.1%;">Top Clears</h2>
-
 
 
       <div class="card_on_top" id="middle_card">
@@ -71,10 +77,10 @@
         <table class="expenses-table">
           <thead>
             <tr>
-              <th>Mod Name</th>
-              <th>Time</th>
-              <th>Saved</th>
-              <th>Player</th>
+              <th class="top_adjust">Mod Name</th>
+              <th class="top_adjust">Time</th>
+              <th class="top_adjust">Saved</th>
+              <th class="top_adjust">Player</th>
             </tr>
           </thead>
           <tbody>
@@ -104,17 +110,15 @@
         </table>
       </div>
   
-      <h2 class="text_on_top" style="left: 67.1%;">All Clears</h2>
-
       <div class="card_on_top" id="bottom_card">
 
         <table class="expenses-table">
           <thead>
             <tr>
-              <th>Mod Name</th>
-              <th>Time</th>
-              <th>Saved</th>
-              <th>Player</th>
+              <th class="top_adjust">Mod Name</th>
+              <th class="top_adjust">Time</th>
+              <th class="top_adjust">Saved</th>
+              <th class="top_adjust">Player</th>
             </tr>
           </thead>
           <tbody>
